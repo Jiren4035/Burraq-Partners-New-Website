@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request for Proposal - Burraq Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burraqOrange: '#FF5722',
+                        burraqNavy: '#1a1d2e',
+                        softGray: '#F4F5F7',
+                        offWhite: '#FAFAFA',
+                        burraqBlue: '#0066cc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; }
+        .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .goog-te-menu-frame, iframe.goog-te-menu-frame { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; opacity: 0 !important; }
+        body { top: 0px !important; }
+        .skiptranslate:not(.lang-toggle) { display: none !important; }
+        #google_translate_element { display: none !important; }
+        .nav-link { position: relative; transition: color 0.3s ease; display: inline-flex; align-items: center; padding-bottom: 4px; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background-color: #FF5722; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active-link::after { width: 100%; }
+        .dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; }
+        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: 95vw; max-width: 1400px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3.5rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
+        .mega-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; align-items: start; }
+        .mega-column { display: flex; flex-direction: column; }
+        .mega-section { margin-bottom: 1.5rem; }
+        .mega-section h4 { font-size: 0.95rem; font-weight: 800; color: #1a1d2e; margin-bottom: 0.7rem; border-left: 4px solid #FF5722; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
+        .mega-link { display: block; font-size: 0.8rem; color: #64748b; padding: 4px 0; font-weight: 600; transition: all 0.2s ease; text-decoration: none; line-height: 1.3; }
+        .mega-link:hover { color: #FF5722; padding-left: 6px; }
+        .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
+        .rfp-input { width: 100%; padding: 1.25rem 1.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1.5rem; transition: all 0.3s ease; outline: none; font-weight: 500; }
+        .rfp-input:focus { border-color: #FF5722; background: white; box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.1); }
+        .service-group-card { border: 1px solid #f1f1f1; border-radius: 2rem; padding: 2rem; background: #fafafa; transition: all 0.3s ease; }
+        .service-group-card:hover { border-color: #FF5722; box-shadow: 0 10px 30px rgba(0,0,0,0.04); background: white; }
+        .checkbox-custom { accent-color: #FF5722; width: 18px; height: 18px; cursor: pointer; }
+        .footer-link { transition: all 0.3s ease; }
+        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
+        .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+        .whatsapp-fixed:hover { transform: scale(1.1); }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
+        .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
+        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
+        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
+        .lang-option.active { background: #FF5722; color: white; }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="google_translate_element"></div>
+    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm">
+        <div class="max-w-[1600px] mx-auto px-8 lg:px-12 h-24 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="Home.html">
+                    <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-14 w-auto">
+                </a>
+            </div>
+            <div class="hidden xl:flex items-center space-x-10 text-[14px] font-bold uppercase tracking-wider text-slate-700 h-full">
+                <div class="h-full flex items-center"><a href="Home.html" class="nav-link hover:text-burraqOrange">Home</a></div>
+                <div class="h-full flex items-center"><a href="About.html" class="nav-link hover:text-burraqOrange">About Us</a></div>
+                <div class="h-full flex items-center"><a href="Partners.html" class="nav-link hover:text-burraqOrange">Partners</a></div>
+                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link hover:text-burraqOrange">Blog</a></div>
+                <div class="relative dropdown h-full flex items-center">
+                    <a href="Services.html" class="nav-link hover:text-burraqOrange flex items-center gap-2 cursor-pointer">
+                        Services <i class="fa-solid fa-chevron-down text-[12px]"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="mega-grid">
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Deals Advisory</h4>
+                                    <a href="Services.html?service=deals" class="mega-link">Corporate Finance</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Deal Advisory</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Valuations, Business Modeling, & Market Research</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Restructuring</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Project Infrastructure</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Real Estate Advisory</a>
+                                    <a href="Services.html?service=deals" class="mega-link">IPO & Capital Markets</a>
+                                </div>
+                                <div class="mega-section">
+                                    <h4>Business Advisory</h4>
+                                    <a href="Services.html?service=business" class="mega-link">Risk Advisory</a>
+                                    <a href="Services.html?service=business" class="mega-link">Internal Audit</a>
+                                    <a href="Services.html?service=business" class="mega-link">IT Risk & Assurance</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Technology Advisory</h4>
+                                    <a href="Services.html?service=tech" class="mega-link">IT Consulting</a>
+                                    <a href="Services.html?service=tech" class="mega-link">Enterprise Software Solutions</a>
+                                    <a href="Services.html?service=tech" class="mega-link">Digital Transformation</a>
+                                    <a href="Services.html?service=tech" class="mega-link">Business Process Automation</a>
+                                    <a href="Services.html?service=tech" class="mega-link">IT Infrastructure & Cybersecurity</a>
+                                </div>
+                                <div class="mega-section">
+                                    <h4>Corporate Services & Business Setup</h4>
+                                    <a href="Services.html?service=corporate" class="mega-link">Market Entry Strategy</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Entity Formation & Licensing</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Secretarial</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Agreements Advisory</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Liquidation</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Tax, Zakat & Legal Services</h4>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Planning</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Compliance</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Transaction Tax</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Family Business & Zakat</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Due Diligence</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Indirect Tax (VAT)</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Transfer Pricing</a>
+                                    <a href="Services.html?service=tax" class="mega-link">International Taxation</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Technology</a>
+                                    <a href="Services.html?service=tax" class="mega-link">E-Invoicing</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Bookkeeping</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Dispute Resolution</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>HR Consulting & Secondment</h4>
+                                    <a href="Services.html?service=hr" class="mega-link">Labor Law Compliance</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Talent Secondment</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Performance Management</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Recruitment Strategy</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Payroll Administration</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Workforce Restructuring</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
+                <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="lang-toggle notranslate">
+                    <div id="en-btn" class="lang-option active" onclick="changeLang('en')">EN</div>
+                    <div id="ar-btn" class="lang-option" onclick="changeLang('ar')">AR</div>
+                </div>
+                <a href="RFP.html" class="btn-primary group flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase tracking-widest shadow-lg">
+                    SUBMIT RFP
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="relative h-[450px] flex flex-col justify-center items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1600" alt="RFP Hero" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-burraqNavy/85 backdrop-blur-sm"></div>
+        </div>
+        <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center w-full">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-5xl lg:text-7xl font-[800] text-white mb-6 leading-tight tracking-tight">
+                    Request for <span class="text-burraqOrange">Proposal</span>
+                </h1>
+                <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-8 rounded-full"></div>
+                <p class="text-xl text-slate-200 max-w-3xl mx-auto font-medium leading-relaxed">
+                    Partner with Burraq Partners to unlock strategic opportunities and drive impactful progress.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-offWhite">
+        <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+            <form action="https://formspree.io/f/mvzbrpkj" method="POST" enctype="multipart/form-data" class="space-y-16">
+                <div class="bg-white rounded-[2.5rem] p-10 lg:p-16 shadow-xl border border-gray-100">
+                    <h2 class="text-3xl font-extrabold text-burraqNavy mb-10 flex items-center gap-4">
+                        <span class="w-10 h-10 rounded-full bg-burraqOrange text-white flex items-center justify-center text-sm">1</span>
+                        Contact Information
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Full Name</label>
+                            <input type="text" name="full_name" required placeholder="Your Name" class="rfp-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Company Email</label>
+                            <input type="email" name="email" required placeholder="email@company.com" class="rfp-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Phone Number</label>
+                            <input type="tel" name="phone" placeholder="+966 --- --- ---" class="rfp-input">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Organization Name</label>
+                            <input type="text" name="organization" placeholder="Company Name" class="rfp-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-10 lg:p-16 shadow-xl border border-gray-100">
+                    <h2 class="text-3xl font-extrabold text-burraqNavy mb-10 flex items-center gap-4">
+                        <span class="w-10 h-10 rounded-full bg-burraqOrange text-white flex items-center justify-center text-sm">2</span>
+                        Select Required Services
+                    </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="service-group-card">
+                            <h3 class="text-xl font-bold text-burraqNavy mb-6 border-b pb-4 border-slate-100">Deals Advisory</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Deals: Corporate Finance" class="checkbox-custom"> Corporate Finance</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Deals: Deal Advisory" class="checkbox-custom"> Deal Advisory</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Deals: Valuations" class="checkbox-custom"> Valuations & Modeling</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Deals: Restructuring" class="checkbox-custom"> Restructuring</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Deals: Real Estate" class="checkbox-custom"> Real Estate Advisory</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Deals: IPO" class="checkbox-custom"> IPO & Capital Markets</label>
+                            </div>
+                        </div>
+                        <div class="service-group-card">
+                            <h3 class="text-xl font-bold text-burraqNavy mb-6 border-b pb-4 border-slate-100">Business Advisory</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Business: Risk" class="checkbox-custom"> Risk Management</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Business: Performance" class="checkbox-custom"> Performance Improvement</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Business: IT Risk" class="checkbox-custom"> IT Risk</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Business: Human Capital" class="checkbox-custom"> Human Capital</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Business: Internal Audit" class="checkbox-custom"> Internal Audit</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Business: Strategy" class="checkbox-custom"> Strategy</label>
+                            </div>
+                        </div>
+                        <div class="service-group-card">
+                            <h3 class="text-xl font-bold text-burraqNavy mb-6 border-b pb-4 border-slate-100">Technology Advisory</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tech: IT Consulting" class="checkbox-custom"> IT Consulting</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tech: Enterprise Software" class="checkbox-custom"> Enterprise Software</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tech: Digital Trans." class="checkbox-custom"> Digital Transformation</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tech: Automation" class="checkbox-custom"> Business Automation</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tech: Cybersecurity" class="checkbox-custom"> Cybersecurity</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tech: AI" class="checkbox-custom"> AI & Data Privacy</label>
+                            </div>
+                        </div>
+                        <div class="service-group-card">
+                            <h3 class="text-xl font-bold text-burraqNavy mb-6 border-b pb-4 border-slate-100">Tax Advisory</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tax: Planning" class="checkbox-custom"> Planning & Compliance</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tax: Transaction" class="checkbox-custom"> Transaction Tax</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tax: International" class="checkbox-custom"> Indirect & International</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tax: Solutions" class="checkbox-custom"> Business Solutions</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tax: Advisory" class="checkbox-custom"> Specialized Advisory</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Tax: Assessment" class="checkbox-custom"> Resolution & Assessment</label>
+                            </div>
+                        </div>
+                        <div class="service-group-card">
+                            <h3 class="text-xl font-bold text-burraqNavy mb-6 border-b pb-4 border-slate-100">Corporate Advisory</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Corp: Market Entry" class="checkbox-custom"> Market Entry</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Corp: Formation" class="checkbox-custom"> Formation</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Corp: Governance" class="checkbox-custom"> Governance</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Corp: Secretarial" class="checkbox-custom"> Secretarial</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Corp: Agreements" class="checkbox-custom"> Agreements</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="Corp: Restructuring" class="checkbox-custom"> Restructuring</label>
+                            </div>
+                        </div>
+                        <div class="service-group-card">
+                            <h3 class="text-xl font-bold text-burraqNavy mb-6 border-b pb-4 border-slate-100">HR Advisory</h3>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="HR: Audit" class="checkbox-custom"> Compliance Audit</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="HR: Talent" class="checkbox-custom"> Talent Secondment</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="HR: Systems" class="checkbox-custom"> Performance Systems</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="HR: Recruitment" class="checkbox-custom"> Recruitment Strategy</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="HR: Payroll" class="checkbox-custom"> Payroll & Benefits</label>
+                                <label class="flex items-center gap-3 text-sm text-slate-600 cursor-pointer hover:text-burraqOrange transition-colors"><input type="checkbox" name="service[]" value="HR: Transition" class="checkbox-custom"> Workforce Transition</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-[2.5rem] p-10 lg:p-16 shadow-xl border border-gray-100">
+                    <h2 class="text-3xl font-extrabold text-burraqNavy mb-10 flex items-center gap-4">
+                        <span class="w-10 h-10 rounded-full bg-burraqOrange text-white flex items-center justify-center text-sm">3</span>
+                        Additional Details & Documents
+                    </h2>
+                    <div class="space-y-8">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Brief Project Description</label>
+                            <textarea name="description" rows="5" placeholder="Tell us more about your specific needs..." class="rfp-input resize-none"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 ml-1">Upload Supporting Documents (Optional)</label>
+                            <div class="border-2 border-dashed border-slate-200 rounded-[1.5rem] p-10 text-center bg-slate-50 hover:bg-white hover:border-burraqOrange transition-all cursor-pointer group relative">
+                                <i class="fa-solid fa-cloud-arrow-up text-4xl text-slate-300 group-hover:text-burraqOrange mb-4"></i>
+                                <p class="text-sm text-slate-500">Click to browse your files</p>
+                                <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-widest">Max file size: 1 GB (PDF, DOCX, XLSX)</p>
+                                <input type="file" name="attachment" class="absolute inset-0 opacity-0 cursor-pointer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="btn-primary px-16 py-6 rounded-2xl font-bold uppercase tracking-widest text-sm shadow-2xl flex items-center gap-4 group">
+                        Submit RFP
+                        <i class="fa-solid fa-paper-plane group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="mb-16">
+                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left">
+                    Empowering <span class="text-burraqOrange">Growth</span>, Unleashing Potential
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left items-start mb-16">
+                <div class="flex flex-col gap-8 items-center md:items-start">
+                    <div class="flex flex-col items-center md:items-start gap-4">
+                        <a href="Home.html">
+                            <img src="BurraqLogoLight.svg" alt="Burraq Logo" class="h-16 w-auto">
+                        </a>
+                        <p class="text-slate-400 text-sm font-medium max-w-[280px] text-center md:text-left leading-relaxed">
+                            Burraq Partners drives growth through innovation and strategic solutions, empowering businesses to achieve success
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://www.youtube.com/@BurraqPartners" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                        <li><a href="Home.html" class="footer-link">Home</a></li>
+                        <li><a href="About.html" class="footer-link">About Us</a></li>
+                        <li><a href="Partners.html" class="footer-link">Partners</a></li>
+                        <li><a href="Blogs.html" class="footer-link">Blog</a></li>
+                        <li><a href="Services.html" class="footer-link">Services</a></li>
+                        <li><a href="Careers.html" class="footer-link">Careers</a></li>
+                        <li><a href="Contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                        <li><a href="Services.html?service=deals" class="footer-link">Deals Advisory</a></li>
+                        <li><a href="Services.html?service=business" class="footer-link">Business Advisory</a></li>
+                        <li><a href="Services.html?service=tech" class="footer-link">Technology Advisory</a></li>
+                        <li><a href="Services.html?service=tax" class="footer-link">Tax Advisory</a></li>
+                        <li><a href="Services.html?service=corporate" class="footer-link">Corporate Services</a></li>
+                        <li><a href="Services.html?service=hr" class="footer-link">HR Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-5 text-slate-400 text-base font-medium">
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                            <i class="fa-solid fa-envelope mt-1 text-burraqOrange text-lg"></i>
+                            <span>info@burraqpartners.com</span>
+                        </li>
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                            <i class="fa-solid fa-phone mt-1 text-burraqOrange text-lg"></i>
+                            <span>+966 11 248 0261</span>
+                        </li>
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                            <i class="fa-solid fa-location-dot mt-1 text-burraqOrange text-lg"></i>
+                            <span>8074 Building, Riyadh, KSA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-sm font-medium">
+                <p>&copy; 2026 Burraq Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/966535287164" target="_blank" class="whatsapp-fixed">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fa-solid fa-arrow-up text-xl"></i>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'ar,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+        function changeLang(lang) {
+            const select = document.querySelector('select.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+                document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+                document.getElementById('ar-btn').classList.toggle('active', lang === 'ar');
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

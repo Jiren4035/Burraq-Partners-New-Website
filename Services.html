@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Burraq Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burraqOrange: '#FF5722',
+                        burraqNavy: '#1a1d2e',
+                        softGray: '#F4F5F7',
+                        offWhite: '#FAFAFA',
+                        burraqBlue: '#0066cc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; }
+        .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .goog-te-menu-frame, iframe.goog-te-menu-frame { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; opacity: 0 !important; }
+        body { top: 0px !important; }
+        .skiptranslate:not(.lang-toggle) { display: none !important; }
+        #google_translate_element { display: none !important; }
+        .nav-link { position: relative; transition: color 0.3s ease; display: inline-flex; align-items: center; padding-bottom: 4px; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background-color: #FF5722; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active-link::after { width: 100%; }
+        .dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; }
+        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: 95vw; max-width: 1400px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3.5rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
+        .mega-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; align-items: start; }
+        .mega-column { display: flex; flex-direction: column; }
+        .mega-section { margin-bottom: 1.5rem; }
+        .mega-section h4 { font-size: 0.95rem; font-weight: 800; color: #1a1d2e; margin-bottom: 0.7rem; border-left: 4px solid #FF5722; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
+        .mega-link { display: block; font-size: 0.8rem; color: #64748b; padding: 4px 0; font-weight: 600; transition: all 0.2s ease; text-decoration: none; line-height: 1.3; }
+        .mega-link:hover { color: #FF5722; padding-left: 6px; }
+        .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
+        .icon-bg { width: 64px; height: 64px; background-color: #f8fafc; border-radius: 1.25rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; color: #1a1d2e; }
+        .service-tab { cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: white; }
+        .service-tab:hover { transform: translateY(-8px); background-color: #FF5722 !important; box-shadow: 0 20px 40px rgba(255, 87, 34, 0.2); }
+        .service-tab:hover .icon-bg { background-color: rgba(255, 255, 255, 0.2); color: white; }
+        .service-tab:hover span { color: white !important; }
+        .service-tab.active { background-color: #FF5722 !important; box-shadow: 0 20px 40px rgba(255, 87, 34, 0.3); }
+        .service-tab.active .icon-bg { background-color: rgba(255, 255, 255, 0.2); color: white; }
+        .service-tab.active span { color: white !important; }
+        .details-container { display: none; opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+        .details-container.active { display: block; opacity: 1; transform: translateY(0); }
+        .alternating-row { display: flex; flex-direction: column; gap: 60px; }
+        .service-block { display: flex; align-items: stretch; gap: 50px; background: white; border-radius: 2.5rem; overflow: hidden; border: 1px solid #f1f1f1; padding: 50px; transition: all 0.4s ease; border-left: 4px solid transparent; border-right: 4px solid transparent; }
+        .service-block:hover { border-left: 4px solid #FF5722; border-right: 4px solid #FF5722; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .block-image { width: 45%; min-height: 450px; border-radius: 2rem; overflow: hidden; flex-shrink: 0; }
+        .block-image img { width: 100%; height: 100%; object-fit: cover; }
+        .block-content { width: 55%; display: flex; flex-direction: column; justify-content: center; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-400px * 23)); } }
+        .marquee-container { overflow: hidden; position: relative; width: 100%; background: white; padding: 60px 0; border-top: 1px solid #f1f1f1; border-bottom: 1px solid #f1f1f1; }
+        .marquee-content { display: flex; width: calc(400px * 46); animation: scroll 120s linear infinite; }
+        .marquee-content:hover { animation-play-state: paused; }
+        .client-logo-item { width: 400px; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 25px; background: #fcfcfd; border-radius: 2rem; border: 1px solid #f1f1f1; transition: all 0.3s ease; padding: 15px; }
+        .client-logo-item:hover { border-color: #FF5722; background: white; transform: scale(1.05); }
+        .client-logo-item img { width: 95%; height: 95%; object-fit: contain; transition: filter 0.3s ease; }
+        .client-logo-item:hover img { filter: grayscale(0%); }
+        .footer-link { transition: all 0.3s ease; }
+        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
+        .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .whatsapp-fixed:hover { transform: scale(1.1); }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
+        .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
+        .bullet-point { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-weight: 700; color: #1a1d2e; font-size: 0.95rem; }
+        .bullet-point i { color: #FF5722; font-size: 1.1rem; }
+        .orange-dash { width: 40px; height: 3px; background-color: #FF5722; margin: 8px auto 0; border-radius: 20px; }
+        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
+        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
+        .lang-option.active { background: #FF5722; color: white; }
+        .rfp-section { background-color: #ffffff; border-top: 1px solid #f1f1f1; }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="google_translate_element"></div>
+    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm">
+        <div class="max-w-[1600px] mx-auto px-8 lg:px-12 h-24 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="Home.html">
+                    <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-14 w-auto">
+                </a>
+            </div>
+            <div class="hidden xl:flex items-center space-x-10 text-[14px] font-bold uppercase tracking-wider text-slate-700 h-full">
+                <div class="h-full flex items-center"><a href="Home.html" class="nav-link hover:text-burraqOrange">Home</a></div>
+                <div class="h-full flex items-center"><a href="About.html" class="nav-link hover:text-burraqOrange">About Us</a></div>
+                <div class="h-full flex items-center"><a href="Partners.html" class="nav-link hover:text-burraqOrange">Partners</a></div>
+                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link hover:text-burraqOrange">Blog</a></div>
+                <div class="relative dropdown h-full flex items-center">
+                    <a href="Services.html" class="nav-link text-burraqOrange font-extrabold active-link">
+                        Services <i class="fa-solid fa-chevron-down text-[12px] ml-2"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="mega-grid">
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Deals Advisory</h4>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">Corporate Finance</a>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">Deal Advisory</a>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">Valuations, Business Modeling, & Market Research</a>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">Restructuring</a>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">Project Infrastructure</a>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">Real Estate Advisory</a>
+                                    <a href="javascript:void(0)" onclick="showService('deals')" class="mega-link">IPO & Capital Markets</a>
+                                </div>
+                                <div class="mega-section">
+                                    <h4>Business Advisory</h4>
+                                    <a href="Services.html" class="mega-link">Risk Advisory</a>
+                                    <a href="Services.html" class="mega-link">Internal Audit</a>
+                                    <a href="Services.html" class="mega-link">IT Risk & Assurance</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Technology Advisory</h4>
+                                    <a href="javascript:void(0)" onclick="showService('tech')" class="mega-link">IT Consulting</a>
+                                    <a href="javascript:void(0)" onclick="showService('tech')" class="mega-link">Enterprise Software Solutions</a>
+                                    <a href="javascript:void(0)" onclick="showService('tech')" class="mega-link">Digital Transformation</a>
+                                    <a href="javascript:void(0)" onclick="showService('tech')" class="mega-link">Business Process Automation</a>
+                                    <a href="javascript:void(0)" onclick="showService('tech')" class="mega-link">IT Infrastructure & Cybersecurity</a>
+                                </div>
+                                <div class="mega-section">
+                                    <h4>Corporate Services & Business Setup</h4>
+                                    <a href="javascript:void(0)" onclick="showService('corporate')" class="mega-link">Market Entry Strategy</a>
+                                    <a href="javascript:void(0)" onclick="showService('corporate')" class="mega-link">Entity Formation & Licensing</a>
+                                    <a href="javascript:void(0)" onclick="showService('corporate')" class="mega-link">Corporate Governance</a>
+                                    <a href="javascript:void(0)" onclick="showService('corporate')" class="mega-link">Corporate Secretarial</a>
+                                    <a href="javascript:void(0)" onclick="showService('corporate')" class="mega-link">Agreements Advisory</a>
+                                    <a href="javascript:void(0)" onclick="showService('corporate')" class="mega-link">Liquidation</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Tax, Zakat & Legal Services</h4>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Tax Planning</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Tax Compliance</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Transaction Tax</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Corporate Governance</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Family Business & Zakat</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Tax Due Diligence</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Indirect Tax (VAT)</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Transfer Pricing</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">International Taxation</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Tax Technology</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">E-Invoicing</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Bookkeeping</a>
+                                    <a href="javascript:void(0)" onclick="showService('tax')" class="mega-link">Tax Dispute Resolution</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>HR Consulting & Secondment</h4>
+                                    <a href="javascript:void(0)" onclick="showService('hr')" class="mega-link">Labor Law Compliance</a>
+                                    <a href="javascript:void(0)" onclick="showService('hr')" class="mega-link">Talent Secondment</a>
+                                    <a href="javascript:void(0)" onclick="showService('hr')" class="mega-link">Performance Management</a>
+                                    <a href="javascript:void(0)" onclick="showService('hr')" class="mega-link">Recruitment Strategy</a>
+                                    <a href="javascript:void(0)" onclick="showService('hr')" class="mega-link">Payroll Administration</a>
+                                    <a href="javascript:void(0)" onclick="showService('hr')" class="mega-link">Workforce Restructuring</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
+                <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="lang-toggle notranslate">
+                    <div id="en-btn" class="lang-option active" onclick="changeLang('en')">EN</div>
+                    <div id="ar-btn" class="lang-option" onclick="changeLang('ar')">AR</div>
+                </div>
+                <a href="RFP.html" class="btn-primary group flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase tracking-widest shadow-lg">
+                    SUBMIT RFP
+                    <i class="fa-solid fa-file-signature group-hover:scale-110 transition-transform text-white text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <section class="relative h-[450px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1600" alt="Technology Services" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-burraqNavy/90"></div>
+        </div>
+        <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+            <h1 class="text-5xl lg:text-7xl font-[800] text-white mb-6 leading-tight">
+                Our <span class="text-burraqOrange">Services</span>
+            </h1>
+            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-8 rounded-full"></div>
+            <p class="text-xl lg:text-2xl text-white max-w-4xl mx-auto leading-relaxed font-medium mb-12">
+                We provide innovative solutions to boost growth, streamline operations, and deliver impactful results, tailored to meet the unique needs of each business.
+            </p>
+        </div>
+    </section>
+    <section class="py-32 bg-white">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="flex justify-start">
+                <div class="border-2 border-gray-100 rounded-[3rem] p-10 mb-24 shadow-sm">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div onclick="showService('deals')" id="tab-deals" class="service-tab p-6 rounded-3xl flex flex-col items-center text-center gap-4 transition-all">
+                            <div class="icon-bg shadow-sm"><i class="fa-solid fa-handshake-angle text-xl"></i></div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[11px] font-extrabold uppercase tracking-widest text-burraqNavy leading-tight">Deals</span>
+                                <div class="orange-dash"></div>
+                            </div>
+                        </div>
+                        <div onclick="showService('business')" id="tab-business" class="service-tab p-6 rounded-3xl flex flex-col items-center text-center gap-4 transition-all">
+                            <div class="icon-bg shadow-sm"><i class="fa-solid fa-chart-pie text-xl"></i></div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[11px] font-extrabold uppercase tracking-widest text-burraqNavy leading-tight">Business</span>
+                                <div class="orange-dash"></div>
+                            </div>
+                        </div>
+                        <div onclick="showService('tech')" id="tab-tech" class="service-tab p-6 rounded-3xl flex flex-col items-center text-center gap-4 transition-all">
+                            <div class="icon-bg shadow-sm"><i class="fa-solid fa-laptop-code text-xl"></i></div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[11px] font-extrabold uppercase tracking-widest text-burraqNavy leading-tight">Technology</span>
+                                <div class="orange-dash"></div>
+                            </div>
+                        </div>
+                        <div onclick="showService('tax')" id="tab-tax" class="service-tab p-6 rounded-3xl flex flex-col items-center text-center gap-4 transition-all">
+                            <div class="icon-bg shadow-sm"><i class="fa-solid fa-calculator text-xl"></i></div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[11px] font-extrabold uppercase tracking-widest text-burraqNavy leading-tight">Tax, Zakat & Legal</span>
+                                <div class="orange-dash"></div>
+                            </div>
+                        </div>
+                        <div onclick="showService('corporate')" id="tab-corporate" class="service-tab p-6 rounded-3xl flex flex-col items-center text-center gap-4 transition-all">
+                            <div class="icon-bg shadow-sm"><i class="fa-solid fa-building-shield text-xl"></i></div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[11px] font-extrabold uppercase tracking-widest text-burraqNavy leading-tight">Corporate</span>
+                                <div class="orange-dash"></div>
+                            </div>
+                        </div>
+                        <div onclick="showService('hr')" id="tab-hr" class="service-tab p-6 rounded-3xl flex flex-col items-center text-center gap-4 transition-all">
+                            <div class="icon-bg shadow-sm"><i class="fa-solid fa-users-gear text-xl"></i></div>
+                            <div class="flex flex-col items-center">
+                                <span class="text-[11px] font-extrabold uppercase tracking-widest text-burraqNavy leading-tight">HR</span>
+                                <div class="orange-dash"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-softGray/20 rounded-[3.5rem] p-6 lg:p-12">
+                <div id="details-deals" class="details-container">
+                    <div class="text-left mb-16">
+                        <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3"><span class="text-burraqOrange">Deals</span> Advisory</h2>
+                        <div class="w-20 h-1.5 bg-burraqOrange mb-8 rounded-full"></div>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-5xl text-justify">We empower organizations to navigate complex financial landscapes by offering end-to-end Deals Advisory services that drive strategic growth and maximize stakeholder value. Our expertise spans the entire transaction lifecycle, from sell-side and buy-side advisory to rigorous financial and tax due diligence for Mergers & Acquisitions and IPOs. We specialize in business valuations, feasibility studies, and robust financial modeling that provide the clarity needed for informed decision-making. Whether you are seeking capital structure optimization, debt and equity recapitalization, or navigating Initial Public Offerings (IPOs), our team delivers the insights required to close deals with confidence. Furthermore, we support businesses in transition through operational restructuring, distressed debt advisory, and exit readiness strategies, ensuring your organization is positioned for long-term resilience and market leadership.</p>
+                    </div>
+                    <div class="alternating-row" id="deals-alternating-grid"></div>
+                </div>
+                <div id="details-business" class="details-container">
+                    <div class="text-left mb-16">
+                        <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3"><span class="text-burraqOrange">Business</span> Advisory</h2>
+                        <div class="w-20 h-1.5 bg-burraqOrange mb-8 rounded-full"></div>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-5xl text-justify">We drive operational excellence and organizational resilience through integrated Business Advisory solutions tailored to the unique challenges of the regional market. Our services focus on the three lines of defense, providing comprehensive support in Governance, Risk, and Compliance (GRC), including internal audits, enterprise risk management (ERM), and regulatory violation prevention. We specialize in performance improvement, identifying critical gaps and implementing strategies to optimize operations, sales, and customer service. Our team also addresses the technical complexities of modern enterprise through IT Risk & Assurance, ensuring your infrastructure is secure, compliant, and aligned with business objectives. From strategic human resource consulting and talent integration to navigating the nuances of Family Business governance, we deliver the tools and frameworks necessary to enhance efficiency and maintain a sustainable competitive advantage.</p>
+                    </div>
+                    <div class="alternating-row" id="business-alternating-grid"></div>
+                </div>
+                <div id="details-tech" class="details-container">
+                    <div class="text-left mb-16">
+                        <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3"><span class="text-burraqOrange">Technology</span> Advisory</h2>
+                        <div class="w-20 h-1.5 bg-burraqOrange mb-8 rounded-full"></div>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-5xl text-justify">Burraq Partners’ Technology Advisory services are designed to drive innovation, efficiency, and security for your organization. We combine strategic insights with hands-on expertise to deliver solutions tailored to your business needs.</p>
+                    </div>
+                    <div class="alternating-row" id="tech-alternating-grid"></div>
+                </div>
+                <div id="details-tax" class="details-container">
+                    <div class="text-left mb-16">
+                        <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3"><span class="text-burraqOrange">Tax, Zakat</span>, Legal Services & Process Solutions</h2>
+                        <div class="w-20 h-1.5 bg-burraqOrange mb-8 rounded-full"></div>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-5xl text-justify">We adds value by offering comprehensive zakat and tax planning and compliance services that optimize tax efficiency and ensure full regulatory adherence. We specialize in transaction tax, tax due diligence for merger & acquisition and IPOs, transfer pricing, and international taxation, while also providing expertise in VAT, real estate taxes, and zakat base calculation. Additionally, we support family businesses with zakat & tax prospective, help navigate corporate governance requirements, and offer tailored tax technology solutions. From compliance and bookkeeping to tax dispute resolution and assessment. We deliver strategic insights that minimize risk and enhance business performance at every stage.</p>
+                    </div>
+                    <div class="alternating-row" id="tax-alternating-grid"></div>
+                </div>
+                <div id="details-corporate" class="details-container">
+                    <div class="text-left mb-16">
+                        <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3"><span class="text-burraqOrange">Corporate Services</span> & Business Setup Solutions</h2>
+                        <div class="w-20 h-1.5 bg-burraqOrange mb-8 rounded-full"></div>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-5xl text-justify">Corporate Services are foundational to regional success. We empower businesses, especially those entering the Saudi and broader MENA markets, by offering end-to-end guidance on legal establishment, regulatory compliance, and optimal corporate structuring. We navigate the complexities of local commercial laws, licensing requirements, and governance standards to ensure a seamless, efficient, and fully compliant launch. Our expertise covers everything from entity formation and licensing in mainland and free zones to ongoing corporate secretarial duties and regulatory filing. We provide strategic insights that minimize legal risk and lay the groundwork for long-term operational success.</p>
+                    </div>
+                    <div class="alternating-row" id="corporate-alternating-grid"></div>
+                </div>
+                <div id="details-hr" class="details-container">
+                    <div class="text-left mb-16">
+                        <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3"><span class="text-burraqOrange">HR Consulting</span> & Secondment</h2>
+                        <div class="w-20 h-1.5 bg-burraqOrange mb-8 rounded-full"></div>
+                        <p class="text-slate-600 font-medium leading-relaxed max-w-5xl text-justify">Our Human Resources Consulting and Talent Secondment services are designed to equip your organization with the right talent and the compliant policies necessary for high performance in the MENA region. We recognize that KSA Labor Law and local talent market dynamics present unique challenges. We offer strategic HR policy development, compliance audits, performance management system design, and specialized Talent Secondment. Secondment provides immediate access to expert, project-based staff (from HR specialists to finance controllers) without the commitment of permanent employment, ensuring flexibility and rapid scaling during market expansion or critical projects. We deliver strategic insights that minimize labor risk and ensure your workforce is engaged, compliant, and optimized for success.</p>
+                    </div>
+                    <div class="alternating-row" id="hr-alternating-grid"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="clients" class="py-32 bg-softGray overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center mb-12">
+            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Clients Served / Team <span class="text-burraqOrange">Experience</span></h2>
+            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-4 rounded-full"></div>
+        </div>
+        <div class="marquee-container">
+            <div class="marquee-content" id="marquee-content"></div>
+        </div>
+    </section>
+    <section class="rfp-section py-28 border-t border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left flex-1">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
+                <p class="text-slate-500 text-xl font-medium max-w-xl">Get in touch with our experts to discuss how we can drive value for your organization.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-start gap-6 border-l-4 border-burraqOrange pl-8">
+                <span class="text-burraqNavy text-2xl font-bold tracking-tight">Request for proposal</span>
+                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-12 py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-sm flex items-center gap-3">
+                    Submit RFP <i class="fa-solid fa-paper-plane text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="mb-16">
+                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left">
+                    Empowering <span class="text-burraqOrange">Growth</span>, Unleashing Potential
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left items-start mb-16">
+                <div class="flex flex-col gap-8 items-center md:items-start">
+                    <div class="flex flex-col items-center md:items-start gap-4">
+                        <a href="Home.html">
+                            <img src="BurraqLogoLight.svg" alt="Burraq Logo" class="h-16 w-auto">
+                        </a>
+                        <p class="text-slate-400 text-sm font-medium max-w-[280px] text-center md:text-left leading-relaxed">
+                            Burraq Partners drives growth through innovation and strategic solutions, empowering businesses to achieve success
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://www.youtube.com/@BurraqPartners" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/burraqpartners/posts/?feedView=all" target="_blank" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                        <li><a href="Home.html" class="footer-link">Home</a></li>
+                        <li><a href="About.html" class="footer-link">About Us</a></li>
+                        <li><a href="Partners.html" class="footer-link">Partners</a></li>
+                        <li><a href="Blogs.html" class="footer-link">Blog</a></li>
+                        <li><a href="Services.html" class="footer-link">Services</a></li>
+                        <li><a href="Careers.html" class="footer-link">Careers</a></li>
+                        <li><a href="Contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                        <li><a href="javascript:void(0)" onclick="showService('deals')" class="footer-link">Deals</a></li>
+                        <li><a href="javascript:void(0)" onclick="showService('business')" class="footer-link">Business</a></li>
+                        <li><a href="javascript:void(0)" onclick="showService('tech')" class="footer-link">Technology</a></li>
+                        <li><a href="javascript:void(0)" onclick="showService('tax')" class="footer-link">Tax Advisory</a></li>
+                        <li><a href="javascript:void(0)" onclick="showService('corporate')" class="footer-link">Corporate Services</a></li>
+                        <li><a href="javascript:void(0)" onclick="showService('hr')" class="footer-link">HR Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Contact Information</h4>
+                    <ul class="space-y-5 text-slate-400 text-base font-medium">
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors"><i class="fa-solid fa-envelope mt-1 text-burraqOrange text-lg"></i><span>info@burraqpartners.com</span></li>
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors"><i class="fa-solid fa-phone mt-1 text-burraqOrange text-lg"></i><span>+966 11 248 0261</span></li>
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors"><i class="fa-solid fa-location-dot mt-1 text-burraqOrange text-lg"></i><span>8074 Building, Riyadh, KSA</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-sm font-medium">
+                <p>&copy; 2026 Burraq Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/966553771125" target="_blank" class="whatsapp-fixed">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fa-solid fa-arrow-up text-xl"></i>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'ar,en', autoDisplay: false }, 'google_translate_element'); }
+        function changeLang(lang) {
+            const select = document.querySelector('select.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+                document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+                document.getElementById('ar-btn').classList.toggle('active', lang === 'ar');
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        const dealsAdvisoryData = [
+            { title: "Corporate Finance", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800", description: "In today’s dynamic business environment, organizations face a multitude of financial challenges that can significantly impact their ability to grow and thrive. From optimizing capital structure to ensuring sustainable funding for new projects, businesses must make informed financial decisions that align with their strategic goals. At Burraq Partners, we provide tailored corporate finance advisory services that empower organizations to navigate these challenges effectively, harnessing financial insights to fuel growth and create value.", points: ["Capital structures", "Funding strategy for new projects", "Dividend/distribution policy", "Portfolio optimization", "Debt and equity recapitalization decisions"] },
+            { title: "Deal Advisory", image: "Deal Advisory.jpeg", description: "Executing successful transactions is pivotal to both enhancing your company’s market position and achieving your strategic objectives. Whether you’re considering a merger, acquisition, or divestment, the stakes are high, and the complexities of each deal can overwhelm even the most seasoned professionals. That’s where Burraq Partners comes in. Our expert deal advisory services are designed to provide you with the insights, strategies, and support you need to navigate these critical decisions, helping you unlock new avenues for growth and optimize your company’s value. From initial assessments to final negotiations, Burraq Partners guides you through every step of the deal-making process, ensuring that you’re well-equipped to make informed decisions. ", points: ["Sell-side deal advisory", "Buy-side deal advisory", "Deal negotiations", "Advice on closing accounts and deal closure", "Post-closing dispute"] },
+            { title: "Valuations, Business Modeling, and Market Research", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", description: "Understanding the true value of your business is paramount. The ability to make informed decisions hinges on accurate assessments of your organization’s worth, market position, and potential opportunities for growth. Whether you’re seeking investment, preparing for a merger or acquisition, or simply looking to chart a course for future success, having a reliable partner to guide you through this landscape is crucial. At Burraq Partners, we specialize in unlocking insights that empower you to make sound strategic decisions and navigate the complexities of business valuations and market research with confidence. We utilize rigorous analytical methodologies to deliver precise asset valuations, financial projections, and scenario analyses tailored to your industry and business context. Our expert team employs both quantitative and qualitative techniques to ensure you receive a holistic view of your business landscape. From conducting discounted cash flow analyses to utilizing market comparable, we offer customized business modelling that integrates risk assessments, market trends, and regulatory impact. ", points: ["Business valuations", "Impairment testing", "Purchase price allocation", "Financial reporting valuations", "Feasibility studies"] },
+            { title: "Restructuring", image: "Restructuring.jpeg", description: "At Burraq Partners, we specialize in providing comprehensive restructuring services that enable companies to navigate the complexities of transformation confidently. Our expertise is designed to help you regain control, optimize resources, and emerge stronger in an ever-changing landscape. By leveraging our deep industry insights and tailored approaches, we focus on enhancing operational efficiency and financial stability. Our cash and working capital management strategies ensure that your resources are utilized effectively, maximizing liquidity and supporting ongoing operations. Additionally, our restructuring and turnaround consulting services offer a holistic view of your organizational needs, allowing us to create robust strategies that drive transformation and improve performance across all levels.", points: ["Cash and working capital management", "Restructuring and turnaround consulting", "Operational restructuring", "Short-term cash flow forecasting", "Distressed debt and capital advisory"] },
+            { title: "Project Infrastructure", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1600", description: "Public-private partnerships (3P) serve as a vital mechanism for leveraging both public resources and private sector expertise to develop project infrastructure that meets the needs of communities and drives economic advancement. At Burraq Partners, we recognize that navigating the complexities of these partnerships requires a keen understanding of stakeholder dynamics, financial structuring, and regulatory frameworks. Our expertise allows your organization to harness the full potential of 3P initiatives, ensuring projects are completed efficiently and successfully. By partnering with us, you can access targeted services that help ensure the viability and success of your infrastructure projects. Our 3P advisory services are designed to facilitate strategic collaboration between public entities and private investors, maximizing funding opportunities while minimizing risks. In addition, our infrastructure development consulting focuses on best practices for project execution, delivering clear pathways for successful rollouts that are both cost-effective and sustainable. Understanding the broader economic implications of your projects is essential, which is why we offer comprehensive economic impact assessments to evaluate potential benefits to the community and guide decision-making. Furthermore, our bid financial modelling and audit services provide a robust foundation for securing financing and aligns project proposals with stakeholder expectations. ", points: ["Public-Private Partnerships Advisory", "Infrastructure development consulting", "Economic impact assessments", "Bid financial modelling preparation", "Risk Assessment and Mitigation Strategies"] },
+            { title: "Real Estate Advisory", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800", description: "Real estate development can sometimes pose significant challenges for investors, developers, and public authorities alike. Demand for innovative and effective solutions is rising as urbanization accelerates and economies shift. To navigate these complexities, organizations need comprehensive real estate advisory services that not only enhance project viability but also align with broader business strategies. At BurraqPartners, we are committed to guiding clients through the intricacies of the real estate landscape, ensuring that every investment decision is informed by data, expertise, and a keen understanding of market dynamics. With a focus on maximizing the value of your real estate assets, our transaction real estate advisory services equip you with critical insights and strategies for successful negotiations and transactions. Our team provides expert real estate strategic advisory that blends market understanding with your organizational objectives, crafting tailored plans that guide development and investment for sustainable growth. Moreover, understanding market trends and feasibility is crucial in today’s competitive environment. Our market assessment and feasibility studies deliver rigorous evaluations, ensuring that your projects are both market-ready and aligned with current demand. ", points: ["Transaction real estate advisory", "Best use analysis", "Real estate strategic advisory", "Market assessment and feasibility studies", "Investment strategy development"] },
+            { title: "IPO & Capital Markets", image: "IPO.jpeg", description: "In today’s competitive economic landscape, businesses seeking to elevate their status and access new capital markets face increasingly complex challenges. As organizations prepare for an Initial Public Offering (IPO) or consider an exit strategy through listing, they require expert guidance to navigate regulatory frameworks, financial scrutiny, and market dynamics. At Burraq Partners, we understand that a successful IPO isn’t just about raising capital; it’s about crafting a strategic narrative that aligns with your company’s vision while optimizing investor confidence. Our mission is to provide you with the expertiseand insights necessary to transform your capital market ambitions into reality. We start with a comprehensive capital markets and IPO/exit readiness assessment, evaluating your business’s current standing and the steps needed to position it for a successful public offering or exit. Our team conducts thorough pre-IPO financial and tax due diligence, ensuring that all financial statements are robust and compliant with regulatory requirements while also identifying potential tax implications. By meticulously analyzing your financial health, we help mitigate risks and pave the way for a smoother transition into the public market. The next step in the journey involves developing a compelling equity story that resonates with investors. Our advisory team works closely with you to articulate your unique value proposition, market positioning, and growth trajectory in a way that captures the attention of potential shareholders. ", points: ["Capital markets & IPO/exit readiness assessment", "Pre-IPO financial & tax due diligence", "Equity story development", "Separation & IPO preparation", "Exit readiness strategies"] }
+        ];
+        const businessAdvisoryData = [
+            { title: "Risk Advisory", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800", description: "Our risk services include tailored solutions designed to help our clients manage and mitigate various risks that could impact their organization. We work with our clients by understanding the unique risks their business faces which involves identifying potential threats to their operations, such as financial instability, data breaches, regulatory violations, operational disruptions, or even reputational damages. Our ranage of services covers the 3 lines of defence in the organizationwith an intergated approach across Governance, Risk and Compliance (GRC). ", points: ["Governance, Risk and Compliance (GRC)", "Financial instability mitigation", "Regulatory violation prevention", "Operational disruption management", "Reputational damage protection"] },
+            { title: "Internal Audit", image: "Performance Improvement.jpeg", description: "Our Internal Audit services focus on identifying performance gaps, creating tailored strategies for our clients, and implementing processes that drive better results across operations, sales, customer service, and organizational strategy.", points: ["Operational efficiency", "Sales optimization", "Customer service enhancement", "Organizational strategy alignment", "Performance gap analysis"] },
+            { title: "IT Risk & Assurance", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800", description: "Our IT risk services our helping organizations identify, assess, manage, and mitigate risks related to their information technology (IT) infrastructure, systems, and data. These services areprovided by our IT professionls which are essential in ensuring that organization’s technology environment is secure, resilient, compliant with regulations, and aligned with business objectives. ", points: ["IT infrastructure security", "System and data resilience", "Regulatory compliance", "Risk assessment and mitigation", "Strategic IT alignment"] },
+        ];
+        const technologyAdvisoryData = [
+            { title: "IT Consulting", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", description: "We help businesses navigate their IT landscape with expert guidance and strategic planning.", points: ["Technology Strategy & Alignment", "System Integration", "IT Infrastructure Scale", "Risk Management & Resilience", "Data Protection Law Implementation"] },
+            { title: "Enterprise Software Solutions", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800", description: "Leverage cutting-edge software solutions to streamline business operations.", points: ["ERP Planning & Development", "CRM Development", "HRM Systems", "Data Analytics & BI", "AI Technologies Integration"] },
+            { title: "Digital Transformation", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800", description: "We guide businesses through their digital evolution, enabling smarter, future-ready operations.", points: ["Digital Evolution Strategy", "Cloud Migrations", "Agile Business Operations", "Future-ready Infrastructure", "Scalable Digital Ecosystems"] },
+            { title: "Business Process Automation", image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=800", description: "Enhance productivity with automated workflows and systems.", points: ["Workflow Automation Tools", "Supply Chain & Logistics Visibility", "Retail Solutions & POS", "eCommerce Technologies", "Inventory Management Automation"] },
+            { title: "IT Infrastructure & Cybersecurity", image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800", description: "Secure and optimize your IT ecosystem to protect against modern threats.", points: ["IT Audits & Assessments", "Cybersecurity (OT/ICS)", "Cloud Resource Optimization", "AI Models Training Privacy", "Responsible Data Management"] }
+        ];
+        const taxAdvisoryData = [
+            { title: "Tax Planning: Compliance with Tax Policies and Controversy Management", image: "Tax Planning & Controversy Management.jpeg", description: "We offer strategic tax planning to minimize tax liabilities while ensuring compliance with local and international tax laws. Our services include aligning tax functions such as reporting, filing, and payments with your policies. We also help manage tax disputes, audits, and litigation to mitigate risks. Our approach ensures tax savings while protecting your business from scrutiny.", points: ["Strategic Tax Planning", "Controversy Management", "Audits & Litigation Support", "Risk Mitigation Strategies", "Policy Alignment"] },
+            { title: "Tax Compliance Services: Submission of Returns and Statutory Obligations", image: "Tax Compliance Services.jpeg", description: "Our tax compliance services ensure timely and accurate submission of tax returns, including income tax, VAT, and GST. We also assist in meeting statutory obligations such as tax withholding and record-keeping. Our team ensures adherence to local regulations, minimizing penalties. We help your business maintain transparency and stay compliant with tax laws.", points: ["Income Tax, VAT & GST Returns", "Statutory Obligations Meeting", "Tax Withholding Support", "Local Regulation Adherence", "Transparency Maintenance"] },
+            { title: "Transaction Tax Services: Sector-Specific Business Performance Optimization", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=800", description: "We provide transaction tax services that optimize tax outcomes during mergers, acquisitions, and restructurings. Our strategies are tailored to sector-specific regulations and opportunities. We assess tax implications to minimize liabilities and maximize value during transactions. This ensures that businesses meet objectives while reducing tax-related risks.", points: ["Sector-Specific Optimization", "Merger & Acquisition Tax", "Restructuring Strategy", "Liability Minimization", "Value Maximization"] },
+            { title: "Corporate Governance Compliance with Regulatory Requirements", image: "Corporate Governance compliance.jpeg", description: "We ensure your business complies with corporate governance regulations, including board structure, reporting, and shareholder rights. Our services help align your internal policies with legal frameworks. We assist in mitigating regulatory risks while maintaining transparency and trust. Our approach fosters long-term sustainability and accountability for your organization.", points: ["Board Structure Alignment", "Regulatory Reporting", "Shareholder Rights Protection", "Internal Policy Alignment", "Sustainability & Accountability"] },
+            { title: "Family Business, Zakat, and Tax Calculation Compliance", image: "Family Business & Zakat Compliance.jpeg", description: "We help family businesses calculate accurate Zakat and tax obligations based on Islamic principles and local regulations. Our experts ensure timely Zakat payments and assist with business and personal tax filings. We guide businesses through complex Zakat and tax laws, minimizing liabilities. This helps avoid penalties while ensuring compliance with all regulatory requirements.", points: ["Islamic Principle Alignment", "Timely Zakat Payments", "Personal & Business Filings", "Complex Law Navigation", "Penalty Prevention"] },
+            { title: "Tax Due Diligence for Mergers & Acquisitions", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=800", description: "Our tax due diligence services focus on identifying tax risks and opportunities during mergers and acquisitions. We review financials and structures to ensure tax compliance and optimize tax efficiency. Our experts identify hidden liabilities and help structure deals to minimize tax burdens. This ensures smooth transactions while managing tax-related risks.", points: ["Risk Identification", "Financial Structure Review", "Tax Efficiency Optimization", "Hidden Liability Search", "Deal Structuring Support"] },
+            { title: "Tax Due Diligence for Restructuring & IPOs", image: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&q=80&w=800", description: "We evaluate tax risks for businesses undergoing restructuring or preparing for an IPO. Our services include assessing financial and tax positions to optimize tax structures. We ensure compliance with regulations while minimizing tax liabilities. Our goal is to help businesses manage complex tax implications while enhancing value for investors.", points: ["IPO Preparation Tax Review", "Restructuring Risk Assessment", "Tax Structure Optimization", "Investor Value Enhancement", "Regulation Compliance"] },
+            { title: "Indirect Tax (VAT) Compliance: From Return Submission to Year-End Assessment and Audit", image: "Indirect Tax (VAT) Compliance.jpeg", description: "We provide comprehensive VAT compliance services, ensuring timely return submissions and adherence to local VAT laws. Our team manages year-end assessments and prepares businesses for VAT audits. We help identify potential issues to ensure your business is fully compliant. Our services reduce risks and ensure VAT regulations are met effectively.", points: ["Return Submission Management", "Year-End VAT Assessment", "VAT Audit Preparation", "Issue Identification", "Risk Reduction"] },
+            { title: "Transfer Pricing & Anti-Avoidance Rules Compliance", image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=800", description: "We ensure compliance with transfer pricing regulations and anti-avoidance rules for cross-border transactions. Our services include establishing arm’s length pricing and documenting pricing structures. We help mitigate risks of tax disputes and penalties by aligning with local and international laws. Our approach ensures transparency and defensibility in your pricing practices.", points: ["Arm's Length Pricing Setup", "Cross-Border Documentation", "Dispute Mitigation", "International Law Alignment", "Transparency & Defensibility"] },
+            { title: "International Taxation & Treaty Tax Optimization", image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800", description: "We provide international tax services to optimize global tax positions and ensure treaty compliance. Our experts help businesses minimize double taxation and reduce withholding taxes. We leverage tax treaties to manage transfer pricing risks and enhance tax efficiencies. Our services ensure businesses comply with domestic and international tax regulations while minimizing liabilities.", points: ["Double Taxation Minimization", "Withholding Tax Reduction", "Treaty Leverage", "Global Position Optimization", "International Efficiency"] },
+            { title: "Business Process Solutions: From Incorporation to the Start of Commercial Operations", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600", description: "We guide businesses from incorporation to commercial operations, ensuring a smooth transition. Our services include setting up legal structures, developing workflows, and ensuring regulatory compliance. We help streamline financial processes to optimize performance from day one. This minimizes operational risks and supports long-term business success.", points: ["Incorporation Guidance", "Legal Structure Setup", "Workflow Development", "Regulatory Compliance", "Operational Risk Minimization"] },
+            { title: "Tax Technology Consulting & Support", image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800", description: "Our tax technology consulting services help businesses integrate advanced digital tools to streamline tax operations. We assist in selecting the right tax software and automating compliance processes. Our solutions improve efficiency, reduce errors, and ensure compliance with evolving regulations. We help your business stay up-to-date with changing tax requirements.", points: ["Digital Tool Integration", "Tax Software Selection", "Compliance Automation", "Efficiency Improvement", "Error Reduction Support"] },
+            { title: "Bookkeeping & Record Preparation in Compliance with Taxation Requirements", image: "Bookkeeping & Record Preparation.jpeg", description: "We provide bookkeeping services that ensure accurate financial records and tax compliance. Our team maintains records that align with local tax laws and regulations. We support businesses by preparing documentation for tax filings, minimizing audit risks. Our services help ensure transparency and accuracy in tax reporting.", points: ["Accurate Record Maintenance", "Tax Filing Preparation", "Audit Risk Minimization", "Documentation Support", "Reporting Transparency"] },
+            { title: "Intangibles, Data, and Technology Tax Management", image: "Intangibles & Technology.jpeg", description: "We manage the tax implications of intangible assets, data, and technology-driven business models. Our services include the valuation and structuring of intellectual property and data assets. We ensure compliance with transfer pricing rules and optimize tax liabilities. Our approach helps businesses manage digital and intellectual property tax risks effectively.", points: ["Asset Valuation & Structuring", "IP Tax Management", "Pricing Rule Compliance", "Digital Model Optimization", "Risk Mitigation"] },
+            { title: "Real Estate Transaction Tax", image: "Real Estate Transaction Tax.jpeg", description: "We provide tax advisory for real estate transactions, including acquisitions, sales, and developments. Our services cover taxes such as VAT, capital gains, and stamp duties. We help businesses structure transactions to minimize tax liabilities while ensuring compliance. Our expertise ensures efficient tax planning for real estate operations.", points: ["Acquisition advisory", "VAT & Capital Gains Support", "Stamp Duty Management", "Transaction Structuring", "Compliance Assurance"] },
+            { title: "E-Invoicing", image: "EInvoicing.jpeg", description: "Our e-invoicing services help businesses implement digital invoicing systems to meet local tax requirements. We automate invoice generation and facilitate real-time reporting to ensure compliance. Our solutions improve operational efficiency and reduce errors. We help businesses stay compliant with evolving e-invoicing regulations.", points: ["Digital System Implementation", "Automated Generation", "Real-Time Reporting", "Operational Efficiency", "Regulation Compliance"] },
+            { title: "Zakat and Tax Calculation for Non-Muslim/Non-Resident Equity Participants", image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=800", description: "We offer specialized services for calculating Zakat and taxes for non-Muslim and non-resident equity participants. We ensure accurate Zakat calculations based on Islamic principles, alongside tax compliance. Our team helps businesses manage obligations for non-resident stakeholders, reducing liabilities. We guide you in meeting both Zakat and tax requirements efficiently.", points: ["Accurate Calculation Support", "Obligation Management", "Stakeholder Liability Reduction", "Efficiency Guidance", "Principle Alignment"] },
+            { title: "Tax Dispute Resolution: Comprehensive Support Across All Tax Services", image: "Tax Dispute Resolution.jpeg", description: "Our tax dispute resolution services provide expert support for all tax-related issues, including VAT, Zakat, and corporate taxes. We assist with audits, negotiations, and challenging tax assessments. Our team works to resolve disputes efficiently while minimizing risks. We offer strategic solutions to achieve favorable outcomes in tax disputes.", points: ["Audit & Negotiation Support", "Assessment Challenges", "Risk Minimization", "Strategic Conflict Resolution", "Favorable Outcome Pursuit"] },
+            { title: "Tax & Zakat Base Assessment", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800", description: "We conduct thorough tax and Zakat base assessments to ensure accurate calculations and compliance. Our services assess both taxable income and Zakat liabilities, factoring in all relevant laws. We help businesses determine the correct tax base for obligations, reducing risks. This ensures compliance and optimizes financial outcomes for businesses.", points: ["Thorough Base Evaluation", "Income & Liability Assessment", "Risk Identification", "Financial Outcome Optimization", "Compliance Verification"] }
+        ];
+        const corporateAdvisoryData = [
+            { title: "Market Entry Strategy & Structuring: Optimizing Your Regional Footprint", image: "Market Entry Strategy & Structuring.jpeg", description: "We offer strategic advice on selecting the optimal legal entity (e.g., LLC, Branch, Free Zone establishment) for KSA and MENA market entry. Our services analyze tax, liability, and ownership requirements to recommend the structure that best aligns with your long-term growth objectives. We ensure your entity is established for maximum efficiency and future scalability.", points: ["Optimal Entity Selection", "Regional Footprint Optimization", "Tax & Liability Analysis", "Growth Objective Alignment", "Scalability Planning"] },
+            { title: "Entity Formation and Licensing: From Incorporation to Commercial Operation", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800", description: "We manage the entire lifecycle of corporate setup, including the preparation and submission of all incorporation documents, obtaining necessary commercial licenses, and securing initial regulatory approvals. Our goal is to significantly compress your time-to-market, allowing you to focus on core commercial activities from the earliest possible date.", points: ["Board Structure Alignment", "Shareholder Administration", "Statutory Filing Management", "Risk Mitigation", "Sustainability & Accountability"] },
+            { title: "Corporate Governance Compliance with Regulatory Requirements", image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&q=80&w=800", description: "We ensure your business complies with local corporate governance regulations, including board structure, shareholder administration, and statutory filing obligations. Our services help align your internal policies with regional legal frameworks, mitigating regulatory risks and fostering long-term sustainability and accountability.", points: ["Mandatory Filings Management", "Meeting Minutes Support", "Document Retention", "Record Maintenance", "Audit Readiness"] },
+            { title: "Corporate Secretarial & Regulatory Filing", image: "Filing.jpeg", description: "We provide comprehensive corporate secretarial support, managing regular mandatory filings, board and shareholder meeting minutes, and document retention. Our team ensures the meticulous maintenance of your corporate records, guaranteeing readiness for audits and compliance checks across all jurisdictions..", points: ["Mandatory Regulatory Filings", "Board & Shareholder Meeting Minutes", "Meticulous Corporate Record Maintenance", "Document Retention Management", "Audit & Compliance Readiness"] },
+            { title: "Commercial Agency & Distributor Agreements Advisory", image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=800", description: "We advise on and draft commercial agency and distributor agreements compliant with local laws. Our expertise helps businesses structure robust agreements that protect interests, clearly define responsibilities, and comply with regional commercial practices.", points: ["Agreement Drafting", "Compliance with Local Laws", "Interest Protection", "Responsibility Definition", "Commercial Practice Alignment"] },
+            { title: "Liquidation and Restructuring Advisory", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800", description: "We guide businesses through complex corporate restructuring or voluntary liquidation processes. Our services ensure all legal and administrative requirements are met efficiently and compliantly, minimizing risk and ensuring a smooth transition or exit.", points: ["Restructuring Guidance", "Voluntary Liquidation Management", "Legal Requirement Compliance", "Administrative Support", "Exit Strategy Planning"] }
+        ];
+        const hrAdvisoryData = [
+            { title: "HR Policy and Labor Law Compliance Audit", image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=800", description: "We provide project-based access to specialized professional talent—including Finance, HR, and Administrative experts—for temporary needs or market entry phases. This service allows for immediate resource scalability and flexibility without increasing your permanent headcount or long-term liability.", points: ["Labor Law Gap Analysis", "Strategic Policy Development", "Risk Minimization", "Compliance Assurance", "Market Entry HR Support"] },
+            { title: "Talent Secondment & Flexible Staffing Solutions", image: "https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?auto=format&fit=crop&q=80&w=800", description: "We provide project-based access to specialized professional talent—including Finance, HR, and Administrative experts—for temporary needs or market entry phases. This service allows for immediate resource scalability and flexibility without increasing your permanent headcount or long-term liability.", points: ["Immediate Resource Scalability", "Project-Based Talent Access", "Finance & HR Expert Secondment", "Headcount Liability Management", "Flexible Scaling Support"] },
+            { title: "Performance Management System Design & Implementation", image: "Performance Management System Design & Implementation.jpeg", description: "We design and implement modern performance appraisal systems tailored to regional cultural and business environments. Our goal is to align individual and team performance with overall corporate objectives to drive productivity and retention.", points: ["Modern Appraisal Design", "Cultural Alignment", "Productivity Driving", "Retention Strategy", "Corporate Goal Mapping"] },
+            { title: "Recruitment Strategy and Local Talent Integration", image: "Recruitment Strategy and Local Talent Integration.jpeg", description: "We advise on effective recruitment strategies, focusing on identifying and integrating high-caliber local talent to meet Saudization/Nitaqat and other regional localization targets. Our strategies enhance your employer brand and ensure cultural fit.", points: ["Saudization/Nitaqat Strategy", "Local Talent Integration", "Employer Brand Enhancement", "Cultural Fit Assessment", "Regional Targeting"] },
+            { title: "Payroll and Benefits Administration", image: "Payroll and Benefits Administration.jpeg", description: "We manage the complexity of regional payroll processing, ensuring accurate, timely compensation, compliant tax withholding, and adherence to social security and benefits regulations across multiple MENA countries.", points: ["Regional Payroll Outsourcing", "Tax Withholding Accuracy", "Social Security Compliance", "Benefits Administration", "MENA-wide Processing"] },
+            { title: "Workforce Restructuring and Transition Advisory", image: "Workforce Restructuring and Transition Advisory.jpeg", description: "We guide management through complex workforce changes, including rightsizing, restructuring, and redundancy processes. Our advisory ensures the process is handled legally, ethically, and minimizes negative impact on remaining employees and reputation.", points: ["Rightsizing Guidance", "Ethical Transition Support", "Legal Redundancy Processes", "Reputation Management", "Impact Minimization"] }
+        ];
+        function renderServices(containerId, data) {
+            const grid = document.getElementById(containerId);
+            if (!grid) return;
+            grid.innerHTML = data.map((item, index) => {
+                const isEven = index % 2 === 0;
+                return `<div class="service-block ${isEven ? 'flex-row' : 'flex-row-reverse'}"><div class="block-image"><img src="${item.image}" alt="${item.title}"></div><div class="block-content"><h3 class="text-3xl font-[800] text-burraqNavy mb-6">${item.title}</h3><p class="text-slate-600 font-medium leading-relaxed text-justify mb-8">${item.description}</p><div class="grid grid-cols-1 gap-1">${item.points.map(p => `<div class="bullet-point"><i class="fa-solid fa-check-circle"></i><span>${p}</span></div>`).join('')}</div></div></div>`;
+            }).join('');
+        }
+        function showService(id) {
+            document.querySelectorAll('.details-container').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.service-tab').forEach(el => el.classList.remove('active'));
+            const targetDetail = document.getElementById('details-' + id);
+            const targetTab = document.getElementById('tab-' + id);
+            if(targetDetail && targetTab) {
+                targetDetail.classList.add('active');
+                targetTab.classList.add('active');
+                const yOffset = -150;
+                const y = targetDetail.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            }
+        }
+        function initMarquee() {
+            const marquee = document.getElementById('marquee-content');
+            const clientFiles = [24, 25, 26, 27, 28, 29, 30, 31, 32, 14, 15, 17, 18, 19, 20, 21, 22, 23, 1, 2, 7, 8, 9, 10, 11];
+            clientFiles.forEach(num => {
+                const item = document.createElement('div');
+                item.className = 'client-logo-item';
+                item.innerHTML = `<img src="client-${num}.svg" alt="Client Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHRleHQgeD0iNTAiIHk9IjYwIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjY2NjIj5DbGllbnQgJHtudW19PC90ZXh0Pjwvc3ZnPg==';">`;
+                marquee.appendChild(item);
+            });
+            marquee.innerHTML += marquee.innerHTML;
+        }
+        window.onload = () => {
+            renderServices('deals-alternating-grid', dealsAdvisoryData);
+            renderServices('business-alternating-grid', businessAdvisoryData);
+            renderServices('tech-alternating-grid', technologyAdvisoryData);
+            renderServices('tax-alternating-grid', taxAdvisoryData);
+            renderServices('corporate-alternating-grid', corporateAdvisoryData);
+            renderServices('hr-alternating-grid', hrAdvisoryData);
+            initMarquee();
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+            if (serviceParam) { showService(serviceParam); } else { showService('deals'); }
+        };
+    </script>
+</body>
+</html>

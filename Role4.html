@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistant Manager Financial Advisory - Burraq Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burraqOrange: '#FF5722',
+                        burraqNavy: '#1a1d2e',
+                        softGray: '#F4F5F7',
+                        offWhite: '#FAFAFA',
+                        burraqBlue: '#0066cc',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; }
+        .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .goog-te-menu-frame, iframe.goog-te-menu-frame { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; opacity: 0 !important; }
+        body { top: 0px !important; }
+        .skiptranslate:not(.lang-toggle) { display: none !important; }
+        #google_translate_element { display: none !important; }
+        .nav-link { position: relative; transition: color 0.3s ease; display: inline-flex; align-items: center; padding-bottom: 4px; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background-color: #FF5722; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link.active-link::after { width: 100%; }
+        .dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; }
+        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: 95vw; max-width: 1400px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3.5rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
+        .mega-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; align-items: start; }
+        .mega-column { display: flex; flex-direction: column; }
+        .mega-section { margin-bottom: 1.5rem; }
+        .mega-section h4 { font-size: 0.95rem; font-weight: 800; color: #1a1d2e; margin-bottom: 0.7rem; border-left: 4px solid #FF5722; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
+        .mega-link { display: block; font-size: 0.8rem; color: #64748b; padding: 4px 0; font-weight: 600; transition: all 0.2s ease; text-decoration: none; line-height: 1.3; }
+        .mega-link:hover { color: #FF5722; padding-left: 6px; }
+        .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
+        .jd-card { background: white; border-radius: 2.5rem; padding: 3rem; border: 1px solid #f1f1f1; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .apply-input { width: 100%; padding: 1rem 1.25rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1rem; outline: none; transition: all 0.3s ease; }
+        .apply-input:focus { border-color: #FF5722; background: white; }
+        .sidebar-sticky { position: sticky; top: 120px; }
+        .section-divider { width: 40px; height: 3px; background: #FF5722; margin: 1.5rem 0; border-radius: 2px; }
+        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
+        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
+        .lang-option.active { background: #FF5722; color: white; }
+        .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+        .whatsapp-fixed:hover { transform: scale(1.1); }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
+        .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
+        .rfp-section { background-color: #ffffff; border-top: 1px solid #f1f1f1; }
+        .footer-link { transition: all 0.3s ease; }
+        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="google_translate_element"></div>
+    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm">
+        <div class="max-w-[1600px] mx-auto px-8 lg:px-12 h-24 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="Home.html">
+                    <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-14 w-auto">
+                </a>
+            </div>
+            <div class="hidden xl:flex items-center space-x-10 text-[14px] font-bold uppercase tracking-wider text-slate-700 h-full">
+                <div class="h-full flex items-center"><a href="Home.html" class="nav-link hover:text-burraqOrange">Home</a></div>
+                <div class="h-full flex items-center"><a href="About.html" class="nav-link hover:text-burraqOrange">About Us</a></div>
+                <div class="h-full flex items-center"><a href="Partners.html" class="nav-link hover:text-burraqOrange">Partners</a></div>
+                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link hover:text-burraqOrange">Blog</a></div>
+                <div class="relative dropdown h-full flex items-center">
+                    <a href="Services.html" class="nav-link hover:text-burraqOrange flex items-center gap-2 cursor-pointer">
+                        Services <i class="fa-solid fa-chevron-down text-[12px]"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="mega-grid">
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Deals Advisory</h4>
+                                    <a href="Services.html?service=deals" class="mega-link">Corporate Finance</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Deal Advisory</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Valuations, Business Modeling, & Market Research</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Restructuring</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Project Infrastructure</a>
+                                    <a href="Services.html?service=deals" class="mega-link">Real Estate Advisory</a>
+                                    <a href="Services.html?service=deals" class="mega-link">IPO & Capital Markets</a>
+                                </div>
+                                <div class="mega-section">
+                                    <h4>Business Advisory</h4>
+                                    <a href="Services.html?service=business" class="mega-link">Risk Advisory</a>
+                                    <a href="Services.html?service=business" class="mega-link">Internal Audit</a>
+                                    <a href="Services.html?service=business" class="mega-link">IT Risk & Assurance</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Technology Advisory</h4>
+                                    <a href="Services.html?service=tech" class="mega-link">IT Consulting</a>
+                                    <a href="Services.html?service=tech" class="mega-link">Enterprise Software Solutions</a>
+                                    <a href="Services.html?service=tech" class="mega-link">Digital Transformation</a>
+                                    <a href="Services.html?service=tech" class="mega-link">Business Process Automation</a>
+                                    <a href="Services.html?service=tech" class="mega-link">IT Infrastructure & Cybersecurity</a>
+                                </div>
+                                <div class="mega-section">
+                                    <h4>Corporate Services & Business Setup</h4>
+                                    <a href="Services.html?service=corporate" class="mega-link">Market Entry Strategy</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Entity Formation & Licensing</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Secretarial</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Agreements Advisory</a>
+                                    <a href="Services.html?service=corporate" class="mega-link">Liquidation</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>Tax, Zakat & Legal Services</h4>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Planning</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Compliance</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Transaction Tax</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Family Business & Zakat</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Due Diligence</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Indirect Tax (VAT)</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Transfer Pricing</a>
+                                    <a href="Services.html?service=tax" class="mega-link">International Taxation</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Technology</a>
+                                    <a href="Services.html?service=tax" class="mega-link">E-Invoicing</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Bookkeeping</a>
+                                    <a href="Services.html?service=tax" class="mega-link">Tax Dispute Resolution</a>
+                                </div>
+                            </div>
+                            <div class="mega-column">
+                                <div class="mega-section">
+                                    <h4>HR Consulting & Secondment</h4>
+                                    <a href="Services.html?service=hr" class="mega-link">Labor Law Compliance</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Talent Secondment</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Performance Management</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Recruitment Strategy</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Payroll Administration</a>
+                                    <a href="Services.html?service=hr" class="mega-link">Workforce Restructuring</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link text-burraqOrange font-extrabold active-link">Careers</a></div>
+                <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="lang-toggle notranslate">
+                    <div id="en-btn" class="lang-option active" onclick="changeLang('en')">EN</div>
+                    <div id="ar-btn" class="lang-option" onclick="changeLang('ar')">AR</div>
+                </div>
+                <a href="RFP.html" class="btn-primary group flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase tracking-widest shadow-lg">
+                    SUBMIT RFP
+                    <i class="fa-solid fa-file-signature group-hover:scale-110 transition-transform text-white text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-12 bg-softGray/30 border-b border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <a href="Careers.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-burraqOrange font-bold text-sm uppercase tracking-widest transition-colors mb-8">
+                <i class="fa-solid fa-arrow-left"></i> Back to Careers
+            </a>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy leading-tight">Assistant Manager – <span class="text-burraqOrange">Financial Advisory</span></h1>
+            <div class="flex flex-wrap gap-6 mt-6 text-slate-500 font-medium">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-burraqOrange"></i> Saudi Arabia</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-briefcase text-burraqOrange"></i> Full Time</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-plane-up text-burraqOrange"></i> Aviation & Energy</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="w-full lg:w-8/12">
+                    <div class="jd-card space-y-12">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-burraqNavy">About the Role</h2>
+                            <div class="section-divider"></div>
+                            <p class="text-slate-600 leading-relaxed text-justify">
+                                Burraq Partners is hiring an Assistant Manager – Financial Advisory on behalf of one of its leading clients in the aviation and energy sector, to support reconciliations, variance analysis, and settlement preparation, based in Saudi Arabia.
+                                <br><br>
+                                The Assistant Manager will support the Manager in validating cost submissions, performing variance analysis, and ensuring that reconciliations comply with contractual and accounting requirements. The role involves conducting detailed financial analysis, validating ERP systems, and preparing structured reconciliation reports.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-burraqNavy">Key Responsibilities</h2>
+                            <div class="section-divider"></div>
+                            <ul class="grid gap-4">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Assist in the review and validation of AC’s reconciliation accounts and cost sheets.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Perform detailed variance analysis and request clarifications on discrepancies.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Exclude invalid or prior-year costs and incorporate late invoices into the correct reconciliation cycles.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Maintain a structured discrepancy log for transparency and traceability.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Recalculate cost allocations and flight-hour data under the guidance of the Manager.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Support preparation of payment calculations, settlement drafts, and KPI performance reports.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Coordinate with AC and ACO teams for data collection, clarifications, and documentation.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Prepare working papers and ensure proper record-keeping for audit readiness.</span></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-burraqNavy">Qualifications & Experience</h2>
+                            <div class="section-divider"></div>
+                            <div class="grid md:grid-cols-2 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-burraqNavy mb-4 uppercase tracking-widest text-xs text-slate-400">Education & Certification</h4>
+                                    <ul class="space-y-3 text-slate-600 text-sm">
+                                        <li class="flex gap-2"><span>•</span> Bachelor’s degree in accounting, Finance, or related field.</li>
+                                        <li class="flex gap-2"><span>•</span> Professional certification (part-qualified ACCA, CPA, CA, CMA) preferred.</li>
+                                        <li class="flex gap-2"><span>•</span> Strong understanding of IFRS and contract compliance.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-burraqNavy mb-4 uppercase tracking-widest text-xs text-slate-400">Skills & Experience</h4>
+                                    <ul class="space-y-3 text-slate-600 text-sm">
+                                        <li class="flex gap-2"><span>•</span> Minimum 2–3 years of relevant experience in finance, accounting, or audit.</li>
+                                        <li class="flex gap-2"><span>•</span> Experience with ERP systems (SAP preferred).</li>
+                                        <li class="flex gap-2"><span>•</span> Strong analytical and problem-solving abilities.</li>
+                                        <li class="flex gap-2"><span>•</span> Attention to detail and reporting skills.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-burraqNavy">Additional Details</h2>
+                            <div class="section-divider"></div>
+                            <ul class="space-y-4">
+                                <li class="flex gap-3"><strong class="text-burraqNavy">Engagement Duration:</strong> <span class="text-slate-600">6 months to 1 Year (Renewable Yearly).</span></li>
+                                <li class="flex gap-3"><strong class="text-burraqNavy">Eligibility:</strong> <span class="text-slate-600">Candidate must be available in KSA with a transferable Iqama and be ready to join immediately.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-4/12">
+                    <div class="sidebar-sticky space-y-8">
+                        <div class="jd-card !p-8">
+                            <h3 class="text-xl font-extrabold text-burraqNavy mb-6">Submit Application</h3>
+                            <form action="https://formspree.io/f/mvzbrpkj" method="POST" enctype="multipart/form-data" class="space-y-4">
+                                <input type="hidden" name="job_title" value="Assistant Manager - Financial Advisory">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" name="first_name" required placeholder="First Name" class="apply-input text-sm">
+                                    <input type="text" name="last_name" required placeholder="Last Name" class="apply-input text-sm">
+                                </div>
+                                <input type="tel" name="phone" placeholder="Phone Number" class="apply-input text-sm">
+                                <input type="email" name="email" required placeholder="Email Address" class="apply-input text-sm">
+                                <div class="relative">
+                                    <label class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1">Upload CV (PDF)</label>
+                                    <input type="file" name="cv" required class="text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-softGray file:text-burraqNavy hover:file:bg-burraqOrange hover:file:text-white transition-all cursor-pointer">
+                                </div>
+                                <button type="submit" class="btn-primary w-full py-4 rounded-xl font-bold uppercase tracking-widest text-sm mt-4">Submit Application</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rfp-section py-28 border-t border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left flex-1">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
+                <p class="text-slate-500 text-xl font-medium max-w-xl">Get in touch with our experts to discuss how we can drive value for your organization.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-start gap-6 border-l-4 border-burraqOrange pl-8">
+                <span class="text-burraqNavy text-2xl font-bold tracking-tight">Request for proposal</span>
+                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-12 py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-sm flex items-center gap-3">
+                    Submit RFP <i class="fa-solid fa-paper-plane text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="mb-16">
+                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left">
+                    Empowering <span class="text-burraqOrange">Growth</span>, Unleashing Potential
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left items-start mb-16">
+                <div class="flex flex-col gap-8 items-center md:items-start">
+                    <div class="flex flex-col items-center md:items-start gap-4">
+                        <a href="Home.html">
+                            <img src="BurraqLogoLight.svg" alt="Burraq Logo" class="h-16 w-auto">
+                        </a>
+                        <p class="text-slate-400 text-sm font-medium max-w-[280px] text-center md:text-left leading-relaxed">
+                            Burraq Partners drives growth through innovation and strategic solutions, empowering businesses to achieve success
+                        </p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://www.youtube.com/@BurraqPartners" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                        <li><a href="Home.html" class="footer-link">Home</a></li>
+                        <li><a href="About.html" class="footer-link">About Us</a></li>
+                        <li><a href="Partners.html" class="footer-link">Partners</a></li>
+                        <li><a href="Blogs.html" class="footer-link">Blog</a></li>
+                        <li><a href="Services.html" class="footer-link">Services</a></li>
+                        <li><a href="Careers.html" class="footer-link">Careers</a></li>
+                        <li><a href="Contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                        <li><a href="Services.html?service=deals" class="footer-link">Deals Advisory</a></li>
+                        <li><a href="Services.html?service=business" class="footer-link">Business Advisory</a></li>
+                        <li><a href="Services.html?service=tech" class="footer-link">Technology Advisory</a></li>
+                        <li><a href="Services.html?service=tax" class="footer-link">Tax Advisory</a></li>
+                        <li><a href="Services.html?service=corporate" class="footer-link">Corporate Services</a></li>
+                        <li><a href="Services.html?service=hr" class="footer-link">HR Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-5 text-slate-400 text-base font-medium">
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                            <i class="fa-solid fa-envelope mt-1 text-burraqOrange text-lg"></i>
+                            <span>info@burraqpartners.com</span>
+                        </li>
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                            <i class="fa-solid fa-phone mt-1 text-burraqOrange text-lg"></i>
+                            <span>+966 11 248 0261</span>
+                        </li>
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                            <i class="fa-solid fa-location-dot mt-1 text-burraqOrange text-lg"></i>
+                            <span>8074 Building, Road 2798 Alkhair District, 13581, Riyadh</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-sm font-medium">
+                <p>&copy; 2026 Burraq Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/966535287164" target="_blank" class="whatsapp-fixed">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fa-solid fa-arrow-up text-xl"></i>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'ar,en',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function changeLang(lang) {
+            const select = document.querySelector('select.goog-te-combo');
+            if (select) {
+                select.value = lang;
+                select.dispatchEvent(new Event('change'));
+                document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+                document.getElementById('ar-btn').classList.toggle('active', lang === 'ar');
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
