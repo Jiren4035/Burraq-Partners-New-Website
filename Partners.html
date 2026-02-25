@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Partners - Burraq Partners</title>
+    <link rel="icon" type="image/png" href="BurraqIcon.png">
+    <link rel="apple-touch-icon" href="BurraqIcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <script>
@@ -27,7 +29,7 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; width: 100%; overflow-x: hidden; }
         .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .goog-te-menu-frame, iframe.goog-te-menu-frame { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; opacity: 0 !important; }
         body { top: 0px !important; }
         .skiptranslate:not(.lang-toggle) { display: none !important; }
@@ -37,19 +39,20 @@
         .nav-link:hover::after { width: 100%; }
         .nav-link.active-link::after { width: 100%; }
         .dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; }
-        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: 95vw; max-width: 1400px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3.5rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
-        .mega-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; align-items: start; }
+        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: auto; min-width: 1050px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
+        .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; align-items: start; }
         .mega-column { display: flex; flex-direction: column; }
-        .mega-section { margin-bottom: 1.5rem; }
+        .mega-section { margin-bottom: 2rem; }
+        .mega-section:last-child { margin-bottom: 0; }
         .mega-section h4 { font-size: 0.95rem; font-weight: 800; color: #1a1d2e; margin-bottom: 0.7rem; border-left: 4px solid #FF5722; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
         .mega-link { display: block; font-size: 0.8rem; color: #64748b; padding: 4px 0; font-weight: 600; transition: all 0.2s ease; text-decoration: none; line-height: 1.3; }
         .mega-link:hover { color: #FF5722; padding-left: 6px; }
         .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
         .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
         .partner-row { display: flex; align-items: center; gap: 4rem; padding: 6rem 0; border-bottom: 1px solid #f1f1f1; transition: all 0.4s ease; }
-        .partner-logo-box { width: 40%; aspect-ratio: 16/9; background: #f8fafc; border: 2px solid transparent; border-radius: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; cursor: pointer; position: relative; }
-        .partner-logo-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .partner-row:hover .partner-logo-box { border-color: #FF5722; background: white; box-shadow: 0 25px 50px -12px rgba(255, 87, 34, 0.15); transform: translateY(-5px); }
+        .partner-logo-box { width: 40%; aspect-ratio: 16/9; background: #ffffff; border: 2px solid #f1f1f1; border-radius: 2.5rem; display: flex; align-items: center; justify-content: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; cursor: pointer; position: relative; padding: 2rem; }
+        .partner-logo-box img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s ease; }
+        .partner-row:hover .partner-logo-box { border-color: #FF5722; box-shadow: 0 25px 50px -12px rgba(255, 87, 34, 0.15); transform: translateY(-5px); }
         .partner-row:hover .partner-logo-box img { transform: scale(1.05); }
         .partner-content { width: 60%; transition: transform 0.4s ease; }
         .footer-link { transition: all 0.3s ease; }
@@ -61,12 +64,19 @@
         .whatsapp-fixed:hover { transform: scale(1.1); }
         .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
         .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
+        #mobile-menu { display: none; position: fixed; inset: 0; background: white; z-index: 200; flex-direction: column; overflow-y: auto; }
+        @media (max-width: 1279px) {
+            .dropdown-menu { display: none !important; }
+            .partner-row { flex-direction: column !important; padding: 4rem 0; gap: 2rem; }
+            .partner-logo-box { width: 100%; }
+            .partner-content { width: 100%; text-align: center; }
+        }
     </style>
 </head>
 <body class="antialiased">
     <div id="google_translate_element"></div>
-    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm">
-        <div class="max-w-[1600px] mx-auto px-8 lg:px-12 h-24 flex justify-between items-center">
+    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm transition-all duration-300">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-24 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="Home.html">
                     <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-14 w-auto">
@@ -86,67 +96,64 @@
                             <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>Deals Advisory</h4>
-                                    <a href="Services.html?service=deals" class="mega-link">Corporate Finance</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Deal Advisory</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Valuations, Business Modeling, & Market Research</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Restructuring</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Project Infrastructure</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Real Estate Advisory</a>
-                                    <a href="Services.html?service=deals" class="mega-link">IPO & Capital Markets</a>
+                                    <a href="Services.html?service=deals&block=corporate-finance" class="mega-link">Corporate Finance</a>
+                                    <a href="Services.html?service=deals&block=deal-advisory" class="mega-link">Deal Advisory</a>
+                                    <a href="Services.html?service=deals&block=valuations" class="mega-link">Valuations & Market Research</a>
+                                    <a href="Services.html?service=deals&block=restructuring" class="mega-link">Restructuring</a>
+                                    <a href="Services.html?service=deals&block=project-infrastructure" class="mega-link">Project Infrastructure</a>
+                                    <a href="Services.html?service=deals&block=real-estate" class="mega-link">Real Estate Advisory</a>
+                                    <a href="Services.html?service=deals&block=ipo" class="mega-link">IPO & Capital Markets</a>
                                 </div>
                                 <div class="mega-section">
-                                    <h4>Business Advisory</h4>
-                                    <a href="Services.html?service=business" class="mega-link">Risk Advisory</a>
-                                    <a href="Services.html?service=business" class="mega-link">Internal Audit</a>
-                                    <a href="Services.html?service=business" class="mega-link">IT Risk & Assurance</a>
+                                    <h4>Technology Advisory</h4>
+                                    <a href="Services.html?service=tech&block=it-consulting" class="mega-link">IT Consulting</a>
+                                    <a href="Services.html?service=tech&block=it-risk" class="mega-link">IT Risk & Assurance</a>
+                                    <a href="Services.html?service=tech&block=enterprise-software" class="mega-link">Enterprise Software Solutions</a>
+                                    <a href="Services.html?service=tech&block=digital-transformation" class="mega-link">Digital Transformation</a>
+                                    <a href="Services.html?service=tech&block=automation" class="mega-link">Business Process Automation</a>
+                                    <a href="Services.html?service=tech&block=cybersecurity" class="mega-link">Infrastructure & Cybersecurity</a>
                                 </div>
                             </div>
                             <div class="mega-column">
                                 <div class="mega-section">
-                                    <h4>Technology Advisory</h4>
-                                    <a href="Services.html?service=tech" class="mega-link">IT Consulting</a>
-                                    <a href="Services.html?service=tech" class="mega-link">Enterprise Software Solutions</a>
-                                    <a href="Services.html?service=tech" class="mega-link">Digital Transformation</a>
-                                    <a href="Services.html?service=tech" class="mega-link">Business Process Automation</a>
-                                    <a href="Services.html?service=tech" class="mega-link">IT Infrastructure & Cybersecurity</a>
+                                    <h4>Business Advisory</h4>
+                                    <a href="Services.html?service=business&block=risk-advisory" class="mega-link">Risk Advisory</a>
+                                    <a href="Services.html?service=business&block=internal-audit" class="mega-link">Internal Audit</a>
+                                    <a href="Services.html?service=business&block=policy-procedure" class="mega-link">Policy & Procedure</a>
+                                    <a href="Services.html?service=business&block=sop" class="mega-link">Standard Operating Procedure</a>
+                                    <a href="Services.html?service=business&block=outsource-staff" class="mega-link">Outsource Staff</a>
+                                    <a href="Services.html?service=business&block=ifrs" class="mega-link">IFRS Standards</a>
+                                    <a href="Services.html?service=business&block=actuarial" class="mega-link">Actuarial Valuation</a>
                                 </div>
                                 <div class="mega-section">
-                                    <h4>Corporate Services & Business Setup</h4>
-                                    <a href="Services.html?service=corporate" class="mega-link">Market Entry Strategy</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Entity Formation & Licensing</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Governance</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Secretarial</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Agreements Advisory</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Liquidation</a>
+                                    <h4>Corporate Services</h4>
+                                    <a href="Services.html?service=corporate&block=market-entry" class="mega-link">Market Entry Strategy</a>
+                                    <a href="Services.html?service=corporate&block=entity-formation" class="mega-link">Entity Formation & Licensing</a>
+                                    <a href="Services.html?service=corporate&block=governance" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=corporate&block=secretarial" class="mega-link">Corporate Secretarial</a>
+                                    <a href="Services.html?service=corporate&block=agreements" class="mega-link">Agreements Advisory</a>
+                                    <a href="Services.html?service=corporate&block=liquidation" class="mega-link">Liquidation</a>
                                 </div>
                             </div>
                             <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>Tax, Zakat & Legal Services</h4>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Planning</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Compliance</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Transaction Tax</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Corporate Governance</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Family Business & Zakat</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Due Diligence</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Indirect Tax (VAT)</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Transfer Pricing</a>
-                                    <a href="Services.html?service=tax" class="mega-link">International Taxation</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Technology</a>
-                                    <a href="Services.html?service=tax" class="mega-link">E-Invoicing</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Bookkeeping</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Dispute Resolution</a>
+                                    <a href="Services.html?service=tax&block=tax-planning" class="mega-link">Tax Planning</a>
+                                    <a href="Services.html?service=tax&block=tax-compliance" class="mega-link">Tax Compliance</a>
+                                    <a href="Services.html?service=tax&block=transaction-tax" class="mega-link">Transaction Tax</a>
+                                    <a href="Services.html?service=tax&block=family-business" class="mega-link">Family Business & Zakat</a>
+                                    <a href="Services.html?service=tax&block=indirect-tax" class="mega-link">Indirect Tax (VAT)</a>
+                                    <a href="Services.html?service=tax&block=tax-tech" class="mega-link">Tax Technology</a>
+                                    <a href="Services.html?service=tax&block=dispute-resolution" class="mega-link">Tax Dispute Resolution</a>
                                 </div>
-                            </div>
-                            <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>HR Consulting & Secondment</h4>
-                                    <a href="Services.html?service=hr" class="mega-link">Labor Law Compliance</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Talent Secondment</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Performance Management</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Recruitment Strategy</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Payroll Administration</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Workforce Restructuring</a>
+                                    <a href="Services.html?service=hr&block=hr-policy" class="mega-link">Labor Law Compliance</a>
+                                    <a href="Services.html?service=hr&block=talent-secondment" class="mega-link">Talent Secondment</a>
+                                    <a href="Services.html?service=hr&block=perf-mgmt" class="mega-link">Performance Management</a>
+                                    <a href="Services.html?service=hr&block=recruitment" class="mega-link">Recruitment Strategy</a>
+                                    <a href="Services.html?service=hr&block=payroll" class="mega-link">Payroll Administration</a>
+                                    <a href="Services.html?service=hr&block=restructuring" class="mega-link">Workforce Restructuring</a>
                                 </div>
                             </div>
                         </div>
@@ -155,18 +162,40 @@
                 <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
                 <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 lg:gap-6">
                 <div class="lang-toggle notranslate">
                     <div id="en-btn" class="lang-option active" onclick="changeLang('en')">EN</div>
                     <div id="ar-btn" class="lang-option" onclick="changeLang('ar')">AR</div>
                 </div>
-                <a href="RFP.html" class="btn-primary group flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase tracking-widest shadow-lg">
+                <a href="RFP.html" class="btn-primary group hidden sm:flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-[13px] uppercase tracking-widest shadow-lg">
                     SUBMIT RFP
                     <i class="fa-solid fa-file-signature group-hover:scale-110 transition-transform text-white text-sm"></i>
                 </a>
+                <button class="xl:hidden text-burraqNavy text-2xl p-2" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] hidden flex-col overflow-y-auto">
+        <div class="h-24 px-6 flex justify-between items-center border-b border-gray-100">
+            <img src="BurraqLogoDark.svg" alt="Burraq" class="h-10">
+            <button class="text-3xl text-burraqNavy p-2" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="p-8 flex flex-col gap-6 font-bold text-lg text-burraqNavy uppercase tracking-widest">
+            <a href="Home.html" onclick="toggleMobileMenu()">Home</a>
+            <a href="About.html" onclick="toggleMobileMenu()">About Us</a>
+            <a href="Partners.html" onclick="toggleMobileMenu()">Partners</a>
+            <a href="Blogs.html" onclick="toggleMobileMenu()">Blog</a>
+            <a href="Services.html" onclick="toggleMobileMenu()">Services</a>
+            <a href="Careers.html" onclick="toggleMobileMenu()">Careers</a>
+            <a href="Contact.html" onclick="toggleMobileMenu()">Contact Us</a>
+            <a href="RFP.html" class="bg-burraqNavy text-white py-5 text-center rounded-2xl mt-4">Submit RFP</a>
+        </div>
+    </div>
 
     <section class="relative h-[450px] flex flex-col justify-center items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -188,7 +217,7 @@
 
     <section class="py-24 bg-white">
         <div class="max-w-[1200px] mx-auto px-6 lg:px-12">
-            <div class="partner-row flex-col lg:flex-row">
+            <div class="partner-row">
                 <a href="https://khalij.co.uk/about-us/" target="_blank" class="partner-logo-box">
                     <img src="Partner1.jpeg" alt="Khalij Group">
                 </a>
@@ -197,16 +226,16 @@
                     <p class="text-slate-600 leading-relaxed text-lg text-justify font-medium">Khalij Group is a conglomerate focused on servicing the needs and requirements of the Islamic financial services industry and Islamic capital markets, including creating innovative and be-spoke structured solutions, fund raising and distribution of both debt and equity instruments. In the United Kingdom, Khalij Group is authorised and regulated by the Financial Conduct Authority.</p>
                 </div>
             </div>
-            <div class="partner-row flex-col lg:flex-row-reverse">
+            <div class="partner-row">
+                <div class="partner-content text-left">
+                    <h2 class="text-3xl font-extrabold text-burraqNavy mb-6">SHMA Consulting - Actuarial Valuation</h2>
+                    <p class="text-slate-600 leading-relaxed text-lg text-justify font-medium">SHMA is a leading advisory firm with offices in the UAE, Saudi Arabia, and Pakistan, serving clients across MENA and beyond. Our work spans three core areas: Actuarial & Insurance Advisory, Risk Management & Risk Advisory, and End-of-Service Benefits (EOSB). Serving over 450 clients worldwide, we provide actuarial valuations, strategy design, and accounting support. At SHMA, we are committed to simplifying complexity, enabling informed decisions, and creating long-term value for our clients.</p>
+                </div>
                 <a href="https://shma.sa/" target="_blank" class="partner-logo-box">
                     <img src="Partner2.jpeg" alt="SHMA Consulting">
                 </a>
-                <div class="partner-content">
-                    <h2 class="text-3xl font-extrabold text-burraqNavy mb-6">SHMA Consulting - Actuarial Evaluation</h2>
-                    <p class="text-slate-600 leading-relaxed text-lg text-justify font-medium">SHMA is a leading advisory firm with offices in the UAE, Saudi Arabia, and Pakistan, serving clients across MENA and beyond. Our work spans three core areas: Actuarial & Insurance Advisory, Risk Management & Risk Advisory, and End-of-Service Benefits (EOSB). Serving over 450 clients worldwide, we provide actuarial valuations, strategy design, and accounting support. At SHMA, we are committed to simplifying complexity, enabling informed decisions, and creating long-term value for our clients.</p>
-                </div>
             </div>
-            <div class="partner-row flex-col lg:flex-row">
+            <div class="partner-row">
                 <a href="http://ahcpa.co/" target="_blank" class="partner-logo-box">
                     <img src="Partner3.jpeg" alt="AHCPA">
                 </a>
@@ -215,52 +244,64 @@
                     <p class="text-slate-600 leading-relaxed text-lg text-justify font-medium">ABDULRAHMAN KHALED ALHAMAZANI Certified Public Accountants Company provides rigorous external audit capabilities and financial advisory services. Led by experts with deep experience from the Zakat, Tax and Customs Authority and Big Four auditing firms, AHCPA ensures all financial reporting meets statutory requirements and international standards. Their team of specialists contributes to providing high-quality services in auditing, tax, and zakat, fostering institutional trust and transparency.</p>
                 </div>
             </div>
+            <div class="partner-row">
+                <div class="partner-content text-left">
+                    <h2 class="text-3xl font-extrabold text-burraqNavy mb-6">Odoo</h2>
+                    <p class="text-slate-600 leading-relaxed text-lg text-justify font-medium">Odoo is a leading provider of comprehensive, open-source business applications, offering a dynamic ERP ecosystem with a global footprint. Delivering tailored solutions in accounting, sales, and operations, Odoo's suite of modules is designed to operate seamlessly across multiple regulatory environments. Through a strategic partnership with Burraq Partners, Odoo provides a robust ERP system to streamline financial operations and ensure full compliance with the Saudi Zakat, Tax and Customs Authority (ZATCA) regulations.</p>
+                </div>
+                <a href="https://www.odoo.com/" target="_blank" class="partner-logo-box">
+                    <img src="Partner4.jpeg" alt="Odoo ERP Solutions">
+                </a>
+            </div>
         </div>
     </section>
 
-    <section class="rfp-section py-28 border-t border-gray-100">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="text-center md:text-left flex-1">
-                <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
-                <p class="text-slate-500 text-xl font-medium max-w-xl">Get in touch with our experts to discuss how we can drive value for your organization.</p>
+    <section class="rfp-section py-28 px-4 bg-softGray">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left flex-1 px-4">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
+                <p class="text-slate-500 text-lg lg:text-xl font-medium max-w-xl text-justify">Get in touch with our experts to discuss how we can drive value for your organization.</p>
             </div>
             <div class="flex flex-col items-center md:items-start gap-6 border-l-4 border-burraqOrange pl-8">
-                <span class="text-burraqNavy text-2xl font-bold tracking-tight">Request for proposal</span>
-                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-12 py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-sm flex items-center gap-3">
+                <span class="text-burraqNavy text-xl lg:text-2xl font-bold tracking-tight">Request for proposal</span>
+                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-10 py-5 lg:px-12 lg:py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-xs lg:text-sm flex items-center gap-3">
                     Submit RFP <i class="fa-solid fa-paper-plane text-xs"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5 px-4">
+        <div class="max-w-[1400px] mx-auto">
             <div class="mb-16">
-                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left">
+                <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left px-4">
                     Empowering <span class="text-burraqOrange">Growth</span>, Unleashing Potential
                 </h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left items-start mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left items-start mb-16 px-4">
                 <div class="flex flex-col gap-8 items-center md:items-start">
                     <div class="flex flex-col items-center md:items-start gap-4">
                         <a href="Home.html">
                             <img src="BurraqLogoLight.svg" alt="Burraq Logo" class="h-16 w-auto">
                         </a>
                         <p class="text-slate-400 text-sm font-medium max-w-[280px] text-center md:text-left leading-relaxed">
-                            Burraq Partners drives growth through innovation and strategic solutions, empowering businesses to achieve success
+                            Driving success through trusted <br>
+                            partnerships, innovative solutions, <br>
+                            & unwavering values which makes <br>
+                            <strong>"Your Journey, Our Purpose"</strong>
                         </p>
                     </div>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
-                        <a href="https://www.youtube.com/@BurraqPartners" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
-                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://www.youtube.com/@BurraqPartners" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
                     </div>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Quick Links</h4>
-                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                    <ul class="space-y-4 text-slate-400 text-sm lg:text-base font-medium">
                         <li><a href="Home.html" class="footer-link">Home</a></li>
                         <li><a href="About.html" class="footer-link">About Us</a></li>
                         <li><a href="Partners.html" class="footer-link">Partners</a></li>
@@ -272,7 +313,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Services</h4>
-                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                    <ul class="space-y-4 text-slate-400 text-sm lg:text-base font-medium">
                         <li><a href="Services.html?service=deals" class="footer-link">Deals Advisory</a></li>
                         <li><a href="Services.html?service=business" class="footer-link">Business Advisory</a></li>
                         <li><a href="Services.html?service=tech" class="footer-link">Technology Advisory</a></li>
@@ -283,7 +324,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Contact Info</h4>
-                    <ul class="space-y-5 text-slate-400 text-base font-medium">
+                    <ul class="space-y-5 text-slate-400 text-sm lg:text-base font-medium">
                         <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
                             <i class="fa-solid fa-envelope mt-1 text-burraqOrange text-lg"></i>
                             <span>info@burraqpartners.com</span>
@@ -292,24 +333,29 @@
                             <i class="fa-solid fa-phone mt-1 text-burraqOrange text-lg"></i>
                             <span>+966 11 248 0261</span>
                         </li>
-                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors text-justify">
                             <i class="fa-solid fa-location-dot mt-1 text-burraqOrange text-lg"></i>
-                            <span>8074 Building, Riyadh, KSA</span>
+                            <span>Office 31 & 32, Qurtabah Square<br>
+                                  Dammam Road, Qurtabah<br>
+                                  Riyadh, Saudi Arabia 11576
+                            </span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-sm font-medium">
+            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-xs lg:text-sm font-medium">
                 <p>&copy; 2026 Burraq Partners. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
     <a href="https://wa.me/966535287164" target="_blank" class="whatsapp-fixed">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
     <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <i class="fa-solid fa-arrow-up text-xl"></i>
     </div>
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -326,6 +372,12 @@
                 document.getElementById('en-btn').classList.toggle('active', lang === 'en');
                 document.getElementById('ar-btn').classList.toggle('active', lang === 'ar');
             }
+        }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const isHidden = menu.style.display === 'none' || menu.style.display === '';
+            menu.style.display = isHidden ? 'flex' : 'none';
+            document.body.style.overflow = isHidden ? 'hidden' : 'auto';
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

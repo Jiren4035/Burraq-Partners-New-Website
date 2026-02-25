@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Internal Auditor (Banking) - Burraq Partners</title>
+    <title>Integrating ESG into Corporate Risk Management - Burraq Partners</title>
     <link rel="icon" type="image/png" href="BurraqIcon.png">
     <link rel="apple-touch-icon" href="BurraqIcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,20 +49,28 @@
         .mega-link:hover { color: #FF5722; padding-left: 6px; }
         .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
         .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
-        .jd-card { background: white; border-radius: 2.5rem; padding: 3rem; border: 1px solid #f1f1f1; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-        .apply-input { width: 100%; padding: 1rem 1.25rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1rem; outline: none; transition: all 0.3s ease; }
-        .apply-input:focus { border-color: #FF5722; background: white; }
-        .sidebar-sticky { position: sticky; top: 120px; }
-        .section-divider { width: 40px; height: 3px; background: #FF5722; margin: 1.5rem 0; border-radius: 2px; }
-        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
-        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
-        .lang-option.active { background: #FF5722; color: white; }
+        .blog-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #475569; text-align: justify; font-weight: 500; }
+        .blog-content h2 { font-size: 1.875rem; font-weight: 800; color: #1a1d2e; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .table-wrapper { overflow-x: auto; margin: 2rem 0; border-radius: 1.5rem; border: 1px solid #f1f1f1; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background-color: #1a1d2e; color: white; padding: 1.25rem; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        td { padding: 1.25rem; border-bottom: 1px solid #f1f1f1; font-weight: 500; color: #475569; font-size: 0.95rem; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .toc-box { background: #f8fafc; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f1f1f1; margin-bottom: 3rem; }
+        .toc-box ul { list-style: none; padding: 0; }
+        .toc-box li { margin-bottom: 1rem; position: relative; padding-left: 1.5rem; }
+        .toc-box li::before { content: '→'; position: absolute; left: 0; color: #FF5722; font-weight: 800; }
+        .toc-box a { color: #1a1d2e; font-weight: 700; transition: all 0.3s ease; text-decoration: none; }
+        .toc-box a:hover { color: #FF5722; padding-left: 5px; }
+        .footer-link { transition: all 0.3s ease; display: inline-block; }
+        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
         .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         .whatsapp-fixed:hover { transform: scale(1.1); }
         .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
         .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
-        .footer-link { transition: all 0.3s ease; }
-        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
+        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
+        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
+        .lang-option.active { background: #FF5722; color: white; }
         #mobile-menu { display: none; position: fixed; inset: 0; background: white; z-index: 200; flex-direction: column; overflow-y: auto; }
         .rfp-section { background-color: #ffffff; border-top: 1px solid #f1f1f1; }
     </style>
@@ -80,7 +88,7 @@
                 <div class="h-full flex items-center"><a href="Home.html" class="nav-link hover:text-burraqOrange">Home</a></div>
                 <div class="h-full flex items-center"><a href="About.html" class="nav-link hover:text-burraqOrange">About Us</a></div>
                 <div class="h-full flex items-center"><a href="Partners.html" class="nav-link hover:text-burraqOrange">Partners</a></div>
-                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link hover:text-burraqOrange">Blog</a></div>
+                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link active-link text-burraqOrange font-extrabold">Blog</a></div>
                 <div class="relative dropdown h-full flex items-center">
                     <a href="Services.html" class="nav-link hover:text-burraqOrange flex items-center gap-2 cursor-pointer">
                         Services <i class="fa-solid fa-chevron-down text-[12px]"></i>
@@ -153,7 +161,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link text-burraqOrange font-extrabold">Careers</a></div>
+                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
                 <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
             </div>
             <div class="flex items-center gap-4 lg:gap-6">
@@ -172,7 +180,7 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] hidden flex-col overflow-y-auto">
+    <div id="mobile-menu">
         <div class="h-24 px-6 flex justify-between items-center border-b border-gray-100">
             <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-10">
             <button class="text-3xl text-burraqNavy p-2" onclick="toggleMobileMenu()">
@@ -191,72 +199,94 @@
         </div>
     </div>
 
-    <section class="py-12 bg-softGray/30 border-b border-gray-100">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <a href="Careers.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-burraqOrange font-bold text-sm uppercase tracking-widest transition-colors mb-8">
-                <i class="fa-solid fa-arrow-left"></i> Back to Careers
-            </a>
-            <h1 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy leading-tight">Internal Auditor – <span class="text-burraqOrange">Banking Sector</span></h1>
-            <div class="flex flex-wrap gap-6 mt-6 text-slate-500 font-medium">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-burraqOrange"></i> Riyadh / Dammam / Khobar, KSA</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-briefcase text-burraqOrange"></i> Full Time</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-building text-burraqOrange"></i> Banking & Financial Services</span>
+    <header class="py-24 bg-softGray">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <span class="bg-burraqNavy text-white px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-widest">Risk Management</span>
+            <h1 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy mt-8 mb-8 leading-tight">
+                Integrating ESG Factors into Corporate Risk Management: Challenges for Businesses in Saudi Arabia
+            </h1>
+            <div class="flex items-center justify-center gap-8 text-slate-500 font-bold">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-user text-burraqOrange"></i> Burraq Partners Team</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-calendar text-burraqOrange"></i> July 17, 2025</div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row gap-16">
-                <div class="w-full lg:w-8/12">
-                    <div class="jd-card space-y-12">
-                        <div>
-                            <h2 class="text-2xl font-extrabold text-burraqNavy">Role Overview</h2>
-                            <div class="section-divider"></div>
-                            <p class="text-slate-600 leading-relaxed text-justify">We are seeking highly skilled Internal Audit professionals with specialized experience in the banking sector. The ideal candidate will have a deep understanding of banking operations and regulatory frameworks, ensuring institutional integrity and compliance through rigorous internal control assessments.</p>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-extrabold text-burraqNavy">Requirements</h2>
-                            <div class="section-divider"></div>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">4–6 years of solid experience within the Internal Audit department of a Bank (Note: Experience during articles is excluded).</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Qualification: CA/ACCA (Finalists are eligible to apply) or experienced Finance Professionals.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Certification: <strong>CIA (Certified Internal Auditor) is a mandatory requirement.</strong></span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Availability: Must be available to join immediately.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Visa Status: Valid Transferable Iqama in KSA is required.</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-extrabold text-burraqNavy">Compensation</h2>
-                            <div class="section-divider"></div>
-                            <p class="text-slate-600 leading-relaxed">Salary and benefits are competitive and will depend on the candidate's profile, depth of experience, and technical assessment.</p>
-                        </div>
-                    </div>
+    <article class="py-24 bg-white">
+        <div class="max-w-[1000px] mx-auto px-6">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" alt="Corporate Risk Management" class="w-full h-[350px] lg:h-[550px] object-cover rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl mb-16">
+
+            <div class="toc-box">
+                <h4 class="text-burraqNavy text-2xl font-extrabold mb-8">Table of Contents</h4>
+                <ul class="space-y-4">
+                    <li><a href="#role-esg">The Role of ESG in Corporate Risk Management</a></li>
+                    <li><a href="#strategic-integration">Strategic Integration of ESG Factors</a></li>
+                    <li><a href="#challenges">Challenges Faced by Businesses in Integrating ESG</a></li>
+                    <li><a href="#barq-help">How Burraq Partners Solutions Can Assist</a></li>
+                </ul>
+            </div>
+
+            <div class="blog-content px-2 lg:px-0">
+                <p class="text-xl font-semibold !text-slate-700 mb-12 italic border-l-4 border-burraqOrange pl-8">
+                    As sustainability gains prominence, integrating ESG factors into corporate risk management is now essential. In Saudi Arabia, this aligns with Vision 2030’s goal of a sustainable, diversified economy. Embedding ESG into risk frameworks is critical for meeting global standards and regulatory demands.
+                </p>
+
+                <h2 id="role-esg">The Role of ESG in Corporate Risk Management</h2>
+                <p>Risk management is about identifying and assessing the potential risks that could affect a company’s long-term objectives. ESG risks include environmental factors like climate change, social issues such as labor practices, and governance concerns like executive pay and corruption. Failing to address these can lead to supply chain disruptions and damage to brand reputation.</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Regulatory Catalyst</th>
+                                <th>Significance for Risk Management</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Carbon Reduction Mandates</td><td>Enforces CO₂ reduction targeting net-zero for Aramco by 2050.</td></tr>
+                            <tr><td>Renewable Energy Surge</td><td>Kingdom plans to tender 100–130 GW by 2030.</td></tr>
+                            <tr><td>ESG Disclosure Guidelines</td><td>Mandatory-aligned reporting standards introduced by CMA and Tadawul.</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="w-full lg:w-4/12">
-                    <div class="sidebar-sticky space-y-8">
-                        <div class="jd-card !p-8">
-                            <h3 class="text-xl font-extrabold text-burraqNavy mb-6">Apply for this Role</h3>
-                            <form action="https://formspree.io/f/mvzbrpkj" method="POST" enctype="multipart/form-data" class="space-y-4">
-                                <input type="hidden" name="subject" value="Bank IA - 02">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <input type="text" name="first_name" required placeholder="First Name" class="apply-input text-sm">
-                                    <input type="text" name="last_name" required placeholder="Last Name" class="apply-input text-sm">
-                                </div>
-                                <input type="tel" name="phone" placeholder="Phone Number" class="apply-input text-sm">
-                                <input type="email" name="email" required placeholder="Email Address" class="apply-input text-sm">
-                                <div class="relative">
-                                    <label class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1">Upload CV (PDF)</label>
-                                    <input type="file" name="cv" required class="text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-softGray file:text-burraqNavy hover:file:bg-burraqOrange hover:file:text-white transition-all cursor-pointer">
-                                </div>
-                                <button type="submit" class="btn-primary w-full py-4 rounded-xl font-bold uppercase tracking-widest text-sm mt-4 shadow-lg">Submit Application</button>
-                            </form>
-                        </div>
-                    </div>
+
+                <h2 id="strategic-integration">Strategic Integration of ESG Factors</h2>
+                <p>Integrating ESG factors into a corporate risk management framework requires a systematic approach. Companies must move beyond viewing ESG as a box-ticking exercise. This requires leadership commitment, robust data analytics to monitor risks, and proactive stakeholder engagement with investors and consumers.</p>
+
+                <h2 id="challenges">Challenges Faced by Businesses in Integrating ESG</h2>
+                <p>Despite growing recognition, businesses in Saudi Arabia face hurdles like the lack of standardized metrics, data quality gaps, and integration with legacy risk management systems. Quantitative data shows firms with low-quality ESG data experience 2.5× more regulatory penalties.</p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Challenge Area</th>
+                                <th>Impact on Risk Management</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Data Quality</td><td>34% higher reputational damage costs for poor data.</td></tr>
+                            <tr><td>System Integration</td><td>ROI realization delayed by 12–18 months due to misalignment.</td></tr>
+                            <tr><td>Leadership Shortfalls</td><td>Only 43% of firms prioritizing ESG training.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="bg-softGray p-8 rounded-[2rem] font-bold text-burraqNavy border-l-4 border-burraqOrange mt-12" id="barq-help">
+                    How Burraq Partners Solutions Can Assist: Burraq Partners Solutions specializes in helping businesses navigate the complexities of integrating ESG factors into their corporate risk management frameworks. We offer strategy development and change management support to ensure smooth integration into existing corporate structures.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center py-16 border-t border-gray-100 mt-16 gap-6">
+                    <a href="Blog5.html" class="flex items-center gap-3 text-burraqNavy font-extrabold uppercase tracking-widest text-sm hover:text-burraqOrange transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous Post
+                    </a>
+                    <a href="Blogs.html" class="flex items-center gap-3 text-burraqNavy font-extrabold uppercase tracking-widest text-sm hover:text-burraqOrange transition-all">
+                        Back to All Posts <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </article>
 
     <section class="rfp-section py-28 px-4 bg-softGray">
         <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12">

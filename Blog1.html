@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESOP for Vision 2030 Companies - Burraq Partners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Navigating Saudi Regulatory Landscapes - Burraq Partners</title>
+    <link rel="icon" type="image/png" href="BurraqIcon.png">
+    <link rel="apple-touch-icon" href="BurraqIcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <script>
@@ -27,7 +29,7 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; width: 100%; overflow-x: hidden; }
         .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .goog-te-menu-frame, iframe.goog-te-menu-frame { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; opacity: 0 !important; }
         body { top: 0px !important; }
         .skiptranslate:not(.lang-toggle) { display: none !important; }
@@ -37,36 +39,45 @@
         .nav-link:hover::after { width: 100%; }
         .nav-link.active-link::after { width: 100%; }
         .dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; }
-        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: 95vw; max-width: 1400px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3.5rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
-        .mega-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; align-items: start; }
+        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: auto; min-width: 1050px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
+        .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; align-items: start; }
         .mega-column { display: flex; flex-direction: column; }
-        .mega-section { margin-bottom: 1.5rem; }
+        .mega-section { margin-bottom: 2rem; }
+        .mega-section:last-child { margin-bottom: 0; }
         .mega-section h4 { font-size: 0.95rem; font-weight: 800; color: #1a1d2e; margin-bottom: 0.7rem; border-left: 4px solid #FF5722; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
         .mega-link { display: block; font-size: 0.8rem; color: #64748b; padding: 4px 0; font-weight: 600; transition: all 0.2s ease; text-decoration: none; line-height: 1.3; }
         .mega-link:hover { color: #FF5722; padding-left: 6px; }
         .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
         .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
-        .blog-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #4a5568; text-align: justify; }
+        .blog-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #475569; text-align: justify; font-weight: 500; }
         .blog-content h2 { font-size: 1.875rem; font-weight: 800; color: #1a1d2e; margin-top: 2.5rem; margin-bottom: 1.25rem; }
-        .blog-content h3 { font-size: 1.5rem; font-weight: 700; color: #1a1d2e; margin-top: 2rem; margin-bottom: 1rem; }
-        .related-card { transition: all 0.4s ease; border: 1px solid #f1f1f1; border-radius: 2rem; overflow: hidden; }
-        .related-card:hover { transform: translateY(-5px); border-color: #FF5722; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .rfp-section { background-color: #ffffff; border-top: 1px solid #f1f1f1; }
-        .footer-link { transition: all 0.3s ease; }
+        .table-wrapper { overflow-x: auto; margin: 2rem 0; border-radius: 1.5rem; border: 1px solid #f1f1f1; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background-color: #1a1d2e; color: white; padding: 1.25rem; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        td { padding: 1.25rem; border-bottom: 1px solid #f1f1f1; font-weight: 500; color: #475569; font-size: 0.95rem; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        .toc-box { background: #f8fafc; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f1f1f1; margin-bottom: 3rem; }
+        .toc-box ul { list-style: none; padding: 0; }
+        .toc-box li { margin-bottom: 1rem; position: relative; padding-left: 1.5rem; }
+        .toc-box li::before { content: '→'; position: absolute; left: 0; color: #FF5722; font-weight: 800; }
+        .toc-box a { color: #1a1d2e; font-weight: 700; transition: all 0.3s ease; text-decoration: none; }
+        .toc-box a:hover { color: #FF5722; padding-left: 5px; }
+        .footer-link { transition: all 0.3s ease; display: inline-block; }
         .footer-link:hover { color: #FF5722; transform: translateX(5px); }
         .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         .whatsapp-fixed:hover { transform: scale(1.1); }
-        .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
         .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
         .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
         .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
         .lang-option.active { background: #FF5722; color: white; }
+        #mobile-menu { display: none; position: fixed; inset: 0; background: white; z-index: 200; flex-direction: column; overflow-y: auto; }
     </style>
 </head>
 <body class="antialiased">
     <div id="google_translate_element"></div>
-    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm">
-        <div class="max-w-[1600px] mx-auto px-8 lg:px-12 h-24 flex justify-between items-center">
+    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm transition-all duration-300">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-24 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="Home.html">
                     <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-14 w-auto">
@@ -76,7 +87,7 @@
                 <div class="h-full flex items-center"><a href="Home.html" class="nav-link hover:text-burraqOrange">Home</a></div>
                 <div class="h-full flex items-center"><a href="About.html" class="nav-link hover:text-burraqOrange">About Us</a></div>
                 <div class="h-full flex items-center"><a href="Partners.html" class="nav-link hover:text-burraqOrange">Partners</a></div>
-                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link text-burraqOrange font-extrabold active-link">Blog</a></div>
+                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link active-link text-burraqOrange font-extrabold">Blog</a></div>
                 <div class="relative dropdown h-full flex items-center">
                     <a href="Services.html" class="nav-link hover:text-burraqOrange flex items-center gap-2 cursor-pointer">
                         Services <i class="fa-solid fa-chevron-down text-[12px]"></i>
@@ -86,67 +97,64 @@
                             <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>Deals Advisory</h4>
-                                    <a href="Services.html?service=deals" class="mega-link">Corporate Finance</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Deal Advisory</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Valuations, Business Modeling, & Market Research</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Restructuring</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Project Infrastructure</a>
-                                    <a href="Services.html?service=deals" class="mega-link">Real Estate Advisory</a>
-                                    <a href="Services.html?service=deals" class="mega-link">IPO & Capital Markets</a>
+                                    <a href="Services.html?service=deals&block=corporate-finance" class="mega-link">Corporate Finance</a>
+                                    <a href="Services.html?service=deals&block=deal-advisory" class="mega-link">Deal Advisory</a>
+                                    <a href="Services.html?service=deals&block=valuations" class="mega-link">Valuations & Market Research</a>
+                                    <a href="Services.html?service=deals&block=restructuring" class="mega-link">Restructuring</a>
+                                    <a href="Services.html?service=deals&block=project-infrastructure" class="mega-link">Project Infrastructure</a>
+                                    <a href="Services.html?service=deals&block=real-estate" class="mega-link">Real Estate Advisory</a>
+                                    <a href="Services.html?service=deals&block=ipo" class="mega-link">IPO & Capital Markets</a>
                                 </div>
                                 <div class="mega-section">
-                                    <h4>Business Advisory</h4>
-                                    <a href="Services.html?service=business" class="mega-link">Risk Advisory</a>
-                                    <a href="Services.html?service=business" class="mega-link">Internal Audit</a>
-                                    <a href="Services.html?service=business" class="mega-link">IT Risk & Assurance</a>
+                                    <h4>Technology Advisory</h4>
+                                    <a href="Services.html?service=tech&block=it-consulting" class="mega-link">IT Consulting</a>
+                                    <a href="Services.html?service=tech&block=it-risk" class="mega-link">IT Risk & Assurance</a>
+                                    <a href="Services.html?service=tech&block=enterprise-software" class="mega-link">Enterprise Software Solutions</a>
+                                    <a href="Services.html?service=tech&block=digital-transformation" class="mega-link">Digital Transformation</a>
+                                    <a href="Services.html?service=tech&block=automation" class="mega-link">Business Process Automation</a>
+                                    <a href="Services.html?service=tech&block=cybersecurity" class="mega-link">Infrastructure & Cybersecurity</a>
                                 </div>
                             </div>
                             <div class="mega-column">
                                 <div class="mega-section">
-                                    <h4>Technology Advisory</h4>
-                                    <a href="Services.html?service=tech" class="mega-link">IT Consulting</a>
-                                    <a href="Services.html?service=tech" class="mega-link">Enterprise Software Solutions</a>
-                                    <a href="Services.html?service=tech" class="mega-link">Digital Transformation</a>
-                                    <a href="Services.html?service=tech" class="mega-link">Business Process Automation</a>
-                                    <a href="Services.html?service=tech" class="mega-link">IT Infrastructure & Cybersecurity</a>
+                                    <h4>Business Advisory</h4>
+                                    <a href="Services.html?service=business&block=risk-advisory" class="mega-link">Risk Advisory</a>
+                                    <a href="Services.html?service=business&block=internal-audit" class="mega-link">Internal Audit</a>
+                                    <a href="Services.html?service=business&block=policy-procedure" class="mega-link">Policy & Procedure</a>
+                                    <a href="Services.html?service=business&block=sop" class="mega-link">Standard Operating Procedure</a>
+                                    <a href="Services.html?service=business&block=outsource-staff" class="mega-link">Outsource Staff</a>
+                                    <a href="Services.html?service=business&block=ifrs" class="mega-link">IFRS Standards</a>
+                                    <a href="Services.html?service=business&block=actuarial" class="mega-link">Actuarial Valuation</a>
                                 </div>
                                 <div class="mega-section">
-                                    <h4>Corporate Services & Business Setup</h4>
-                                    <a href="Services.html?service=corporate" class="mega-link">Market Entry Strategy</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Entity Formation & Licensing</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Governance</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Corporate Secretarial</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Agreements Advisory</a>
-                                    <a href="Services.html?service=corporate" class="mega-link">Liquidation</a>
+                                    <h4>Corporate Services</h4>
+                                    <a href="Services.html?service=corporate&block=market-entry" class="mega-link">Market Entry Strategy</a>
+                                    <a href="Services.html?service=corporate&block=entity-formation" class="mega-link">Entity Formation & Licensing</a>
+                                    <a href="Services.html?service=corporate&block=governance" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=corporate&block=secretarial" class="mega-link">Corporate Secretarial</a>
+                                    <a href="Services.html?service=corporate&block=agreements" class="mega-link">Agreements Advisory</a>
+                                    <a href="Services.html?service=corporate&block=liquidation" class="mega-link">Liquidation</a>
                                 </div>
                             </div>
                             <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>Tax, Zakat & Legal Services</h4>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Planning</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Compliance</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Transaction Tax</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Corporate Governance</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Family Business & Zakat</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Due Diligence</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Indirect Tax (VAT)</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Transfer Pricing</a>
-                                    <a href="Services.html?service=tax" class="mega-link">International Taxation</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Technology</a>
-                                    <a href="Services.html?service=tax" class="mega-link">E-Invoicing</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Bookkeeping</a>
-                                    <a href="Services.html?service=tax" class="mega-link">Tax Dispute Resolution</a>
+                                    <a href="Services.html?service=tax&block=tax-planning" class="mega-link">Tax Planning</a>
+                                    <a href="Services.html?service=tax&block=tax-compliance" class="mega-link">Tax Compliance</a>
+                                    <a href="Services.html?service=tax&block=transaction-tax" class="mega-link">Transaction Tax</a>
+                                    <a href="Services.html?service=tax&block=family-business" class="mega-link">Family Business & Zakat</a>
+                                    <a href="Services.html?service=tax&block=indirect-tax" class="mega-link">Indirect Tax (VAT)</a>
+                                    <a href="Services.html?service=tax&block=tax-tech" class="mega-link">Tax Technology</a>
+                                    <a href="Services.html?service=tax&block=dispute-resolution" class="mega-link">Tax Dispute Resolution</a>
                                 </div>
-                            </div>
-                            <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>HR Consulting & Secondment</h4>
-                                    <a href="Services.html?service=hr" class="mega-link">Labor Law Compliance</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Talent Secondment</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Performance Management</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Recruitment Strategy</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Payroll Administration</a>
-                                    <a href="Services.html?service=hr" class="mega-link">Workforce Restructuring</a>
+                                    <a href="Services.html?service=hr&block=hr-policy" class="mega-link">Labor Law Compliance</a>
+                                    <a href="Services.html?service=hr&block=talent-secondment" class="mega-link">Talent Secondment</a>
+                                    <a href="Services.html?service=hr&block=perf-mgmt" class="mega-link">Performance Management</a>
+                                    <a href="Services.html?service=hr&block=recruitment" class="mega-link">Recruitment Strategy</a>
+                                    <a href="Services.html?service=hr&block=payroll" class="mega-link">Payroll Administration</a>
+                                    <a href="Services.html?service=hr&block=restructuring" class="mega-link">Workforce Restructuring</a>
                                 </div>
                             </div>
                         </div>
@@ -155,135 +163,192 @@
                 <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
                 <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 lg:gap-6">
                 <div class="lang-toggle notranslate">
                     <div id="en-btn" class="lang-option active" onclick="changeLang('en')">EN</div>
                     <div id="ar-btn" class="lang-option" onclick="changeLang('ar')">AR</div>
                 </div>
-                <a href="RFP.html" class="btn-primary group flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase tracking-widest shadow-lg">
+                <a href="RFP.html" class="btn-primary group hidden sm:flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[13px] uppercase tracking-widest shadow-lg">
                     SUBMIT RFP
                     <i class="fa-solid fa-file-signature group-hover:scale-110 transition-transform text-white text-sm"></i>
                 </a>
+                <button class="xl:hidden text-burraqNavy text-2xl p-2" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
-    <article class="pt-12 pb-32">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 mb-12 flex justify-between items-center">
-            <a href="Blogs.html" class="flex items-center gap-2 text-burraqNavy font-bold uppercase tracking-widest text-xs hover:text-burraqOrange transition-colors group">
-                <i class="fa-solid fa-arrow-left transition-transform group-hover:-translate-x-1"></i> Back to Blog
-            </a>
-            <a href="Blog2.html" class="flex items-center gap-2 text-burraqNavy font-bold uppercase tracking-widest text-xs hover:text-burraqOrange transition-colors group">
-                Next Article <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-            </a>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] hidden flex-col overflow-y-auto">
+        <div class="h-24 px-6 flex justify-between items-center border-b border-gray-100">
+            <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-10">
+            <button class="text-3xl text-burraqNavy p-2" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
-        <div class="max-w-[900px] mx-auto px-6 lg:px-0">
-            <header class="mb-12">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="bg-burraqNavy text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Human Capital</span>
-                    <span class="text-slate-400 text-sm font-semibold">Feb 15, 2026</span>
-                </div>
-                <h1 class="text-4xl lg:text-6xl font-extrabold text-burraqNavy leading-tight mb-8">ESOP for Vision 2030 Companies: 5 Proven Ways to Attract & Retain Talent in KSA</h1>
-                <div class="flex items-center gap-4 p-6 bg-softGray rounded-3xl border border-gray-100">
-                    <div class="w-14 h-14 rounded-2xl bg-burraqOrange flex items-center justify-center text-white">
-                        <i class="fa-solid fa-user-tie text-2xl"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Written By</p>
-                        <p class="text-burraqNavy font-extrabold">Burraq Advisory Team</p>
-                    </div>
-                </div>
-            </header>
-            <div class="rounded-[3rem] overflow-hidden shadow-2xl mb-16 aspect-video">
-                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200" alt="Vision 2030 Corporate Excellence" class="w-full h-full object-cover">
+        <div class="p-8 flex flex-col gap-6 font-bold text-lg text-burraqNavy uppercase tracking-widest">
+            <a href="Home.html" onclick="toggleMobileMenu()">Home</a>
+            <a href="About.html" onclick="toggleMobileMenu()">About Us</a>
+            <a href="Partners.html" onclick="toggleMobileMenu()">Partners</a>
+            <a href="Blogs.html" onclick="toggleMobileMenu()">Blog</a>
+            <a href="Services.html" onclick="toggleMobileMenu()">Services</a>
+            <a href="Careers.html" onclick="toggleMobileMenu()">Careers</a>
+            <a href="Contact.html" onclick="toggleMobileMenu()">Contact Us</a>
+            <a href="RFP.html" class="bg-burraqNavy text-white py-5 text-center rounded-2xl mt-4">Submit RFP</a>
+        </div>
+    </div>
+
+    <header class="py-24 bg-softGray">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <span class="bg-burraqNavy text-white px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-widest">Regulatory</span>
+            <h1 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy mt-8 mb-8 leading-tight">
+                Navigating Saudi Regulatory Landscapes: How SOPs Ensure SAMA Compliance
+            </h1>
+            <div class="flex items-center justify-center gap-8 text-slate-500 font-bold">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-user text-burraqOrange"></i> Burraq Partners Team</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-calendar text-burraqOrange"></i> Feb 23, 2026</div>
             </div>
-            <div class="blog-content">
-                <p class="text-xl text-slate-600 font-medium italic border-l-4 border-burraqOrange pl-6 mb-12">As Saudi Arabia accelerates toward its Vision 2030 goals, the battle for top-tier talent has moved beyond basic salaries. Employee Stock Ownership Plans (ESOPs) are becoming the definitive tool for alignment and retention.</p>
-                <p>The Kingdom’s economic transformation is fueling a "war for talent." With giga-projects and a burgeoning private sector, firms must offer more than competitive pay. ESOPs offer a unique value proposition: they turn employees into stakeholders, directly linking their personal wealth to the company’s growth and the national vision.</p>
-                <h2>Five Strategies for KSA ESOP Success</h2>
-                <h3>1. Align Vesting with National Milestones</h3>
-                <p>Aligning equity vesting schedules with Vision 2030 progress reports or major company project launches creates a powerful narrative. It positions the employee as a vital contributor to both the firm and the Kingdom's future.</p>
-                <h3>2. Radical Transparency</h3>
-                <p>In a market still adapting to equity incentives, transparency is key. Providing intuitive dashboards and regular independent valuations ensures employees understand exactly what their stake is worth and how it grows.</p>
-                <h3>3. Tiered Equity Granting</h3>
-                <p>Differentiating equity pools based on role criticality and performance ensures high-impact talent feels uniquely rewarded. This helps retain key leadership in highly competitive sectors like Tech and Finance.</p>
-                <h3>4. Proactive Regulatory Management</h3>
-                <p>Navigating Capital Market Authority (CMA) guidelines is non-negotiable. Leading firms proactively handle the Zakat and legal documentation, making the plan seamless for the employee.</p>
-                <h3>5. Foster an "Owner" Mindset</h3>
-                <p>The most successful ESOPs are backed by a culture of ownership. Involving employees in decision-making and sharing high-level wins reinforces the idea that their efforts directly impact the stock's value.</p>
-                <div class="my-16 p-10 bg-burraqNavy rounded-[2.5rem] text-white">
-                    <h4 class="text-2xl font-bold mb-4">The Strategic Advantage</h4>
-                    <p class="text-slate-300">Companies adopting ESOPs today are not just hiring employees; they are recruiting partners who will drive the resilience and innovation required for Vision 2030 success.</p>
-                </div>
+        </div>
+    </header>
+
+    <article class="py-24 bg-white">
+        <div class="max-w-[1000px] mx-auto px-6">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800" alt="SAMA Compliance" class="w-full h-[350px] lg:h-[550px] object-cover rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl mb-16">
+
+            <div class="toc-box">
+                <h4 class="text-burraqNavy text-2xl font-extrabold mb-8">Table of Contents</h4>
+                <ul class="space-y-4">
+                    <li><a href="#operational-regulatory">Why SOPs Are Essential for Operational and Regulatory Compliance</a></li>
+                    <li><a href="#controls-audit">How SOPs Strengthen Controls, Documentation, and Audit Readiness</a></li>
+                    <li><a href="#mapping-sama">Mapping SAMA Requirements to Compliance SOPs</a></li>
+                    <li><a href="#sama-metrics">Key SAMA Regulatory Metrics for Your SOPs</a></li>
+                    <li><a href="#cybersecurity-pdpl">Integrating SOPs into SAMA Cybersecurity & PDPL Requirements</a></li>
+                    <li><a href="#reporting-monitoring">Using SOPs to Streamline Regulatory Reporting & Monitoring</a></li>
+                    <li><a href="#improvement-cycle">Building a Continuous SOP Improvement Cycle for SAMA Compliance</a></li>
+                </ul>
             </div>
-            <div class="mt-32 pt-20 border-t border-gray-100 text-center">
-                <h2 class="text-3xl font-extrabold text-burraqNavy mb-12">Related <span class="text-burraqOrange">Insights</span></h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <a href="Blog2.html" class="related-card bg-white group">
-                        <div class="aspect-[16/10] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-burraqNavy group-hover:text-burraqOrange transition-colors line-clamp-2">White Land Tax Saudi Arabia: Framework Guide</h4>
-                        </div>
+
+            <div class="blog-content px-2 lg:px-0">
+                <p class="text-xl font-semibold !text-slate-700 mb-12 italic border-l-4 border-burraqOrange pl-8">
+                    SAMA compliance is a critical priority for financial institutions in Saudi Arabia, requiring strong internal processes and alignment with regulatory guidelines. Developing robust SOPs helps organizations translate regulatory requirements into consistent, actionable practices, ensuring compliance, reducing risk, and strengthening operational resilience.
+                </p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data Point</th>
+                                <th>Figure & Time Period</th>
+                                <th>Relevance to SAMA Compliance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>New SAMA Reporting Rules</td><td>27 new updates (Late 2023)</td><td>Demonstrates increasing regulatory expectations for data granularity.</td></tr>
+                            <tr><td>Saudi Capital Market Size</td><td>Top 10 Globally (2025)</td><td>Highlights the scale and global integration of the market SAMA regulates.</td></tr>
+                            <tr><td>Banking Sector Capitalization</td><td>19.3% Adequacy Ratio (2025)</td><td>Shows regulatory focus on financial resilience and risk management.</td></tr>
+                            <tr><td>Digital Payment Adoption</td><td>70% of retail payments (2023)</td><td>Underscores the need for SOPs addressing digital operational risks.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="operational-regulatory">Why SOPs Are Essential for Operational and Regulatory Compliance</h2>
+                <p>SOPs serve as the internal backbone through which regulatory expectations are maintained. By outlining step-by-step instructions for staff and systems, SOPs reduce ambiguity, ensure reliability, and strengthen operational discipline. In a sector where compliance breaches can result in substantial fines—including penalties under the Personal Data Protection Law (PDPL) that can reach up to SAR 5 million—and reputational damage, having clearly defined procedures is essential for sustainable growth.</p>
+
+                <h2 id="controls-audit">How SOPs Strengthen Controls, Documentation, and Audit Readiness</h2>
+                <p>Regulators expect institutions to demonstrate more than policy-level awareness. They look for clear evidence of active compliance execution. SOPs enhance internal control mechanisms by providing consistent methods for monitoring processes, documenting decisions, and tracking corrective actions.</p>
+
+                <h2 id="mapping-sama">Mapping SAMA Requirements to Compliance SOPs</h2>
+                <p>To align regulatory obligations with internal procedures, institutions must embed SAMA operational risk management into SOPs and follow SAMA’s Cyber Threat Intelligence Principles through a compliance roadmap (six months for basic, operational, and technical principles; twelve months for strategic principles).</p>
+
+                <h2 id="sama-metrics">Key SAMA Regulatory Metrics for Your SOPs</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Regulatory Area</th>
+                                <th>Quantitative Requirement</th>
+                                <th>Source & Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Cyber Threat Intelligence</td><td>6 and 12-month deadlines</td><td>SAMA Cyber Threat Intelligence Principles (2022).</td></tr>
+                            <tr><td>Liquidity Risk Monitoring</td><td>Monthly LCR reporting</td><td>SAMA Rulebook on Frequency of Calculation.</td></tr>
+                            <tr><td>Pillar 3 Disclosures</td><td>Max 30-day time lag</td><td>SAMA Rulebook on Timing of Disclosures.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="cybersecurity-pdpl">Integrating SOPs into SAMA Cybersecurity & PDPL Requirements</h2>
+                <p>SAMA’s Cybersecurity Framework and the Saudi Personal Data Protection Law (PDPL) set strong mandates around data security, privacy, access controls, incident response, encryption, and vendor management. Furthermore, under the PDPL, organizations are legally required to report a personal data breach to the Saudi Data & AI Authority (SDAIA) no later than 72 hours of becoming aware of the incident.</p>
+
+                <h2 id="reporting-monitoring">Using SOPs to Streamline Regulatory Reporting & Monitoring</h2>
+                <p>SAMA requires financial institutions to maintain timely, accurate, and complete regulatory reporting. SOPs eliminate ambiguity by defining who prepares reports, who reviews them, what tools are used, how data is validated, and what documentation must accompany each submission.</p>
+
+                <h2 id="improvement-cycle">Building a Continuous SOP Improvement Cycle for SAMA Compliance</h2>
+                <p>To remain aligned with evolving regulations, organizations must refresh SOPs through a structured, ongoing improvement cycle that continues to support SAMA operational risk management and strengthens preparedness for any future SAMA compliance audit. As regulatory expectations evolve, refining internal processes in line with the SAMA GRC framework ensures teams remain fully aligned and strategically positioned for long-term compliance.</p>
+
+                <p class="bg-softGray p-8 rounded-[2rem] font-bold text-burraqNavy border-l-4 border-burraqOrange mt-12">
+                    How Burraq Partners Solutions Supports Organizations in Achieving SAMA-Aligned SOP Excellence: Burraq Partners Solutions supports institutions in developing and enhancing SOPs that align with SAMA’s expectations, while Burraq Partners Financial Advisory strengthens governance, risk controls, and compliance readiness.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center py-16 border-t border-gray-100 mt-16 gap-6">
+                    <a href="Blogs.html" class="flex items-center gap-3 text-burraqNavy font-extrabold uppercase tracking-widest text-sm hover:text-burraqOrange transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Back to Blog
                     </a>
-                    <a href="Blog3.html" class="related-card bg-white group">
-                        <div class="aspect-[16/10] overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1451187530230-b237ee7026e6?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        </div>
-                        <div class="p-6">
-                            <h4 class="font-bold text-burraqNavy group-hover:text-burraqOrange transition-colors line-clamp-2">Navigating the 40% Accounting Saudization</h4>
-                        </div>
-                    </a>
-                    <a href="Blogs.html" class="related-card bg-white group flex flex-col items-center justify-center p-8 bg-softGray/50 border-dashed border-2 border-slate-200">
-                        <i class="fa-solid fa-plus text-burraqOrange text-3xl mb-4"></i>
-                        <span class="font-extrabold text-burraqNavy uppercase tracking-widest text-xs">View All Posts</span>
+                    <a href="Blog2.html" class="flex items-center gap-3 text-burraqNavy font-extrabold uppercase tracking-widest text-sm hover:text-burraqOrange transition-all">
+                        Next Post <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
     </article>
-    <section class="rfp-section py-28">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="text-center md:text-left flex-1">
-                <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
-                <p class="text-slate-500 text-xl font-medium max-w-xl">Get in touch with our experts to discuss how we can drive value for your organization.</p>
+
+    <section class="rfp-section py-28 px-4 bg-softGray">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left flex-1 px-4">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
+                <p class="text-slate-500 text-lg lg:text-xl font-medium max-w-xl text-justify">Get in touch with our experts to discuss how we can drive value for your organization.</p>
             </div>
             <div class="flex flex-col items-center md:items-start gap-6 border-l-4 border-burraqOrange pl-8">
-                <span class="text-burraqNavy text-2xl font-bold tracking-tight">Request for proposal</span>
-                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-12 py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-sm flex items-center gap-3">
+                <span class="text-burraqNavy text-xl lg:text-2xl font-bold tracking-tight">Request for proposal</span>
+                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-10 py-5 lg:px-12 lg:py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-xs lg:text-sm flex items-center gap-3">
                     Submit RFP <i class="fa-solid fa-paper-plane text-xs"></i>
                 </a>
             </div>
         </div>
     </section>
-    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+
+    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5 px-4">
+        <div class="max-w-[1400px] mx-auto">
             <div class="mb-16">
-                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left">
+                <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left px-4">
                     Empowering <span class="text-burraqOrange">Growth</span>, Unleashing Potential
                 </h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left items-start mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left items-start mb-16 px-4">
                 <div class="flex flex-col gap-8 items-center md:items-start">
                     <div class="flex flex-col items-center md:items-start gap-4">
                         <a href="Home.html">
                             <img src="BurraqLogoLight.svg" alt="Burraq Logo" class="h-16 w-auto">
                         </a>
                         <p class="text-slate-400 text-sm font-medium max-w-[280px] text-center md:text-left leading-relaxed">
-                            Burraq Partners drives growth through innovation and strategic solutions, empowering businesses to achieve success
+                            Driving success through trusted <br>
+                            partnerships, innovative solutions, <br>
+                            & unwavering values which makes <br>
+                            <strong>"Your Journey, Our Purpose"</strong>
                         </p>
                     </div>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
-                        <a href="https://www.youtube.com/@BurraqPartners" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
-                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://www.youtube.com/@BurraqPartners" target="_blank" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
                     </div>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Quick Links</h4>
-                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                    <ul class="space-y-4 text-slate-400 text-sm lg:text-base font-medium">
                         <li><a href="Home.html" class="footer-link">Home</a></li>
                         <li><a href="About.html" class="footer-link">About Us</a></li>
                         <li><a href="Partners.html" class="footer-link">Partners</a></li>
@@ -295,7 +360,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Services</h4>
-                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                    <ul class="space-y-4 text-slate-400 text-sm lg:text-base font-medium">
                         <li><a href="Services.html?service=deals" class="footer-link">Deals Advisory</a></li>
                         <li><a href="Services.html?service=business" class="footer-link">Business Advisory</a></li>
                         <li><a href="Services.html?service=tech" class="footer-link">Technology Advisory</a></li>
@@ -306,7 +371,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Contact Info</h4>
-                    <ul class="space-y-5 text-slate-400 text-base font-medium">
+                    <ul class="space-y-5 text-slate-400 text-sm lg:text-base font-medium">
                         <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
                             <i class="fa-solid fa-envelope mt-1 text-burraqOrange text-lg"></i>
                             <span>info@burraqpartners.com</span>
@@ -315,24 +380,29 @@
                             <i class="fa-solid fa-phone mt-1 text-burraqOrange text-lg"></i>
                             <span>+966 11 248 0261</span>
                         </li>
-                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
+                        <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors text-justify">
                             <i class="fa-solid fa-location-dot mt-1 text-burraqOrange text-lg"></i>
-                            <span>8074 Building, Riyadh, KSA</span>
+                            <span>Office 31 & 32, Qurtabah Square<br>
+                                  Dammam Road, Qurtabah<br>
+                                  Riyadh, Saudi Arabia 11576
+                            </span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-sm font-medium">
+            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-xs lg:text-sm font-medium">
                 <p>&copy; 2026 Burraq Partners. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <a href="https://wa.me/966553771125" target="_blank" class="whatsapp-fixed">
+
+    <a href="https://wa.me/966535287164" target="_blank" class="whatsapp-fixed">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
     <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         <i class="fa-solid fa-arrow-up text-xl"></i>
     </div>
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -349,6 +419,12 @@
                 document.getElementById('en-btn').classList.toggle('active', lang === 'en');
                 document.getElementById('ar-btn').classList.toggle('active', lang === 'ar');
             }
+        }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const isHidden = menu.style.display === 'none' || menu.style.display === '';
+            menu.style.display = isHidden ? 'flex' : 'none';
+            document.body.style.overflow = isHidden ? 'hidden' : 'auto';
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

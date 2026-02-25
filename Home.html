@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Home - Burraq Partners</title>
+    <link rel="icon" type="image/png" href="BurraqIcon.png">
+    <link rel="apple-touch-icon" href="BurraqIcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <script>
@@ -27,261 +29,63 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            color: #1a1d2e;
-            top: 0 !important;
-            position: static !important;
-        }
-
-        .goog-te-banner-frame.skiptranslate,
-        .goog-te-banner-frame,
-        #goog-gt-tt,
-        .goog-te-balloon-frame,
-        .goog-te-banner,
-        .goog-te-menu-frame,
-        iframe.goog-te-menu-frame {
-            display: none !important;
-            visibility: hidden !important;
-            height: 0 !important;
-            width: 0 !important;
-            opacity: 0 !important;
-        }
-
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; color: #1a1d2e; top: 0 !important; position: static !important; width: 100%; overflow-x: hidden; }
+        .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-banner, .goog-te-menu-frame, iframe.goog-te-menu-frame { display: none !important; visibility: hidden !important; height: 0 !important; width: 0 !important; opacity: 0 !important; }
         body { top: 0px !important; }
         .skiptranslate:not(.lang-toggle) { display: none !important; }
         #google_translate_element { display: none !important; }
-
         .nav-link { position: relative; transition: color 0.3s ease; display: inline-flex; align-items: center; padding-bottom: 4px; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 3px; bottom: 0; left: 0; background-color: #FF5722; transition: width 0.3s ease; }
         .nav-link:hover::after { width: 100%; }
         .nav-link.active-link::after { width: 100%; }
-
         .dropdown:hover .dropdown-menu { display: block; opacity: 1; visibility: visible; }
-        .dropdown-menu {
-            display: none;
-            opacity: 0;
-            visibility: hidden;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 95vw;
-            max-width: 1400px;
-            background: white;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.12);
-            border-radius: 0 0 3rem 3rem;
-            padding: 3.5rem;
-            z-index: 1000;
-            top: 100%;
-            border: 1px solid #f1f1f1;
-        }
-
-        .mega-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            align-items: start;
-        }
-
+        .dropdown-menu { display: none; opacity: 0; visibility: hidden; position: absolute; left: 50%; transform: translateX(-50%); width: auto; min-width: 1050px; background: white; box-shadow: 0 40px 100px rgba(0,0,0,0.12); border-radius: 0 0 3rem 3rem; padding: 3rem; z-index: 1000; top: 100%; border: 1px solid #f1f1f1; }
+        .mega-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; align-items: start; }
         .mega-column { display: flex; flex-direction: column; }
-        .mega-section { margin-bottom: 1.5rem; }
-
-        .mega-section h4 {
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #1a1d2e;
-            margin-bottom: 0.7rem;
-            border-left: 4px solid #FF5722;
-            padding-left: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-
-        .mega-link {
-            display: block;
-            font-size: 0.8rem;
-            color: #64748b;
-            padding: 4px 0;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            line-height: 1.3;
-        }
-
-        .mega-link:hover {
-            color: #FF5722;
-            padding-left: 6px;
-        }
-
-        .btn-primary {
-            background-color: #1a1d2e;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #FF5722;
-            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
-        }
-
-        .highlight-box {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: #ffffff;
-            border: 1px solid #f1f1f1;
-            border-radius: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            height: auto;
-            min-height: 100%;
-        }
-        .highlight-box:hover {
-            background: #FF5722 !important;
-            transform: translateY(-8px);
-            border-color: #FF5722;
-            box-shadow: 0 20px 40px rgba(255, 87, 34, 0.25);
-        }
+        .mega-section { margin-bottom: 2rem; }
+        .mega-section:last-child { margin-bottom: 0; }
+        .mega-section h4 { font-size: 0.95rem; font-weight: 800; color: #1a1d2e; margin-bottom: 0.7rem; border-left: 4px solid #FF5722; padding-left: 12px; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.2; }
+        .mega-link { display: block; font-size: 0.8rem; color: #64748b; padding: 4px 0; font-weight: 600; transition: all 0.2s ease; text-decoration: none; line-height: 1.3; }
+        .mega-link:hover { color: #FF5722; padding-left: 6px; }
+        .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
+        .highlight-box { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); background: #ffffff; border: 1px solid #f1f1f1; border-radius: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.04); height: auto; min-height: 100%; }
+        .highlight-box:hover { background: #FF5722 !important; transform: translateY(-8px); border-color: #FF5722; box-shadow: 0 20px 40px rgba(255, 87, 34, 0.25); }
         .highlight-box:hover h3, .highlight-box:hover h4, .highlight-box:hover p, .highlight-box:hover span, .highlight-box:hover i { color: white !important; }
         .highlight-box:hover .icon-bg { background-color: rgba(255,255,255,0.2) !important; }
-
-        .icon-bg {
-            width: 56px;
-            height: 56px;
-            background-color: #1a1d2e;
-            border-radius: 1rem;
-            display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; flex-shrink: 0;
-        }
+        .icon-bg { width: 56px; height: 56px; background-color: #1a1d2e; border-radius: 1rem; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; flex-shrink: 0; }
         .icon-bg i { color: #FF5722; }
-
-        #location-image { transition: opacity 0.8s ease-in-out; }
-        .fade-out { opacity: 0; }
-
         .service-card { transition: all 0.4s ease; background: white; border: 1px solid #f1f1f1; border-radius: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.04); height: auto; }
-        .service-card:hover {
-            background: #FF5722 !important;
-            border-color: #FF5722;
-            box-shadow: 0 25px 50px -12px rgba(255, 87, 34, 0.2);
-            transform: translateY(-5px);
-        }
+        .service-card:hover { background: #FF5722 !important; border-color: #FF5722; box-shadow: 0 25px 50px -12px rgba(255, 87, 34, 0.2); transform: translateY(-5px); }
         .service-card:hover h3, .service-card:hover p, .service-card:hover a, .service-card:hover li { color: white !important; }
-        .service-card:hover .icon-bg { background-color: rgba(255,255,255,0.2) !important; }
+        .service-card:hover .icon-bg { background-color: rgba(255, 255, 255, 0.2) !important; }
         .service-card:hover .icon-bg i { color: white !important; }
-
-        .board-card { transition: all 0.3s ease; border: 1px solid #e2e8f0; background: white; overflow: visible; height: auto; }
-        .board-card:hover { border-color: #FF5722; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-
-        .team-card { position: relative; overflow: hidden; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 2.5rem; }
-        .team-card:hover { transform: translateY(-10px); }
-        .team-overlay { background: linear-gradient(to top, rgba(26, 29, 46, 0.95) 0%, rgba(26, 29, 46, 0.2) 100%); }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-400px * 23)); }
-        }
-        .marquee-container { overflow: hidden; position: relative; width: 100%; background: white; padding: 60px 0; border-top: 1px solid #f1f1f1; border-bottom: 1px solid #f1f1f1; }
-        .marquee-content { display: flex; width: calc(400px * 46); animation: scroll 120s linear infinite; }
-        .marquee-content:hover { animation-play-state: paused; }
-        .client-logo-item { width: 400px; height: 220px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin: 0 25px; background: #fcfcfd; border-radius: 2rem; border: 1px solid #f1f1f1; transition: all 0.3s ease; padding: 15px; }
-        .client-logo-item:hover { border-color: #FF5722; background: white; transform: scale(1.05); }
-        .client-logo-item img { width: 95%; height: 95%; object-fit: contain; transition: transform 0.3s ease; }
-
-        .footer-link { transition: all 0.3s ease; }
-        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
-
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(26, 29, 46, 0.8);
-            backdrop-filter: blur(4px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .modal-active { display: flex !important; }
-
-        .read-more-btn { color: white; transition: color 0.3s ease; cursor: pointer; }
-        .read-more-btn:hover { color: #FF5722 !important; }
-        .read-more-advisory { color: #FF5722; border: 1px solid #FF5722; padding: 4px 12px; border-radius: 4px; transition: all 0.3s ease; cursor: pointer; }
-        .read-more-advisory:hover { background: #FF5722; color: white !important; }
-
-        .modal-content-scroll {
-            max-height: 90vh;
-            overflow-y: auto;
-            scrollbar-width: none;
-        }
-        .modal-content-scroll::-webkit-scrollbar { display: none; }
-
-        .whatsapp-fixed {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
+        .blog-card { background: white; border-radius: 2.5rem; overflow: hidden; border: 1px solid #f1f1f1; transition: all 0.4s ease; height: 100%; display: flex; flex-direction: column; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .blog-category-tag { position: absolute; top: 1.5rem; right: 1.5rem; background: #FF5722; color: white; padding: 6px 16px; border-radius: 10px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-400px * 4)); } }
+        .marquee-container { overflow: hidden; width: 100%; padding: 40px 0; }
+        .marquee-content { display: flex; width: calc(400px * 8); animation: scroll 20s linear infinite; }
+        .partner-logo-item { width: 400px; flex-shrink: 0; display: flex; justify-content: center; align-items: center; padding: 0 20px; }
+        .partner-square { width: 300px; height: 180px; background: white; border: 2px solid #f1f1f1; border-radius: 2rem; display: flex; justify-content: center; align-items: center; transition: all 0.4s ease; padding: 30px; }
+        .partner-square:hover { border-color: #FF5722; box-shadow: 0 15px 35px rgba(255, 87, 34, 0.1); transform: scale(1.05); }
+        .partner-square img { max-height: 100px; width: auto; object-fit: contain; filter: none !important; transition: all 0.4s ease; }
+        .partner-square:hover img { transform: scale(1.1); }
+        .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         .whatsapp-fixed:hover { transform: scale(1.1); }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #1a1d2e;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
         .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
-
-        .rfp-section {
-            background-color: #ffffff;
-            border-top: 1px solid #f1f1f1;
-        }
-
-        .lang-toggle {
-            display: flex;
-            align-items: center;
-            background: #f4f5f7;
-            padding: 4px;
-            border-radius: 12px;
-            gap: 6px;
-        }
-        .lang-option {
-            padding: 8px 16px;
-            border-radius: 9px;
-            font-size: 14px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
+        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
         .lang-option.active { background: #FF5722; color: white; }
+        #mobile-menu { display: none; position: fixed; inset: 0; background: white; z-index: 200; flex-direction: column; overflow-y: auto; }
+        .orange-dash-center { width: 40px; height: 3px; background-color: #FF5722; margin: 8px auto 0; border-radius: 20px; }
     </style>
 </head>
 <body class="antialiased">
     <div id="google_translate_element"></div>
-
-    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm">
-        <div class="max-w-[1600px] mx-auto px-8 lg:px-12 h-24 flex justify-between items-center">
+    <nav class="w-full z-[100] bg-white border-b border-gray-100 sticky top-0 shadow-sm transition-all duration-300">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-24 flex justify-between items-center">
             <div class="flex items-center">
                 <a href="Home.html">
                     <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-14 w-auto">
@@ -301,67 +105,64 @@
                             <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>Deals Advisory</h4>
-                                    <a href="Services.html" class="mega-link">Corporate Finance</a>
-                                    <a href="Services.html" class="mega-link">Deal Advisory</a>
-                                    <a href="Services.html" class="mega-link">Valuations, Business Modeling, & Market Research</a>
-                                    <a href="Services.html" class="mega-link">Restructuring</a>
-                                    <a href="Services.html" class="mega-link">Project Infrastructure</a>
-                                    <a href="Services.html" class="mega-link">Real Estate Advisory</a>
-                                    <a href="Services.html" class="mega-link">IPO & Capital Markets</a>
+                                    <a href="Services.html?service=deals&block=corporate-finance" class="mega-link">Corporate Finance</a>
+                                    <a href="Services.html?service=deals&block=deal-advisory" class="mega-link">Deal Advisory</a>
+                                    <a href="Services.html?service=deals&block=valuations" class="mega-link">Valuations & Market Research</a>
+                                    <a href="Services.html?service=deals&block=restructuring" class="mega-link">Restructuring</a>
+                                    <a href="Services.html?service=deals&block=project-infrastructure" class="mega-link">Project Infrastructure</a>
+                                    <a href="Services.html?service=deals&block=real-estate" class="mega-link">Real Estate Advisory</a>
+                                    <a href="Services.html?service=deals&block=ipo" class="mega-link">IPO & Capital Markets</a>
                                 </div>
                                 <div class="mega-section">
-                                    <h4>Business Advisory</h4>
-                                    <a href="Services.html" class="mega-link">Risk Advisory</a>
-                                    <a href="Services.html" class="mega-link">Internal Audit</a>
-                                    <a href="Services.html" class="mega-link">IT Risk & Assurance</a>
+                                    <h4>Technology Advisory</h4>
+                                    <a href="Services.html?service=tech&block=it-consulting" class="mega-link">IT Consulting</a>
+                                    <a href="Services.html?service=tech&block=it-risk" class="mega-link">IT Risk & Assurance</a>
+                                    <a href="Services.html?service=tech&block=enterprise-software" class="mega-link">Enterprise Software Solutions</a>
+                                    <a href="Services.html?service=tech&block=digital-transformation" class="mega-link">Digital Transformation</a>
+                                    <a href="Services.html?service=tech&block=automation" class="mega-link">Business Process Automation</a>
+                                    <a href="Services.html?service=tech&block=cybersecurity" class="mega-link">Infrastructure & Cybersecurity</a>
                                 </div>
                             </div>
                             <div class="mega-column">
                                 <div class="mega-section">
-                                    <h4>Technology Advisory</h4>
-                                    <a href="Services.html" class="mega-link">IT Consulting</a>
-                                    <a href="Services.html" class="mega-link">Enterprise Software Solutions</a>
-                                    <a href="Services.html" class="mega-link">Digital Transformation</a>
-                                    <a href="Services.html" class="mega-link">Business Process Automation</a>
-                                    <a href="Services.html" class="mega-link">IT Infrastructure & Cybersecurity</a>
+                                    <h4>Business Advisory</h4>
+                                    <a href="Services.html?service=business&block=risk-advisory" class="mega-link">Risk Advisory</a>
+                                    <a href="Services.html?service=business&block=internal-audit" class="mega-link">Internal Audit</a>
+                                    <a href="Services.html?service=business&block=policy-procedure" class="mega-link">Policy & Procedure</a>
+                                    <a href="Services.html?service=business&block=sop" class="mega-link">Standard Operating Procedure</a>
+                                    <a href="Services.html?service=business&block=outsource-staff" class="mega-link">Outsource Staff</a>
+                                    <a href="Services.html?service=business&block=ifrs" class="mega-link">IFRS Standards</a>
+                                    <a href="Services.html?service=business&block=actuarial" class="mega-link">Actuarial Valuation</a>
                                 </div>
                                 <div class="mega-section">
-                                    <h4>Corporate Services & Business Setup</h4>
-                                    <a href="Services.html" class="mega-link">Market Entry Strategy</a>
-                                    <a href="Services.html" class="mega-link">Entity Formation & Licensing</a>
-                                    <a href="Services.html" class="mega-link">Corporate Governance</a>
-                                    <a href="Services.html" class="mega-link">Corporate Secretarial</a>
-                                    <a href="Services.html" class="mega-link">Agreements Advisory</a>
-                                    <a href="Services.html" class="mega-link">Liquidation</a>
+                                    <h4>Corporate Services</h4>
+                                    <a href="Services.html?service=corporate&block=market-entry" class="mega-link">Market Entry Strategy</a>
+                                    <a href="Services.html?service=corporate&block=entity-formation" class="mega-link">Entity Formation & Licensing</a>
+                                    <a href="Services.html?service=corporate&block=governance" class="mega-link">Corporate Governance</a>
+                                    <a href="Services.html?service=corporate&block=secretarial" class="mega-link">Corporate Secretarial</a>
+                                    <a href="Services.html?service=corporate&block=agreements" class="mega-link">Agreements Advisory</a>
+                                    <a href="Services.html?service=corporate&block=liquidation" class="mega-link">Liquidation</a>
                                 </div>
                             </div>
                             <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>Tax, Zakat & Legal Services</h4>
-                                    <a href="Services.html" class="mega-link">Tax Planning</a>
-                                    <a href="Services.html" class="mega-link">Tax Compliance</a>
-                                    <a href="Services.html" class="mega-link">Transaction Tax</a>
-                                    <a href="Services.html" class="mega-link">Corporate Governance</a>
-                                    <a href="Services.html" class="mega-link">Family Business & Zakat</a>
-                                    <a href="Services.html" class="mega-link">Tax Due Diligence</a>
-                                    <a href="Services.html" class="mega-link">Indirect Tax (VAT)</a>
-                                    <a href="Services.html" class="mega-link">Transfer Pricing</a>
-                                    <a href="Services.html" class="mega-link">International Taxation</a>
-                                    <a href="Services.html" class="mega-link">Tax Technology</a>
-                                    <a href="Services.html" class="mega-link">E-Invoicing</a>
-                                    <a href="Services.html" class="mega-link">Bookkeeping</a>
-                                    <a href="Services.html" class="mega-link">Tax Dispute Resolution</a>
+                                    <a href="Services.html?service=tax&block=tax-planning" class="mega-link">Tax Planning</a>
+                                    <a href="Services.html?service=tax&block=tax-compliance" class="mega-link">Tax Compliance</a>
+                                    <a href="Services.html?service=tax&block=transaction-tax" class="mega-link">Transaction Tax</a>
+                                    <a href="Services.html?service=tax&block=family-business" class="mega-link">Family Business & Zakat</a>
+                                    <a href="Services.html?service=tax&block=indirect-tax" class="mega-link">Indirect Tax (VAT)</a>
+                                    <a href="Services.html?service=tax&block=tax-tech" class="mega-link">Tax Technology</a>
+                                    <a href="Services.html?service=tax&block=dispute-resolution" class="mega-link">Tax Dispute Resolution</a>
                                 </div>
-                            </div>
-                            <div class="mega-column">
                                 <div class="mega-section">
                                     <h4>HR Consulting & Secondment</h4>
-                                    <a href="Services.html" class="mega-link">Labor Law Compliance</a>
-                                    <a href="Services.html" class="mega-link">Talent Secondment</a>
-                                    <a href="Services.html" class="mega-link">Performance Management</a>
-                                    <a href="Services.html" class="mega-link">Recruitment Strategy</a>
-                                    <a href="Services.html" class="mega-link">Payroll Administration</a>
-                                    <a href="Services.html" class="mega-link">Workforce Restructuring</a>
+                                    <a href="Services.html?service=hr&block=hr-policy" class="mega-link">Labor Law Compliance</a>
+                                    <a href="Services.html?service=hr&block=talent-secondment" class="mega-link">Talent Secondment</a>
+                                    <a href="Services.html?service=hr&block=perf-mgmt" class="mega-link">Performance Management</a>
+                                    <a href="Services.html?service=hr&block=recruitment" class="mega-link">Recruitment Strategy</a>
+                                    <a href="Services.html?service=hr&block=payroll" class="mega-link">Payroll Administration</a>
+                                    <a href="Services.html?service=hr&block=restructuring" class="mega-link">Workforce Restructuring</a>
                                 </div>
                             </div>
                         </div>
@@ -370,475 +171,311 @@
                 <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
                 <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
             </div>
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 lg:gap-6">
                 <div class="lang-toggle notranslate">
                     <div id="en-btn" class="lang-option active" onclick="changeLang('en')">EN</div>
                     <div id="ar-btn" class="lang-option" onclick="changeLang('ar')">AR</div>
                 </div>
-                <a href="RFP.html" class="btn-primary group flex items-center gap-3 px-8 py-5 rounded-2xl font-bold text-[14px] uppercase tracking-widest shadow-lg">
+                <a href="RFP.html" class="btn-primary group hidden sm:flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-[13px] uppercase tracking-widest shadow-lg">
                     SUBMIT RFP
                     <i class="fa-solid fa-file-signature group-hover:scale-110 transition-transform text-white text-sm"></i>
                 </a>
+                <button class="xl:hidden text-burraqNavy text-2xl p-2" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative h-[547px] flex flex-col justify-center items-center overflow-hidden">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[200] hidden flex-col overflow-y-auto">
+        <div class="h-24 px-6 flex justify-between items-center border-b border-gray-100">
+            <img src="BurraqLogoDark.svg" alt="Burraq Partners" class="h-10">
+            <button class="text-3xl text-burraqNavy p-2" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="p-8 flex flex-col gap-6 font-bold text-lg text-burraqNavy uppercase tracking-widest">
+            <a href="Home.html" onclick="toggleMobileMenu()">Home</a>
+            <a href="About.html" onclick="toggleMobileMenu()">About Us</a>
+            <a href="Partners.html" onclick="toggleMobileMenu()">Partners</a>
+            <a href="Blogs.html" onclick="toggleMobileMenu()">Blog</a>
+            <a href="Services.html" onclick="toggleMobileMenu()">Services</a>
+            <a href="Careers.html" onclick="toggleMobileMenu()">Careers</a>
+            <a href="Contact.html" onclick="toggleMobileMenu()">Contact Us</a>
+            <a href="RFP.html" class="bg-burraqNavy text-white py-5 text-center rounded-2xl mt-4">Submit RFP</a>
+        </div>
+    </div>
+
+    <section id="hero" class="relative h-[450px] flex flex-col justify-center items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1600" alt="Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-burraqNavy/80"></div>
         </div>
         <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 w-full text-center">
             <div class="max-w-5xl mx-auto">
-                <h1 class="text-5xl lg:text-7xl font-[800] text-white mb-6 leading-tight tracking-tight">
-                    Redefining <span class="text-burraqOrange">Partnerships</span> <br/>
-                    for Progress
+                <h1 class="text-4xl lg:text-7xl font-[800] text-white mb-6 leading-tight tracking-tight px-4">
+                    Redefining <span class="text-burraqOrange">Partnerships</span>
                 </h1>
                 <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-8 rounded-full"></div>
-                <p class="text-xl text-slate-200 max-w-3xl mx-auto font-medium leading-relaxed">
-                    Burraq Partners drives innovation and collaboration to empower success. Experience tailored solutions and impactful progress with a partner dedicated to your growth journey.
+                <p class="text-lg lg:text-xl text-slate-200 max-w-3xl mx-auto font-medium leading-relaxed px-6">
+                    Empowering Growth Through Collaboration innovation, And Integrity Together, We Shape Success.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white relative z-20 -mt-24">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="grid md:grid-cols-3 gap-8 text-left">
-                <div class="highlight-box p-10 group">
-                    <div class="flex items-center gap-5 mb-6">
-                        <div class="icon-bg group-hover:bg-white/20 transition-all">
-                            <i class="fa-solid fa-lightbulb text-2xl group-hover:text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-burraqNavy transition-colors leading-tight">Strategic Synergy</h4>
-                    </div>
-                    <p class="text-slate-600 font-medium leading-relaxed transition-colors text-justify">Fostering high-impact alliances to drive market leadership through our integrated suite of premium advisory services.</p>
-                </div>
-                <div class="highlight-box p-10 group">
-                    <div class="flex items-center gap-5 mb-6">
-                        <div class="icon-bg group-hover:bg-white/20 transition-all">
-                            <i class="fa-solid fa-chart-line text-2xl group-hover:text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-burraqNavy transition-colors leading-tight">Adaptive Innovation</h4>
-                    </div>
-                    <p class="text-slate-600 font-medium leading-relaxed transition-colors text-justify">Deploying advanced methodologies and tailored strategies to navigate the complexities of a rapidly evolving digital economy.</p>
-                </div>
-                <div class="highlight-box p-10 group">
-                    <div class="flex items-center gap-5 mb-6">
-                        <div class="icon-bg group-hover:bg-white/20 transition-all">
-                            <i class="fa-solid fa-heart text-2xl group-hover:text-white"></i>
-                        </div>
-                        <h4 class="text-xl font-bold text-burraqNavy transition-colors leading-tight">Institutional Impact</h4>
-                    </div>
-                    <p class="text-slate-600 font-medium leading-relaxed transition-colors text-justify">Connecting global vision with localized expertise to build enduring value for regional enterprises and international stakeholders.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="about" class="py-32 bg-offWhite border-y border-gray-100">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3 leading-tight">About <span class="text-burraqOrange">Burraq</span> Partners</h2>
-            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-12 rounded-full"></div>
-            <div class="grid lg:grid-cols-2 gap-16 items-start text-left">
-                <div class="sticky top-24">
-                    <div class="rounded-[3rem] overflow-hidden shadow-2xl relative group bg-slate-200">
-                        <img id="location-image" src="Riyadh.jpeg" alt="Office Location" class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur p-6 rounded-2xl shadow-lg border-l-4 border-burraqOrange transition-all duration-500">
-                            <p id="location-label" class="text-burraqNavy font-bold text-sm uppercase tracking-widest mb-1">Headquarters</p>
-                            <p id="location-city" class="text-slate-600 font-medium">Riyadh, Saudi Arabia</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="pt-4 text-left">
-                    <div class="space-y-8">
-                        <p class="text-xl text-slate-700 leading-relaxed font-medium text-justify">Burraq Partners is a premier consulting firm dedicated to driving organizational growth through innovation and collaborative excellence. With a robust presence across Bahrain, the UK, and Canada, we leverage our Riyadh headquarters to provide a global bridge for enterprise development.</p>
-                        <div class="bg-burraqNavy text-white p-10 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-                            <div class="relative z-10">
-                                <i class="fa-solid fa-quote-left text-burraqOrange text-3xl mb-4 opacity-50"></i>
-                                <p class="text-lg leading-relaxed italic opacity-90 mb-6 text-justify">Guided by principles of integrity and operational rigor, our specialists deliver integrated solutions across taxation, technology, and strategic advisory. We are committed to fostering partnerships that transform challenges into competitive advantages.</p>
-                                <div class="w-12 h-1 bg-burraqOrange rounded-full"></div>
-                            </div>
-                            <i class="fa-solid fa-earth-africa absolute -bottom-8 -right-8 text-white/5 text-[10rem]"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="purpose-values" class="py-32 bg-white text-center">
         <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Our <span class="text-burraqOrange">Purpose</span> & Values</h2>
-            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-12 rounded-full"></div>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">About <span class="text-burraqOrange">Burraq</span> Partners</h2>
+                <div class="w-20 h-1.5 bg-burraqOrange mx-auto rounded-full"></div>
+            </div>
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="text-left space-y-8">
-                    <div class="highlight-box p-10 group cursor-default">
-                        <p class="text-xl text-slate-700 leading-relaxed font-medium text-justify transition-colors group-hover:text-white">
-                            At Burraq Partners, we empower growth through innovation and collaboration. Guided by integrity, respect, and sustainability, we build impactful partnerships that drive progress, enabling businesses and communities to thrive.
+                <div class="rounded-[2.5rem] overflow-hidden shadow-2xl relative group">
+                    <img src="Riyadh.jpeg" alt="Headquarters" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur p-6 rounded-2xl shadow-lg border-l-4 border-burraqOrange">
+                        <p class="text-burraqOrange font-bold text-sm uppercase tracking-widest mb-1">Headquarters</p>
+                        <p class="text-burraqNavy font-bold text-xl">Riyadh, Saudi Arabia</p>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <p class="text-xl text-slate-700 leading-relaxed font-medium text-justify">
+                        Burraq Partners is a premier consulting firm dedicated to driving organizational growth through innovation and collaborative excellence. We leverage our Riyadh headquarters to provide a global bridge for enterprise development across Bahrain, the UK, and Canada.
+                    </p>
+                    <div class="bg-burraqNavy text-white p-10 rounded-[2.5rem] shadow-2xl">
+                        <i class="fa-solid fa-quote-left text-burraqOrange text-3xl mb-4 opacity-50"></i>
+                        <p class="text-lg leading-relaxed italic opacity-90 mb-6 text-justify">
+                            Guided by principles of integrity and operational rigor, our specialists deliver integrated solutions across taxation, technology, and strategic advisory.
                         </p>
-                    </div>
-                    <div class="space-y-6">
-                        <div class="highlight-box p-10 group cursor-default">
-                            <div class="flex gap-6">
-                                <div class="icon-bg group-hover:bg-white/20">
-                                    <i class="fa-solid fa-seedling text-2xl group-hover:text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-2xl font-bold text-burraqNavy mb-2 transition-colors group-hover:text-white">Purpose - Together We Grow</h4>
-                                    <p class="text-slate-600 font-medium leading-relaxed text-justify transition-colors group-hover:text-white">
-                                        Burraq Partners is dedicated to empowering businesses by fostering innovation, collaboration, and shared success, enabling clients to unlock their full potential while driving progress for a better future.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="highlight-box p-10 group cursor-default">
-                            <div class="flex gap-6">
-                                <div class="icon-bg group-hover:bg-white/20">
-                                    <i class="fa-solid fa-shield-halved text-2xl group-hover:text-white"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-2xl font-bold text-burraqNavy mb-2 transition-colors group-hover:text-white">Value - Building on Integrity</h4>
-                                    <p class="text-slate-600 font-medium leading-relaxed text-justify transition-colors group-hover:text-white">
-                                        Guided by principles of integrity, respect, diversity, and sustainability, our values are the foundation of our culture, shaping partnerships that prioritize trust, impact, and excellence in every endeavor.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="rounded-[3rem] overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000" alt="Collaboration" class="w-full h-[600px] object-cover">
+                        <a href="About.html" class="inline-flex items-center gap-2 text-burraqOrange font-extrabold uppercase tracking-widest text-sm hover:underline">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-32 bg-offWhite">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center mb-16">
-            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Our <span class="text-burraqOrange">Services</span></h2>
-            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-4 rounded-full"></div>
-        </div>
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="service-card p-10 flex flex-col items-start group">
-                <div class="icon-bg mb-6 group-hover:bg-burraqOrange transition-colors">
-                    <i class="fa-solid fa-handshake-angle text-2xl group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-burraqNavy mb-3 transition-colors">Deals Advisory</h3>
-                <ul class="text-slate-500 text-sm mb-6 space-y-2 list-disc list-inside font-medium transition-colors">
-                    <li>Strategic Due Diligence</li>
-                    <li>Mergers & Acquisitions</li>
-                    <li>Enterprise Valuations</li>
-                    <li>Operational Restructuring</li>
-                </ul>
-                <a href="Services.html" class="mt-auto flex items-center text-burraqOrange text-sm font-bold group/link transition-colors">Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover/link:translate-x-1.5"></i></a>
-            </div>
-            <div class="service-card p-10 flex flex-col items-start group">
-                <div class="icon-bg mb-6 group-hover:bg-burraqOrange transition-colors">
-                    <i class="fa-solid fa-chart-pie text-2xl group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-burraqNavy mb-3 transition-colors">Business Advisory</h3>
-                <ul class="text-slate-500 text-sm mb-6 space-y-2 list-disc list-inside font-medium transition-colors">
-                    <li>Enterprise Risk Management</li>
-                    <li>Internal Audit & Assurance</li>
-                    <li>Governance & GRC</li>
-                    <li>Operational Optimization</li>
-                </ul>
-                <a href="Services.html" class="mt-auto flex items-center text-burraqOrange text-sm font-bold group/link transition-colors">Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover/link:translate-x-1.5"></i></a>
-            </div>
-            <div class="service-card p-10 flex flex-col items-start group">
-                <div class="icon-bg mb-6 group-hover:bg-burraqOrange transition-colors">
-                    <i class="fa-solid fa-laptop-code text-2xl group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-burraqNavy mb-3 transition-colors">Technology Advisory</h3>
-                <ul class="text-slate-500 text-sm mb-6 space-y-2 list-disc list-inside font-medium transition-colors">
-                    <li>Digital Transformation</li>
-                    <li>Cybersecurity Infrastructure</li>
-                    <li>ERP & Systems Integration</li>
-                    <li>AI & Advanced Analytics</li>
-                </ul>
-                <a href="Services.html" class="mt-auto flex items-center text-burraqOrange text-sm font-bold group/link transition-colors">Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover/link:translate-x-1.5"></i></a>
-            </div>
-            <div class="service-card p-10 flex flex-col items-start group">
-                <div class="icon-bg mb-6 group-hover:bg-burraqOrange transition-colors">
-                    <i class="fa-solid fa-calculator text-2xl group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-burraqNavy mb-3 transition-colors">Tax Advisory</h3>
-                <ul class="text-slate-500 text-sm mb-6 space-y-2 list-disc list-inside font-medium transition-colors">
-                    <li>Corporate Tax & Zakat</li>
-                    <li>Indirect Tax Strategy</li>
-                    <li>Transfer Pricing Compliance</li>
-                    <li>International Tax Planning</li>
-                </ul>
-                <a href="Services.html" class="mt-auto flex items-center text-burraqOrange text-sm font-bold group/link transition-colors">Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover/link:translate-x-1.5"></i></a>
-            </div>
-            <div class="service-card p-10 flex flex-col items-start group">
-                <div class="icon-bg mb-6 group-hover:bg-burraqOrange transition-colors">
-                    <i class="fa-solid fa-building-shield text-2xl group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-burraqNavy mb-3 transition-colors">Corporate Services</h3>
-                <ul class="text-slate-500 text-sm mb-6 space-y-2 list-disc list-inside font-medium transition-colors">
-                    <li>Entity Establishment</li>
-                    <li>Regulatory PRO Services</li>
-                    <li>Corporate Governance</li>
-                    <li>Licensing & Compliance</li>
-                </ul>
-                <a href="Services.html" class="mt-auto flex items-center text-burraqOrange text-sm font-bold group/link transition-colors">Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover/link:translate-x-1.5"></i></a>
-            </div>
-            <div class="service-card p-10 flex flex-col items-start group">
-                <div class="icon-bg mb-6 group-hover:bg-burraqOrange transition-colors">
-                    <i class="fa-solid fa-users-gear text-2xl group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-burraqNavy mb-3 transition-colors">HR Consulting</h3>
-                <ul class="text-slate-500 text-sm mb-6 space-y-2 list-disc list-inside font-medium transition-colors">
-                    <li>Human Capital Strategy</li>
-                    <li>Organizational Architecture</li>
-                    <li>Workforce Policy Design</li>
-                    <li>Leadership Development</li>
-                </ul>
-                <a href="Services.html" class="mt-auto flex items-center text-burraqOrange text-sm font-bold group/link transition-colors">Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover/link:translate-x-1.5"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="advisory-board" class="py-24 bg-softGray">
+    <section id="partners" class="py-24 bg-white">
         <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
-            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Our <span class="text-burraqOrange">Advisory</span> Board</h2>
+            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Global <span class="text-burraqOrange">Partners</span></h2>
             <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-12 rounded-full"></div>
-            <div class="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-                <div class="board-card p-6 flex items-center gap-6 rounded-[2.5rem] shadow-sm">
-                    <div class="w-40 h-40 flex-shrink-0 rounded-[1.5rem] overflow-hidden">
-                        <img src="Advisory1.png" alt="Khalid" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 flex flex-col items-start text-left">
-                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-2">Khalid A Al Bassam</h3>
-                        <p class="text-slate-500 text-base leading-relaxed mb-6">Chairman of Al Bassam Investment Company, bringing 37 years of specialized experience in central banking.</p>
-                        <button type="button" onclick="openModal('khalid')" class="read-more-advisory text-sm font-bold uppercase tracking-wider flex items-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[12px]"></i></button>
-                    </div>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner1.jpeg" alt="Partner 1"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner2.jpeg" alt="Partner 2"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner3.jpeg" alt="Partner 3"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner4.jpeg" alt="Partner 4"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner1.jpeg" alt="Partner 1"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner2.jpeg" alt="Partner 2"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner3.jpeg" alt="Partner 3"></div></div>
+                    <div class="partner-logo-item"><div class="partner-square"><img src="Partner4.jpeg" alt="Partner 4"></div></div>
                 </div>
-                <div class="board-card p-6 flex items-center gap-6 rounded-[2.5rem] shadow-sm">
-                    <div class="w-40 h-40 flex-shrink-0 rounded-[1.5rem] overflow-hidden">
-                        <img src="Advisory2.png" alt="Dean" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 flex flex-col items-start text-left">
-                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-2">Dean Rowan</h3>
-                        <p class="text-slate-500 text-base leading-relaxed mb-6">An internationally recognized consultant with 27 years of expertise in corporate governance.</p>
-                        <button type="button" onclick="openModal('dean')" class="read-more-advisory text-sm font-bold uppercase tracking-wider flex items-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[12px]"></i></button>
-                    </div>
-                </div>
-                <div class="board-card p-6 flex items-center gap-6 rounded-[2.5rem] shadow-sm">
-                    <div class="w-40 h-40 flex-shrink-0 rounded-[1.5rem] overflow-hidden">
-                        <img src="Advisory3.png" alt="Asim" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 flex flex-col items-start text-left">
-                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-2">Asim Khan</h3>
-                        <p class="text-slate-500 text-base leading-relaxed mb-6">A global leader in Islamic finance and investment banking with 30+ years of financial leadership.</p>
-                        <button type="button" onclick="openModal('asim')" class="read-more-advisory text-sm font-bold uppercase tracking-wider flex items-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[12px]"></i></button>
-                    </div>
-                </div>
-                <div class="board-card p-6 flex items-center gap-6 rounded-[2.5rem] shadow-sm">
-                    <div class="w-40 h-40 flex-shrink-0 rounded-[1.5rem] overflow-hidden">
-                        <img src="Advisory4.png" alt="Kaiser" class="w-full h-full object-cover">
-                    </div>
-                    <div class="flex-1 flex flex-col items-start text-left">
-                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-2">Dr. Kaiser H. Naseem</h3>
-                        <p class="text-slate-500 text-base leading-relaxed mb-6">Distinguished expert in development banking and fintech with 40 years of experience.</p>
-                        <button type="button" onclick="openModal('kaiser')" class="read-more-advisory text-sm font-bold uppercase tracking-wider flex items-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[12px]"></i></button>
-                    </div>
-                </div>
+            </div>
+            <div class="mt-12">
+                <a href="Partners.html" class="btn-primary px-10 py-4 rounded-2xl font-bold uppercase tracking-widest inline-flex items-center gap-3">View All Partners <i class="fa-solid fa-globe"></i></a>
             </div>
         </div>
     </section>
 
-    <div id="bioModal" class="modal-overlay" onclick="closeModal()">
-        <div class="bg-white max-w-4xl w-full mx-4 rounded-[2.5rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row modal-content-scroll" onclick="event.stopPropagation()">
-            <button type="button" onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-burraqOrange transition-colors z-50">
-                <i class="fa-solid fa-xmark text-3xl"></i>
-            </button>
-            <div class="w-full md:w-1/3 p-10 bg-softGray flex justify-center items-start">
-                <div class="w-full aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
-                    <img id="modalImg" src="" alt="Profile" class="w-full h-full object-cover">
+    <section id="blog" class="py-32 bg-offWhite px-4">
+        <div class="max-w-[1400px] mx-auto text-center">
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-3">Latest <span class="text-burraqOrange">Blogs</span></h2>
+            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-16 rounded-full"></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
+                <div class="blog-card group">
+                    <div class="relative aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800" alt="SAMA Compliance" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <span class="blog-category-tag">Regulatory</span>
+                    </div>
+                    <div class="p-10 flex flex-col flex-1">
+                        <div class="flex items-center gap-3 mb-4 text-slate-400 text-sm font-bold">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>FEB 23, 2026</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-6 leading-tight group-hover:text-burraqOrange transition-colors">Navigating Saudi Regulatory Landscapes: How SOPs Ensure with SAMA Compliance</h3>
+                        <a href="Blog1.html" class="mt-auto flex items-center gap-2 text-burraqOrange font-bold text-sm uppercase tracking-widest hover:text-burraqNavy transition-colors">
+                            Read More <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card group">
+                    <div class="relative aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" alt="Modern Workspace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <span class="blog-category-tag">Risk Management</span>
+                    </div>
+                    <div class="p-10 flex flex-col flex-1">
+                        <div class="flex items-center gap-3 mb-4 text-slate-400 text-sm font-bold">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>FEB 15, 2026</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-6 leading-tight group-hover:text-burraqOrange transition-colors">Linking SOPs with Risk Management in Saudi Enterprises: A Framework for 2026</h3>
+                        <a href="Blog2.html" class="mt-auto flex items-center gap-2 text-burraqOrange font-bold text-sm uppercase tracking-widest hover:text-burraqNavy transition-colors">
+                            Read More <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-card group">
+                    <div class="relative aspect-[16/10] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="ESG Principles" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <span class="blog-category-tag">ESG</span>
+                    </div>
+                    <div class="p-10 flex flex-col flex-1">
+                        <div class="flex items-center gap-3 mb-4 text-slate-400 text-sm font-bold">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>JAN 28, 2026</span>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-burraqNavy mb-6 leading-tight group-hover:text-burraqOrange transition-colors">Advanced ESG Risk Management Solutions for Leaders in 2025</h3>
+                        <a href="Blog3.html" class="mt-auto flex items-center gap-2 text-burraqOrange font-bold text-sm uppercase tracking-widest hover:text-burraqNavy transition-colors">
+                            Read More <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="w-full md:w-2/3 p-12 flex flex-col justify-center">
-                <h3 id="modalName" class="text-3xl font-extrabold text-burraqNavy mb-2 text-center md:text-left"></h3>
-                <p id="modalTitle" class="text-burraqOrange font-bold text-sm uppercase tracking-widest mb-6 text-center md:text-left"></p>
-                <div id="modalBio" class="text-slate-600 leading-relaxed space-y-4 text-base text-center md:text-justify"></div>
+            <div class="mt-16">
+                <a href="Blogs.html" class="btn-primary px-10 py-4 rounded-2xl font-bold uppercase tracking-widest inline-flex items-center gap-3">View All Blogs <i class="fa-solid fa-newspaper"></i></a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <section id="team" class="py-24 bg-white">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center mb-16">
-            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Meet Our <span class="text-burraqOrange">Team</span></h2>
-            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-4 rounded-full"></div>
-        </div>
+    <section id="services" class="py-32 bg-white text-center">
         <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Rehan Zulqadar</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">Chief Executive Officer</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team1.png" alt="Rehan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('rehan')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-3 leading-tight">Our <span class="text-burraqOrange">Services</span></h2>
+            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-16 rounded-full"></div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                <div class="service-card p-10 lg:p-12 text-left group flex flex-col h-full">
+                    <div class="icon-bg mb-8 group-hover:bg-white/20"><i class="fa-solid fa-handshake-angle text-2xl group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-extrabold text-burraqNavy mb-5 group-hover:text-white transition-colors">Deals Advisory</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed mb-10 flex-grow group-hover:text-white transition-colors text-justify">Strategizing growth through smart acquisitions and capital raising.</p>
+                    <a href="Services.html?service=deals" class="flex items-center gap-3 text-burraqOrange font-bold uppercase tracking-widest text-[11px] group-hover:text-white transition-colors">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Nauman Khalid</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">Finance Transformation</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team2.png" alt="Nauman" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('nauman')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
+                <div class="service-card p-10 lg:p-12 text-left group flex flex-col h-full">
+                    <div class="icon-bg mb-8 group-hover:bg-white/20"><i class="fa-solid fa-chart-pie text-2xl group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-extrabold text-burraqNavy mb-5 group-hover:text-white transition-colors">Business Advisory</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed mb-10 flex-grow group-hover:text-white transition-colors text-justify">Optimizing operations and risk management for value creation.</p>
+                    <a href="Services.html?service=business" class="flex items-center gap-3 text-burraqOrange font-bold uppercase tracking-widest text-[11px] group-hover:text-white transition-colors">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Abdul Sattar</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">Direct & Indirect Taxation</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team3.png" alt="AbdulSattar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('sattar')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
+                <div class="service-card p-10 lg:p-12 text-left group flex flex-col h-full">
+                    <div class="icon-bg mb-8 group-hover:bg-white/20"><i class="fa-solid fa-laptop-code text-2xl group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-extrabold text-burraqNavy mb-5 group-hover:text-white transition-colors">Technology Advisory</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed mb-10 flex-grow group-hover:text-white transition-colors text-justify">Guiding your digital transformation and cybersecurity infrastructure.</p>
+                    <a href="Services.html?service=tech" class="flex items-center gap-3 text-burraqOrange font-bold uppercase tracking-widest text-[11px] group-hover:text-white transition-colors">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Adnan Ahmed</h3>
-                        <p class="text-burraqNavy font-semibold text-[10px] leading-tight uppercase tracking-wider">Business Advisor</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team4.png" alt="Adnan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('adnan')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
+                <div class="service-card p-10 lg:p-12 text-left group flex flex-col h-full">
+                    <div class="icon-bg mb-8 group-hover:bg-white/20"><i class="fa-solid fa-calculator text-2xl group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-extrabold text-burraqNavy mb-5 group-hover:text-white transition-colors">Tax Advisory</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed mb-10 flex-grow group-hover:text-white transition-colors text-justify">Maximizing financial efficiency and ensuring regulatory compliance.</p>
+                    <a href="Services.html?service=tax" class="flex items-center gap-3 text-burraqOrange font-bold uppercase tracking-widest text-[11px] group-hover:text-white transition-colors">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1400px] mx-auto w-full">
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Saima Laeeq</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">Financial Crime & AML</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team5.png" alt="Saima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('saima')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
+                <div class="service-card p-10 lg:p-12 text-left group flex flex-col h-full">
+                    <div class="icon-bg mb-8 group-hover:bg-white/20"><i class="fa-solid fa-building-shield text-2xl group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-extrabold text-burraqNavy mb-5 group-hover:text-white transition-colors">Corporate Services</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed mb-10 flex-grow group-hover:text-white transition-colors text-justify">Comprehensive support for market entry, formation, and governance.</p>
+                    <a href="Services.html?service=corporate" class="flex items-center gap-3 text-burraqOrange font-bold uppercase tracking-widest text-[11px] group-hover:text-white transition-colors">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Javed Ghafoor</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">GRC Specialist</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team6.png" alt="Javed" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('javed')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Muhammad Imran</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">Technology Lead</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team7.png" alt="Imran" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('imran')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card h-[450px] group shadow-xl bg-burraqNavy">
-                    <div class="p-6 pb-2 text-center bg-white">
-                        <h3 class="text-burraqOrange text-xl font-extrabold">Ammad Zafar</h3>
-                        <p class="text-burraqNavy font-semibold text-xs uppercase tracking-wider">Director, Business Growth</p>
-                    </div>
-                    <div class="relative flex-1 overflow-hidden h-[350px]">
-                        <img src="Team8.jpg" alt="Ammad" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                        <div class="team-overlay absolute inset-0 flex flex-col justify-end p-6 text-center">
-                            <button type="button" onclick="openModal('ammad')" class="read-more-btn font-bold text-xs flex items-center justify-center gap-2">View Profile <i class="fa-solid fa-arrow-right text-[10px]"></i></button>
-                        </div>
-                    </div>
+                <div class="service-card p-10 lg:p-12 text-left group flex flex-col h-full">
+                    <div class="icon-bg mb-8 group-hover:bg-white/20"><i class="fa-solid fa-users-gear text-2xl group-hover:text-white"></i></div>
+                    <h3 class="text-2xl font-extrabold text-burraqNavy mb-5 group-hover:text-white transition-colors">HR Consulting</h3>
+                    <p class="text-slate-500 font-medium leading-relaxed mb-10 flex-grow group-hover:text-white transition-colors text-justify">Strategic workforce solutions, from recruitment to performance audit.</p>
+                    <a href="Services.html?service=hr" class="flex items-center gap-3 text-burraqOrange font-bold uppercase tracking-widest text-[11px] group-hover:text-white transition-colors">Read More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="clients" class="py-32 bg-softGray overflow-hidden">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center mb-12">
-            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-3">Clients Served / Team <span class="text-burraqOrange">Experience</span></h2>
-            <div class="w-20 h-1.5 bg-burraqOrange mx-auto mb-4 rounded-full"></div>
-        </div>
-        <div class="marquee-container">
-            <div class="marquee-content" id="marquee-content"></div>
+    <section id="careers" class="py-32 bg-offWhite">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-2">Join Our <span class="text-burraqOrange">Team</span></h2>
+            <div class="orange-dash-center mb-16"></div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-1 lg:order-2 rounded-[3rem] overflow-hidden shadow-2xl relative group h-[350px]">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800" alt="Career Growth" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="order-2 lg:order-1 text-left">
+                    <p class="text-xl text-slate-700 mb-10 leading-relaxed text-justify font-medium">
+                        At Burraq Partners, we are building a legacy of excellence. We are looking for passionate innovators, strategic thinkers, and professionals who want to redefine the future of consulting. Our environment fosters creativity, continuous development, and a strong sense of purpose. Join us as we scale new heights and deliver high-impact results for our global clients.
+                    </p>
+                    <a href="Careers.html" class="btn-primary px-12 py-5 rounded-2xl font-extrabold uppercase tracking-widest inline-flex items-center gap-3">Apply for a Job <i class="fa-solid fa-briefcase"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="rfp-section py-28">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div class="text-center md:text-left flex-1">
-                <h2 class="text-4xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
-                <p class="text-slate-500 text-xl font-medium max-w-xl">Get in touch with our experts to discuss how we can drive value for your organization.</p>
+    <section id="contact" class="py-32 bg-white">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+            <h2 class="text-4xl lg:text-5xl font-[800] text-burraqNavy mb-2">Get in <span class="text-burraqOrange">Touch</span></h2>
+            <div class="orange-dash-center mb-16"></div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="rounded-[3rem] overflow-hidden shadow-2xl relative group">
+                    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=800" alt="Contact Us" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="text-left">
+                    <p class="text-xl text-slate-700 mb-10 leading-relaxed text-justify font-medium">
+                        Whether you are a startup looking to scale or an established enterprise seeking digital transformation, our experts are here to guide you. We combine localized expertise with global vision to provide actionable strategies that drive real value. Let's discuss how we can work together to achieve your organizational goals and overcome complex market challenges.
+                    </p>
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-center gap-5">
+                            <div class="icon-bg w-12 h-12"><i class="fa-solid fa-envelope"></i></div>
+                            <span class="font-bold text-burraqNavy">info@burraqpartners.com</span>
+                        </div>
+                        <div class="flex items-center gap-5">
+                            <div class="icon-bg w-12 h-12"><i class="fa-solid fa-phone"></i></div>
+                            <span class="font-bold text-burraqNavy">+966 11 248 0261</span>
+                        </div>
+                    </div>
+                    <a href="Contact.html" class="btn-primary px-12 py-5 rounded-2xl font-extrabold uppercase tracking-widest inline-flex items-center gap-3">Contact us <i class="fa-solid fa-paper-plane"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rfp-section py-28 px-4 bg-softGray">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left flex-1 px-4">
+                <h2 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy mb-6 leading-tight">Ready to <span class="text-burraqOrange">Scale</span> Your Business?</h2>
+                <p class="text-slate-500 text-lg lg:text-xl font-medium max-w-xl text-justify">Get in touch with our experts to discuss how we can drive value for your organization.</p>
             </div>
             <div class="flex flex-col items-center md:items-start gap-6 border-l-4 border-burraqOrange pl-8">
-                <span class="text-burraqNavy text-2xl font-bold tracking-tight">Request for proposal</span>
-                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-12 py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-sm flex items-center gap-3">
+                <span class="text-burraqNavy text-xl lg:text-2xl font-bold tracking-tight">Request for proposal</span>
+                <a href="RFP.html" class="bg-burraqNavy hover:bg-burraqOrange text-white px-10 py-5 lg:px-12 lg:py-5 rounded-2xl font-extrabold transition-all shadow-[0_15px_30px_rgba(26,29,46,0.15)] hover:shadow-[0_15px_30px_rgba(255,87,34,0.25)] hover:-translate-y-1 uppercase tracking-widest text-xs lg:text-sm flex items-center gap-3">
                     Submit RFP <i class="fa-solid fa-paper-plane text-xs"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <footer class="bg-burraqNavy text-white py-20 border-t border-white/5 px-4">
+        <div class="max-w-[1400px] mx-auto">
             <div class="mb-16">
-                <h2 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left">
+                <h2 class="text-3xl lg:text-5xl font-extrabold tracking-tight leading-tight text-center md:text-left px-4">
                     Empowering <span class="text-burraqOrange">Growth</span>, Unleashing Potential
                 </h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left items-start mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left items-start mb-16 px-4">
                 <div class="flex flex-col gap-8 items-center md:items-start">
                     <div class="flex flex-col items-center md:items-start gap-4">
                         <a href="Home.html">
                             <img src="BurraqLogoLight.svg" alt="Burraq Logo" class="h-16 w-auto">
                         </a>
                         <p class="text-slate-400 text-sm font-medium max-w-[280px] text-center md:text-left leading-relaxed">
-                            Burraq Partners drives growth through innovation and strategic solutions, empowering businesses to achieve success
+                            Driving success through trusted <br>
+                            partnerships, innovative solutions, <br>
+                            & unwavering values which makes <br>
+                            <strong>"Your Journey, Our Purpose"</strong>
                         </p>
                     </div>
                     <div class="flex gap-4">
-                        <div class="flex gap-4">
-                            <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                            <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
-                            <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
-                        </div>
-                        <div class="flex gap-4">
-                            <a href="https://www.youtube.com/@BurraqPartners" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
-                            <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
-                        </div>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                        <a href="#" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://www.youtube.com/@BurraqPartners" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://www.linkedin.com/company/burraqpartners/" target="_blank" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-burraqOrange hover:border-burraqOrange transition-all"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
                     </div>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Quick Links</h4>
-                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                    <ul class="space-y-4 text-slate-400 text-sm lg:text-base font-medium">
                         <li><a href="Home.html" class="footer-link">Home</a></li>
                         <li><a href="About.html" class="footer-link">About Us</a></li>
-                        <li><a href="Services.html" class="footer-link">Partners</a></li>
+                        <li><a href="Partners.html" class="footer-link">Partners</a></li>
                         <li><a href="Blogs.html" class="footer-link">Blog</a></li>
                         <li><a href="Services.html" class="footer-link">Services</a></li>
                         <li><a href="Careers.html" class="footer-link">Careers</a></li>
@@ -847,7 +484,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Services</h4>
-                    <ul class="space-y-4 text-slate-400 text-base font-medium">
+                    <ul class="space-y-4 text-slate-400 text-sm lg:text-base font-medium">
                         <li><a href="Services.html?service=deals" class="footer-link">Deals Advisory</a></li>
                         <li><a href="Services.html?service=business" class="footer-link">Business Advisory</a></li>
                         <li><a href="Services.html?service=tech" class="footer-link">Technology Advisory</a></li>
@@ -858,7 +495,7 @@
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="text-xl font-bold mb-8 text-white uppercase tracking-wider">Contact Info</h4>
-                    <ul class="space-y-5 text-slate-400 text-base font-medium">
+                    <ul class="space-y-5 text-slate-400 text-sm lg:text-base font-medium">
                         <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors">
                             <i class="fa-solid fa-envelope mt-1 text-burraqOrange text-lg"></i>
                             <span>info@burraqpartners.com</span>
@@ -869,12 +506,16 @@
                         </li>
                         <li class="flex items-start justify-center md:justify-start gap-4 hover:text-burraqOrange transition-colors text-justify">
                             <i class="fa-solid fa-location-dot mt-1 text-burraqOrange text-lg"></i>
-                            <span>8074 Building, Riyadh, KSA</span>
+                            <span>Office 31 & 32, Qurtabah Square<br>
+                                  Dammam Road, Qurtabah<br>
+                                  Riyadh, Saudi Arabia 11576
+                            </span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-sm font-medium">
+            <div class="pt-10 border-t border-white/10 text-center text-slate-500 text-xs lg:text-sm font-medium">
+                <br>
                 <p>&copy; 2026 Burraq Partners. All rights reserved.</p>
             </div>
         </div>
@@ -895,7 +536,6 @@
                 autoDisplay: false
             }, 'google_translate_element');
         }
-
         function changeLang(lang) {
             const select = document.querySelector('select.goog-te-combo');
             if (select) {
@@ -905,75 +545,13 @@
                 document.getElementById('ar-btn').classList.toggle('active', lang === 'ar');
             }
         }
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const isHidden = menu.style.display === 'none' || menu.style.display === '';
+            menu.style.display = isHidden ? 'flex' : 'none';
+            document.body.style.overflow = isHidden ? 'hidden' : 'auto';
+        }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <script>
-        const bios = {
-            khalid: { name: "Khalid A Al Bassam", title: "Advisory Board Member", img: "Advisory1.png", text: "<p>Mr. Khalid A Al Bassam is the Chairman of Al Bassam Investment Company W.L.L. , Bahrain. He graduated with a Bachelor degree in Business Administration, from Eastern New Mexico University, USA. Khalid has extensive experience and knowledge in banking and central banking. His 37-year career includes extensive experience in management, banking and investments. He was also the Chairman of Foulath Holding and a Board member of Gulf Investment Corporation, Kuwait. Previously, was the Deputy Governor of the Central Bank of Bahrain, Chairman of Bahrain Islamic Bank B.S.C., Vice Chairman of Bahrain Stock Exchange and a Board member of the Social Insurance Organization Bahrain.</p>" },
-            dean: { name: "Dean Rowan", title: "Advisory Board Member", img: "Advisory2.png", text: "<p>Mr. Rowan is an internationally respected consultant and an advisor, author and market commentator. He has over 27 years of extensive experience in boards, governance, director development. He is a Subject Matter Expert in risk, credit, compliance, AML and governance. As a practitioner, Mr. Rowan has worked with Barclays Bank PLC, London as Head of Group Risk and earlier with Westpac Bank in Australia as Head of Risk, Global Treasury, as well as Head of Credit. He worked for over 10 years with Citibank in Australia and throughout the Asia Pacific region. In the GCC he has worked with the National Commercial Bank as Head of Operational Risk and Basel II and as Chief Risk and Compliance Officer with Gulf One Investment Bank. He is a Senior Fellow of Financial Securities Institute of Australia, Fellow of the International Compliance Association, Fellow of the Australian Society of Certified Practicing Accountants, a Fellow of the Taxation and Management Accountants of Australia, a Fellow of the Taxation Institute of Australia, and a member of the Australian Institute of Company Directors.</p>" },
-            asim: { name: "Asim Khan", title: "Advisory Board Member", img: "Advisory3.png", text: "<p>Asim Khan, a Fellow Chartered Accountant with more than 30 years of experience in investments and finance, is the CEO of Khalij Group (United Kingdom) one of the leading Islamic investment and advisory conglomerates, with assets under advisory in excess of USD 4 billion. He has won various accolades including “Global Islamic Finance Leadership Award” and also the prestigious “Avicenna Medal” in recognition of his services to Islamic Finance. He is also included in the 'Power 100' as one of the most influential British Pakistanis in the United Kingdom. Due to his decades of expertise in investment banking and Islamic finance, Asim serves as technical member on various Shari’a Boards to review and approve Shari’a compliant investment structures and products. Asim is a regular speaker on Islamic finance and continues to speak at various events and forums, including Islamic finance conferences, events, and training and also appears on television for various UK, European and Asian TV channels. Asim also holds an honorary doctorate in comparative religion.</p>" },
-            kaiser: { name: "Dr. Kaiser Naseem", title: "Advisory Board Member", img: "Advisory4.png", text: "<p>Dr. Kaiser Naseem is a distinguished global thought leader and innovator who possesses over 40 years of international experience across industry, development banking, and finance. Throughout his notable 26-year career with the World Bank Group and the International Finance Corporation (IFC), he successfully conceptualized and developed new institutions and business models within challenging environments. As an advisor and independent board director, he brings an entrepreneurial flair and a diverse set of core competencies to institutions, specifically in the areas of corporate governance, strategy formulation and oversight, and digital transformation. His expertise further extends to MSME development and banking, entrepreneurship development, and the critical alignment of business goals with SDGs and ESG frameworks. Recognized for his significant impact on the industry, he was named one of the top 50 fintech influencers in the Middle East in 2017 and among the top 100 Global Fintech influencers for SDGs in 2019. In April 2019, his contributions were further honored with the prestigious title of “Leader in Global Development Finance\".</p>" },
-            rehan: { name: "Rehan Zulqadar", title: "Chief Executive Officer", img: "Team1.png", text: "<p>Rehan is a senior governance, risk, and compliance professional with over two decades of experience, including a pivotal role as Director for a regional consulting firm in KSA where he established and grew the risk advisory practice to a significant topline. He has held senior leadership positions across the financial services sector, including investment banks, financing companies, and investment firms, while serving as a strategic advisor to Board members and CEOs. His extensive professional credentials include an ICA-UK International Diploma in Governance, Risk and Compliance, CFA Institute Investment Foundations, and certifications as an Associate Professional Risk Manager, Certified Operational Risk Manager (PRMIA-USA), Basel subject matter expert (CBiiiPro – USA), Certified Anti-Money Laundering Specialist (ACAMS-USA), and an International Certificate in Banking Risk & Regulations (GARP-USA).</p>" },
-            nauman: { name: "Nauman Khalid", title: "Finance Transformation", img: "Team2.png", text: "<p>Nauman is a senior finance professional with 25 years of experience across the automotive, manufacturing, real estate, and hospitality industries, specializing in capital and debt restructuring, internal controls, and the implementation of ERP, RPA, and business analytics. Having worked in the GCC for over 12 years in various senior capacities, he has led organizations in developing financial strategies for profit maximization and corporate governance while regularly advising audit committees and boards of large family groups and listed companies. He is an FCA from the Institute of Chartered Accountants of Pakistan, holds a CISA qualification from ISACA, and possesses hands-on expertise in Power BI data modeling, data analysis, and Excel data visualization.</p>" },
-            sattar: { name: "Abdul Sattar", title: "Direct & Indirect Taxation", img: "Team3.png", text: "<p>Abdul Sattar leads the Taxation practice with over 20 years of experience spanning CIT, VAT, assurance, and internal audit across a broad range of multinational and family-owned businesses. He has acquired deep industry knowledge by serving clients in trading services, food and beverage, hospitality, manufacturing, real estate, and construction sectors. A Fellow Chartered Accountant (FCA) and Law Graduate, his technical expertise encompasses GCC Tax, Excise and Customs Duty, Zakat, transfer pricing, and e-invoicing, as well as comprehensive tax planning and reporting.</p>" },
-            adnan: { name: "Adnan Ahmed", title: "Business Advisor", img: "Team4.png", text: "<p>Adnan is a seasoned business executive with over 30 years of experience leading growth and transformation for consumer-facing businesses across the Middle East, North Africa, and Pakistan. Throughout his career at prominent global organizations, he has consistently turned underperforming brands into market leaders by revitalizing business models and curating innovative commercial strategies focused on results-driven sales, brand marketing with clear ROI, and digital innovation. Furthermore, Adnan specializes in helping organizations optimize their local content scores through detailed root cause analysis, ensuring strategic alignment with LCGPA requirements to meet regulatory expectations and enhance market competitiveness.</p>" },
-            saima: { name: "Saima Laeeq", title: "Financial Crime & AML", img: "Team5.png", text: "<p>Saima possesses over two decades of experience in fraud risk management, specializing in fraud investigations, anti-bribery practices, fact-finding, and forensic assignments for prominent government and corporate clients. She has a distinguished track record in assisting with the recovery of financial losses—including facilitating the recovery of millions for a major Middle East client involved in a large-scale money laundering scam—while implementing robust fraud prevention strategies and managing complex, project-driven investigations. Her technical skill set includes identifying and assessing procurement, tender, and supply chain management issues, alongside inventory control within diverse global environments. Having served in various auditing and accounting roles across the banking, manufacturing, steel, and automotive sectors in the Middle East, Gulf region, and Canada, she is a Certified Internal Auditor with core competencies in evidence gathering, dispute services, and Anti-Money Laundering (AML).</p>" },
-            javed: { name: "Javed Ghafoor", title: "GRC Specialist", img: "Team6.png", text: "<p>Javed is a results-driven executive with over 21 years of international experience spanning audit, GRC, finance, and strategy across more than 15 countries in Europe, Asia, and Africa. His extensive background includes external and internal audits, risk management frameworks, business valuations, and mergers and acquisitions (M&A) due diligence, with specialized expertise in carbon credits, deal structuring, and financial restructuring. He has held mid to senior-level positions within Big 4 accounting firms and various industries, including Telecom, Healthcare, Oil & Gas, Renewable Energies, and Investment Management, where he has successfully guided companies through IPO preparation and compliance with IFRS and US GAAP standards. A Fellow Chartered Accountant (FCA) from the Institute of Chartered Accountants of Pakistan, Javed brings a comprehensive analytical approach to commercial sensitivity analysis and financial planning.</p>" },
-            imran: { name: "Muhammad Imran", title: "Technology Lead", img: "Team7.png", text: "<p>Imran is a senior Technology Lead with over two decades of experience empowering businesses through the implementation of cutting-edge software, AI solutions, and growth-driven digital strategies. He has established a proven track record of delivering enterprise-level software solutions and user-centric products that drive scalability, with a specialized focus on AI consultancy, implementation, and cybersecurity to create measurable business impact. Throughout his career, he has served prestigious global organizations including UNICEF, the World Bank, and the Asian Development Bank, providing high-level technical guidance and digital marketing expertise. Imran holds a Master’s degree in Business Administration with a specialization in Digital Marketing from the Lahore University of Management Sciences (LUMS) and a Bachelor’s degree in Computer Science, complemented by his status as a Microsoft Certified Solution Developer.</p>" },
-            ammad: { name: "Ammad Zafar", title: "Director, Business Growth", img: "Team8.jpg", text: "<p>Ammad Zafar is a results-oriented leader and the Director of Business Growth, driven by a profound passion for turning ambitious ideas into reality through strategic collaboration and innovation. With an extensive background in identifying growth opportunities and fostering institutional partnerships, he focuses on supporting organizations as they navigate the complexities of expansion and market positioning. Ammad brings a uniquely diverse perspective to the professional landscape, drawing from his experiences as a sports enthusiast, avid traveler, and culinary explorer to build authentic connections and exchange deep insights on the business journey. He is dedicated to connecting with like-minded enthusiasts and industry leaders to explore synergistic opportunities, exchange valuable market intelligence, and discuss actionable strategies that support and elevate the long-term endeavors of his colleagues and partners.</p>" }
-        };
-
-        function openModal(id) {
-            const data = bios[id];
-            if (!data) return;
-            document.getElementById('modalName').innerText = data.name;
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalImg').src = data.img;
-            document.getElementById('modalBio').innerHTML = data.text;
-            document.getElementById('bioModal').classList.add('modal-active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('bioModal').classList.remove('modal-active');
-            document.body.style.overflow = 'auto';
-        }
-
-        const marquee = document.getElementById('marquee-content');
-        const clientFiles = [24, 25, 26, 27, 28, 29, 30, 31, 32, 14, 15, 17, 18, 19, 20, 21, 22, 23, 1, 2, 7, 8, 9, 10, 11];
-        clientFiles.forEach(num => {
-            const item = document.createElement('div');
-            item.className = 'client-logo-item';
-            item.innerHTML = `<img src="client-${num}.svg" alt="Client Logo" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHRleHQgeD0iNTAiIHk9IjYwIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjY2NjIj5DbGllbnQgJHtudW19PC90ZXh0Pjwvc3ZnPg==';">`;
-            marquee.appendChild(item);
-        });
-        marquee.innerHTML += marquee.innerHTML;
-
-        const locationData = [
-            { label: "Regional Headquarters", city: "Riyadh, Saudi Arabia", img: "Riyadh.jpeg" },
-            { label: "Regional Office", city: "Manama, Bahrain", img: "Manama.jpeg" },
-            { label: "International Hub", city: "London, UK", img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" },
-            { label: "International Hub", city: "Waterloo, Canada", img: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&q=80&w=1000" }
-        ];
-
-        let currentIndex = 0;
-        const imgEl = document.getElementById('location-image');
-        const labelEl = document.getElementById('location-label');
-        const cityEl = document.getElementById('location-city');
-
-        function updateLocation() {
-            imgEl.classList.add('fade-out');
-            setTimeout(() => {
-                currentIndex = (currentIndex + 1) % locationData.length;
-                const data = locationData[currentIndex];
-                imgEl.src = data.img;
-                labelEl.textContent = data.label;
-                cityEl.textContent = data.city;
-                imgEl.classList.remove('fade-out');
-            }, 800);
-        }
-        setInterval(updateLocation, 4000);
-    </script>
 </body>
 </html>

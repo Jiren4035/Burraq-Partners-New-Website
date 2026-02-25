@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Internal Auditor (Banking) - Burraq Partners</title>
+    <title>Advanced ESG Risk Management Solutions - Burraq Partners</title>
     <link rel="icon" type="image/png" href="BurraqIcon.png">
     <link rel="apple-touch-icon" href="BurraqIcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,20 +49,24 @@
         .mega-link:hover { color: #FF5722; padding-left: 6px; }
         .btn-primary { background-color: #1a1d2e; color: white; transition: all 0.3s ease; }
         .btn-primary:hover { background-color: #FF5722; box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2); }
-        .jd-card { background: white; border-radius: 2.5rem; padding: 3rem; border: 1px solid #f1f1f1; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
-        .apply-input { width: 100%; padding: 1rem 1.25rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 1rem; outline: none; transition: all 0.3s ease; }
-        .apply-input:focus { border-color: #FF5722; background: white; }
-        .sidebar-sticky { position: sticky; top: 120px; }
-        .section-divider { width: 40px; height: 3px; background: #FF5722; margin: 1.5rem 0; border-radius: 2px; }
-        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
-        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
-        .lang-option.active { background: #FF5722; color: white; }
+        .blog-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #475569; text-align: justify; font-weight: 500; }
+        .blog-content h2 { font-size: 1.875rem; font-weight: 800; color: #1a1d2e; margin-top: 2.5rem; margin-bottom: 1.25rem; }
+        .blog-content h3 { font-size: 1.5rem; font-weight: 700; color: #1a1d2e; margin-top: 2rem; margin-bottom: 1rem; }
+        .toc-box { background: #f8fafc; border-radius: 2rem; padding: 2.5rem; border: 1px solid #f1f1f1; margin-bottom: 3rem; }
+        .toc-box ul { list-style: none; padding: 0; }
+        .toc-box li { margin-bottom: 1rem; position: relative; padding-left: 1.5rem; }
+        .toc-box li::before { content: '→'; position: absolute; left: 0; color: #FF5722; font-weight: 800; }
+        .toc-box a { color: #1a1d2e; font-weight: 700; transition: all 0.3s ease; text-decoration: none; }
+        .toc-box a:hover { color: #FF5722; padding-left: 5px; }
+        .footer-link { transition: all 0.3s ease; display: inline-block; }
+        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
         .whatsapp-fixed { position: fixed; bottom: 30px; left: 30px; background-color: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; }
         .whatsapp-fixed:hover { transform: scale(1.1); }
         .scroll-top { position: fixed; bottom: 30px; right: 30px; background-color: #1a1d2e; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; }
         .scroll-top:hover { background-color: #FF5722; transform: translateY(-5px); }
-        .footer-link { transition: all 0.3s ease; }
-        .footer-link:hover { color: #FF5722; transform: translateX(5px); }
+        .lang-toggle { display: flex; align-items: center; background: #f4f5f7; padding: 4px; border-radius: 12px; gap: 6px; }
+        .lang-option { padding: 8px 16px; border-radius: 9px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.3s ease; }
+        .lang-option.active { background: #FF5722; color: white; }
         #mobile-menu { display: none; position: fixed; inset: 0; background: white; z-index: 200; flex-direction: column; overflow-y: auto; }
         .rfp-section { background-color: #ffffff; border-top: 1px solid #f1f1f1; }
     </style>
@@ -80,7 +84,7 @@
                 <div class="h-full flex items-center"><a href="Home.html" class="nav-link hover:text-burraqOrange">Home</a></div>
                 <div class="h-full flex items-center"><a href="About.html" class="nav-link hover:text-burraqOrange">About Us</a></div>
                 <div class="h-full flex items-center"><a href="Partners.html" class="nav-link hover:text-burraqOrange">Partners</a></div>
-                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link hover:text-burraqOrange">Blog</a></div>
+                <div class="h-full flex items-center"><a href="Blogs.html" class="nav-link active-link text-burraqOrange font-extrabold">Blog</a></div>
                 <div class="relative dropdown h-full flex items-center">
                     <a href="Services.html" class="nav-link hover:text-burraqOrange flex items-center gap-2 cursor-pointer">
                         Services <i class="fa-solid fa-chevron-down text-[12px]"></i>
@@ -153,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link text-burraqOrange font-extrabold">Careers</a></div>
+                <div class="h-full flex items-center"><a href="Careers.html" class="nav-link hover:text-burraqOrange">Careers</a></div>
                 <div class="h-full flex items-center"><a href="Contact.html" class="nav-link hover:text-burraqOrange">Contact Us</a></div>
             </div>
             <div class="flex items-center gap-4 lg:gap-6">
@@ -191,72 +195,85 @@
         </div>
     </div>
 
-    <section class="py-12 bg-softGray/30 border-b border-gray-100">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <a href="Careers.html" class="inline-flex items-center gap-2 text-slate-400 hover:text-burraqOrange font-bold text-sm uppercase tracking-widest transition-colors mb-8">
-                <i class="fa-solid fa-arrow-left"></i> Back to Careers
-            </a>
-            <h1 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy leading-tight">Internal Auditor – <span class="text-burraqOrange">Banking Sector</span></h1>
-            <div class="flex flex-wrap gap-6 mt-6 text-slate-500 font-medium">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-burraqOrange"></i> Riyadh / Dammam / Khobar, KSA</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-briefcase text-burraqOrange"></i> Full Time</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-building text-burraqOrange"></i> Banking & Financial Services</span>
+    <header class="py-24 bg-softGray">
+        <div class="max-w-[1000px] mx-auto px-6 text-center">
+            <span class="bg-burraqNavy text-white px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-widest">ESG</span>
+            <h1 class="text-3xl lg:text-5xl font-extrabold text-burraqNavy mt-8 mb-8 leading-tight">
+                Advanced ESG Risk Management Solutions for Leaders in 2025
+            </h1>
+            <div class="flex items-center justify-center gap-8 text-slate-500 font-bold">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-user text-burraqOrange"></i> Burraq Partners Team</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-calendar text-burraqOrange"></i> Jan 26, 2026</div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row gap-16">
-                <div class="w-full lg:w-8/12">
-                    <div class="jd-card space-y-12">
-                        <div>
-                            <h2 class="text-2xl font-extrabold text-burraqNavy">Role Overview</h2>
-                            <div class="section-divider"></div>
-                            <p class="text-slate-600 leading-relaxed text-justify">We are seeking highly skilled Internal Audit professionals with specialized experience in the banking sector. The ideal candidate will have a deep understanding of banking operations and regulatory frameworks, ensuring institutional integrity and compliance through rigorous internal control assessments.</p>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-extrabold text-burraqNavy">Requirements</h2>
-                            <div class="section-divider"></div>
-                            <ul class="space-y-4">
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">4–6 years of solid experience within the Internal Audit department of a Bank (Note: Experience during articles is excluded).</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Qualification: CA/ACCA (Finalists are eligible to apply) or experienced Finance Professionals.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Certification: <strong>CIA (Certified Internal Auditor) is a mandatory requirement.</strong></span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Availability: Must be available to join immediately.</span></li>
-                                <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-burraqOrange mt-1.5 text-xs"></i> <span class="text-slate-600">Visa Status: Valid Transferable Iqama in KSA is required.</span></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 class="text-2xl font-extrabold text-burraqNavy">Compensation</h2>
-                            <div class="section-divider"></div>
-                            <p class="text-slate-600 leading-relaxed">Salary and benefits are competitive and will depend on the candidate's profile, depth of experience, and technical assessment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full lg:w-4/12">
-                    <div class="sidebar-sticky space-y-8">
-                        <div class="jd-card !p-8">
-                            <h3 class="text-xl font-extrabold text-burraqNavy mb-6">Apply for this Role</h3>
-                            <form action="https://formspree.io/f/mvzbrpkj" method="POST" enctype="multipart/form-data" class="space-y-4">
-                                <input type="hidden" name="subject" value="Bank IA - 02">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <input type="text" name="first_name" required placeholder="First Name" class="apply-input text-sm">
-                                    <input type="text" name="last_name" required placeholder="Last Name" class="apply-input text-sm">
-                                </div>
-                                <input type="tel" name="phone" placeholder="Phone Number" class="apply-input text-sm">
-                                <input type="email" name="email" required placeholder="Email Address" class="apply-input text-sm">
-                                <div class="relative">
-                                    <label class="block text-[10px] font-bold uppercase text-slate-400 mb-2 ml-1">Upload CV (PDF)</label>
-                                    <input type="file" name="cv" required class="text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-softGray file:text-burraqNavy hover:file:bg-burraqOrange hover:file:text-white transition-all cursor-pointer">
-                                </div>
-                                <button type="submit" class="btn-primary w-full py-4 rounded-xl font-bold uppercase tracking-widest text-sm mt-4 shadow-lg">Submit Application</button>
-                            </form>
-                        </div>
-                    </div>
+    <article class="py-24 bg-white">
+        <div class="max-w-[1000px] mx-auto px-6">
+            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1200" alt="Sustainability and ESG" class="w-full h-[350px] lg:h-[550px] object-cover rounded-[2.5rem] lg:rounded-[3.5rem] shadow-2xl mb-16">
+
+            <div class="toc-box">
+                <h4 class="text-burraqNavy text-2xl font-extrabold mb-8">Table of Contents</h4>
+                <ul class="space-y-4">
+                    <li><a href="#what-is-esg">What is ESG Risk Management?</a></li>
+                    <li><a href="#key-challenges">Key Challenges in ESG Risk Management</a></li>
+                    <li><a href="#advanced-solutions">Advanced ESG Risk Management Solutions</a></li>
+                    <li><a href="#vision-2030">Saudi Arabia’s Vision 2030 and ESG</a></li>
+                    <li><a href="#emerging-tech">Emerging ESG Technologies</a></li>
+                    <li><a href="#financial-models">Integrating ESG into Financial Risk Models</a></li>
+                    <li><a href="#benchmarking">Regional ESG Benchmarking</a></li>
+                    <li><a href="#climate-hedging">Climate Risk Hedging</a></li>
+                </ul>
+            </div>
+
+            <div class="blog-content px-2 lg:px-0">
+                <p class="text-xl font-semibold !text-slate-700 mb-12 italic border-l-4 border-burraqOrange pl-8">
+                    In the evolving landscape of corporate governance, environmental, social, and governance (ESG) risk management has become a cornerstone for sustainable business operations. For leaders in Saudi Arabia, implementing advanced ESG risk management solutions is critical to meeting both global and regional expectations.
+                </p>
+
+                <h2 id="what-is-esg">What is ESG Risk Management?</h2>
+                <p>ESG risk management is the process of identifying, assessing, and mitigating risks related to environmental, social, and governance factors. Companies utilize ESG risk management solutions to safeguard their operations, align with stakeholder expectations, and comply with regulatory requirements.</p>
+
+                <h2 id="key-challenges">Key Challenges in ESG Risk Management</h2>
+                <p><strong>Data Collection and Analysis:</strong> Accurate ESG data collection remains a challenge for many organizations. In 2024, 45% of companies in Saudi Arabia cited inconsistent data as a major hurdle.</p>
+                <p><strong>Regulatory Compliance:</strong> Compliance with global and local ESG standards, such as those outlined in Vision 2030, adds complexity. Saudi Arabia’s ESG-related regulatory frameworks are expected to increase by 20% by 2025.</p>
+                <p><strong>Climate-Related Risks:</strong> Environmental factors like climate change pose significant risks. Statistically, 70% of companies globally are incorporating climate-related risk scenarios into their strategic planning as of 2024.</p>
+
+                <h2 id="advanced-solutions">Advanced ESG Risk Management Solutions</h2>
+                <p><strong>AI-Powered Risk Assessment Tools:</strong> AI and machine learning enable companies to analyze vast amounts of ESG data in real-time, predicting and mitigating potential risks with greater accuracy. In the Saudi oil sector, adoption of AI tools reduced environmental risk incidents by 25% in 2024.</p>
+                <p><strong>Blockchain for Transparent ESG Reporting:</strong> Blockchain technology ensures immutable and transparent ESG data records, improving stakeholder trust and regulatory compliance.</p>
+                <p><strong>Scenario Analysis and Stress Testing:</strong> Leaders use scenario analysis to assess the financial impact of various ESG risk scenarios. By 2025, 60% of Saudi corporations plan to integrate stress testing for climate risks.</p>
+
+                <h2 id="vision-2030">Saudi Arabia’s Vision 2030 and ESG Risk Management</h2>
+                <p>Saudi Arabia’s Vision 2030 emphasizes sustainability as a core objective, urging companies to adopt global best practices. Key milestones include the Green Saudi Initiative, targeting a 50% reduction in carbon emissions by 2030, and the NEOM project, which incorporates cutting-edge ESG risk management solutions.</p>
+
+                <h2 id="emerging-tech">Emerging ESG Technologies Transforming Risk Management</h2>
+                <p>Innovations such as IoT sensors are increasingly used to monitor environmental factors like carbon emissions and water usage in real time. The global IoT market for ESG applications is projected to grow to $18 billion by 2025. In Saudi Arabia, NEOM has implemented IoT solutions to achieve its sustainability goals.</p>
+
+                <h2 id="financial-models">Integrating ESG into Financial Risk Models</h2>
+                <p>ESG risk management is evolving into the domain of financial modeling. By 2024, over 75% of global asset managers are expected to incorporate ESG criteria into their investment strategies. The Saudi Investment Fund (PIF) plans to allocate up to $30 billion in ESG-aligned investments by 2025.</p>
+
+                <h2 id="benchmarking">Regional ESG Benchmarking and Performance Metrics</h2>
+                <p>Saudi Arabia leads with initiatives like the Saudi Exchange ESG Index. As of 2024, the index recorded a 12% improvement in overall sustainability scores compared to the previous year. Projections suggest companies are aiming for a 20% reduction in carbon intensity by 2025.</p>
+
+                <h2 id="climate-hedging">Climate Risk Hedging: A Proactive ESG Approach</h2>
+                <p>Climate risk hedging involves financial instruments like green bonds and sustainability-linked loans. In Saudi Arabia, green bond issuance reached $2 billion in 2024, and this figure is projected to grow by 50% in 2025. 35% of organizations in energy-intensive sectors have incorporated climate risk hedging strategies.</p>
+
+                <p class="bg-softGray p-8 rounded-[2rem] font-bold text-burraqNavy border-l-4 border-burraqOrange mt-12">
+                    How Burraq Partners Solutions Can Help: Burraq Partners Solutions provides a suite of advanced ESG risk management solutions tailored to the Saudi Arabian market. We offer customized risk assessments, regulatory compliance support, and stakeholder engagement training to ensure your organization meets its sustainability goals under Vision 2030.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-between items-center py-16 border-t border-gray-100 mt-16 gap-6">
+                    <a href="Blog2.html" class="flex items-center gap-3 text-burraqNavy font-extrabold uppercase tracking-widest text-sm hover:text-burraqOrange transition-all">
+                        <i class="fa-solid fa-arrow-left"></i> Previous Post
+                    </a>
+                    <a href="Blogs.html" class="flex items-center gap-3 text-burraqNavy font-extrabold uppercase tracking-widest text-sm hover:text-burraqOrange transition-all">
+                        Back to Blog <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </article>
 
     <section class="rfp-section py-28 px-4 bg-softGray">
         <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
